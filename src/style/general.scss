@@ -1,9 +1,45 @@
 @use 'bootstrap/scss/bootstrap.scss' as *;
+@use './partials/variables.scss' as *;
 
-.fs-small{
-    font-size: small;
-}
-
-body{
-    background: cadetblue;
+//themes
+#body{
+    height: 100%;
+    *{
+        color:inherit;
+    }
+    main{
+        min-height: 100vh;
+    }
+    &.light{
+        background-color: $light-primary-color;
+        color: $light-text-color;
+        a{
+            color: $light-link-color !important;
+        }
+        .my-text-secondary{
+            color: $light-secondary-color !important;
+        }
+        .my-bg-primary{
+            background-color: $light-primary-color !important;
+        }
+        .my-bg-primary-darken{
+            background-color: $light-primary-darken-color !important;
+        }
+    }
+    &.dark{
+        background-color: $dark-primary-color;
+        color: $dark-text-color;
+        a{
+            color: $dark-link-color !important;
+        }
+        .my-text-secondary{
+            color: $dark-secondary-color !important;
+        }
+        .my-bg-primary{
+            background-color: $dark-primary-color !important;
+        }
+        .my-bg-primary-darken{
+            background-color: $dark-primary-darken-color !important;
+        }
+    }
 }
