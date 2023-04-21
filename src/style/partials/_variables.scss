@@ -1,13 +1,23 @@
-//light theme  
-$light-primary-color: #DDDCC5; //50
-$light-primary-darken-color: #eaffb4; //10
-$light-secondary-color: #6A6A61;//5
-$light-text-color: #1D2326;//20
-$light-link-color: #7c0d29;//5
+html{
+    //light theme  
+    --primary-color: #DDDCC5; //50
+    --primary-darken-color: #eaffb4; //10
+    --secondary-color: #6A6A61; //5 
+    --text-color: #1D2326; //20
+    --text-link-color: #7c0d29; //5 
+    
+    //dark theme 
+    &[data-theme='dark']{
+        --primary-color: #1D2326 ; //50
+        --primary-darken-color: #070909 ; //10
+        --secondary-color: #a0a08c ; //5 
+        --text-color: #DDDCC5 ; //20
+        --text-link-color: #f3ef31 ; //5 
+    } 
+}
 
-//dark theme  
-$dark-primary-color: #1D2326; //50
-$dark-primary-darken-color: #070909; //10
-$dark-secondary-color: #a0a08c; //5 
-$dark-text-color: #DDDCC5; //20
-$dark-link-color: #f3ef31; //5 
+$primary-color: var(--primary-color); //50
+$primary-darken-color: var(--primary-darken-color); //10
+$secondary-color: var(--secondary-color); //5 
+$text-color: var(--text-color); //20
+$text-link-color: var(--text-link-color); //5 

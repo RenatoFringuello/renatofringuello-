@@ -1,45 +1,40 @@
 @use 'bootstrap/scss/bootstrap.scss' as *;
-@use './partials/variables.scss' as *;
 
 //themes
-#body{
-    height: 100%;
+body{
+    #app{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        
+        > main{
+            flex-grow: 1;
+        }
+    }
+
+    background-color: $primary-color;
+    color: $text-color;
+    a{
+        color: $text-link-color !important;
+    }
+    .my-text-secondary{
+        color: $secondary-color !important;
+    }
+    .my-bg-primary{
+        background-color: $primary-color !important;
+    }
+    .my-bg-primary-darken{
+        background-color: $primary-darken-color !important;
+    }
     *{
         color:inherit;
     }
-    main{
-        min-height: 100vh;
-    }
-    &.light{
-        background-color: $light-primary-color;
-        color: $light-text-color;
-        a{
-            color: $light-link-color !important;
-        }
-        .my-text-secondary{
-            color: $light-secondary-color !important;
-        }
-        .my-bg-primary{
-            background-color: $light-primary-color !important;
-        }
-        .my-bg-primary-darken{
-            background-color: $light-primary-darken-color !important;
-        }
-    }
-    &.dark{
-        background-color: $dark-primary-color;
-        color: $dark-text-color;
-        a{
-            color: $dark-link-color !important;
-        }
-        .my-text-secondary{
-            color: $dark-secondary-color !important;
-        }
-        .my-bg-primary{
-            background-color: $dark-primary-color !important;
-        }
-        .my-bg-primary-darken{
-            background-color: $dark-primary-darken-color !important;
-        }
-    }
+}
+
+.transition,
+.transition *,
+.transition *:before,
+.transition *:after {
+    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 620ms!important;
+    transition-delay: 0!important;
 }

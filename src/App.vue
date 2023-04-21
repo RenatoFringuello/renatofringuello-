@@ -2,34 +2,20 @@
 import AppHeader from './components/AppHeader.vue';
 
 export default {
-    name: "App",
-    components: { AppHeader },
-    data() {
-      return {
-        currentTheme:'light',
-        themes:['light', 'dark']
-      }
-    },
-    methods: {
-      
-    },
+  name: "App",
+  components: { AppHeader },
 }
 </script>
 
 <template>
-  <div :class="currentTheme" id="body">
-    <Transition name="theme">
-      <div class="wrapper-theme">
-        <AppHeader @change-theme="(theme) => currentTheme = theme"/>
-        <main>  
-        </main>
-      </div>
-    </Transition>
-  </div>
+  <AppHeader/>
+  <main>  
+    
+  </main>
 </template>
 
 <style lang="scss">
   /* non scrivessi nulla non funzionerebbero i file scss globali 
-     lasciare anche il lang */
+  lasciare anche il lang */
 
 </style>
