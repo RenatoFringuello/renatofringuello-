@@ -10,21 +10,41 @@ export default {
          */
         icon : {
             type:String,
-            default:'fa-solid fa-circle-exclamation'
+            default:''
+        },
+        /**
+         * the class Name to give to the label, used to set it to 'theme-toggle'
+         */
+        className:{
+            type:String,
+            default:''
+        },
+        /**
+         * the name attribute of the checkbox
+         */
+        checkName:{
+            type:String
+        },
+        /**
+         * the emit name to point to
+         */
+        emitName:{
+            type:String,
         }
+
     },
     data() {
         return {
-            themeState:false,//0
+            state:false,//0
         }
     },
 }
 </script>
 
 <template>
-    <div class="switch-toggle" @click="$emit('changeTheme', !themeState)">
-        <input class="container_toggle" type="checkbox" id="switch" name="theme" v-model="themeState">
-        <label for="switch">
+    <div class="switch-toggle" @click="$emit(emitName, !state)">
+        <input class="container_toggle" type="checkbox" :id="checkName" :name="checkName" v-model="state">
+        <label :for="checkName" :class="className">
             <i :class="icon"></i>
         </label>
     </div> 
@@ -37,6 +57,9 @@ export default {
         }
 
         label {
+            &.theme-toggle{
+                background: $text-link-color !important;
+            }
             cursor: pointer;
             width: 55px;
             height: 30px;
