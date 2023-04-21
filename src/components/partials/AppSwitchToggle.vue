@@ -2,7 +2,10 @@
 export default {
     name:'AppSwitchToggle', 
     props:{
-        themes : Array,
+        icon : {
+            type:String,
+            default:'fa-solid fa-circle-exclamation'
+        }
     },
     data() {
         return {
@@ -13,28 +16,59 @@ export default {
 </script>
 
 <template>
-    <div class="switch-toggle" @click="$emit('changeTheme', themes[(themeState)? 0 : 1].name)">
-        <label for="theme">
-            {{ themes[(themeState)? 0 : 1].name }}
-            <i class="fa-solid" :class="themes[(themeState)? 0 : 1].icon"></i>
+    <div class="switch-toggle" @click="$emit('changeTheme', !themeState)">
+        <input class="container_toggle" type="checkbox" id="switch" name="theme" v-model="themeState">
+        <label for="switch">
+            <i :class="icon"></i>
         </label>
-        <input type="checkbox" name="theme" id="theme" v-model="themeState">
-    </div>
+    </div> 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .switch-toggle{
-        label{
-            cursor: pointer;
-            border: 1px solid;
-            border-radius: 2rem;
-            padding: .25rem 1rem;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-        }
-        input{
+        input[type=checkbox] {
             display: none;
+        }
+
+        label {
+            cursor: pointer;
+            width: 55px;
+            height: 30px;
+            background: $secondary-color;
+            margin: 0 0 0 auto;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+            position: relative;
+            
+            i{
+                display: grid;
+                place-content: center;
+                font-size: 15px;
+                background: #fff;
+                color: #000;
+                width: 20px;
+                height: 20px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                position: absolute;
+                top: 5px;
+                left: 4px;
+                transition: cubic-bezier(0.68, -0.05, 0.27, 01.05) 320ms;
+            }
+        }
+
+        input:checked + label {
+            background: $text-link-color;
+            i{
+                left: calc(100% - 5px);
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
         }
     }
 </style>
