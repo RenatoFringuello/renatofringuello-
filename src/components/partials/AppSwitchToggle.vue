@@ -1,7 +1,13 @@
 <script>
+/**
+ * It's the a general swtich toggle with the icon in the thumb
+ */
 export default {
     name:'AppSwitchToggle', 
     props:{
+        /**
+         * the full font awesome's class for the i tag
+         */
         icon : {
             type:String,
             default:'fa-solid fa-circle-exclamation'
