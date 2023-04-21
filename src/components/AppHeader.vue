@@ -54,7 +54,7 @@ export default {
     <header>
         <nav class="navbar navbar-expand-fluid" :class="(isDarkTheme) ?'navbar-dark' :''">
             <div class="container-lg position-relative">
-                <h1 class="m-0">Home</h1>
+                <h1 class="m-0 text-capitalize">{{ $route.name}}</h1>
                 <a class="navbar-brand position-absolute translate-middle top-50 start-50" href="#">
                     <img src="@/assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </a>
