@@ -16,13 +16,13 @@ export default {
         changeTheme(isDark){
             // console.log(isDark);
             this.isDarkTheme = isDark;
-            if(isDark) {
-                this.transition();
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                this.transition();
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
+
+            // enable transition for all just for 1 sec and change theme
+            this.transition();
+            document.documentElement.setAttribute('data-theme', (isDark) ? 'dark' : 'light');
+
+            let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
+            document.getElementById('metaThemeColor').setAttribute('content', color);
         }, 
         transition(){
             document.documentElement.classList.add('transition');
@@ -30,6 +30,9 @@ export default {
                 document.documentElement.classList.remove('transition');
             }, 1000)
         }
+    },
+    created() {
+        this.changeTheme(false);
     },
 }
 </script>
@@ -70,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 header{
-    background: linear-gradient(#0003, #0000);
+    background: linear-gradient($primary-darken-color, #0000);
     li{
         padding:.4rem 0;
         a{
