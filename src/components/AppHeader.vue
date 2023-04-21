@@ -10,20 +10,33 @@ export default {
         return {
             isDarkTheme : false,
             isNavbarOpen : false,
+            navLinks:[
+                {
+                    name:'home',
+                    icon:'fa-solid fa-house'
+                }
+            ]
         }
     },    
     methods: {
+        /**
+         * change the theme of the website by changing the class of the html tag
+         * @param {boolean} isDark - true to activate dark mode
+         */
         changeTheme(isDark){
             // console.log(isDark);
             this.isDarkTheme = isDark;
 
-            // enable transition for all just for 1 sec and change theme
             this.transition();
             document.documentElement.setAttribute('data-theme', (isDark) ? 'dark' : 'light');
 
+            //change the meta theme-color color
             let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
             document.getElementById('metaThemeColor').setAttribute('content', color);
-        }, 
+        },
+        /**
+         *  enable transition for all just for 1 sec
+         */
         transition(){
             document.documentElement.classList.add('transition');
             window.setTimeout(() => {
@@ -52,17 +65,16 @@ export default {
             <div class="container-lg">
                 <div class="navbar-collapse" :class="(isNavbarOpen)?'':'collapse' " id="navbarNav">
                     <ul class="navbar-nav text-end">
-                        <li class="nav-item">
-                            <a class="transition active" href="#">Home</a>
+                        <li class="nav-item" v-for:="navLink in navLinks">
+                            <router-link class="transition active text-capitalize fw-bold" :to="{name:navLink.name}">
+                                {{ navLink.name }}
+                                <i :class="navLink.icon"></i>
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="transition" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="transition" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <AppSwitchToggle class="transition" @change-theme="changeTheme" icon="fa-solid fa-moon"/>
+                            <AppSwitchToggle @change-theme="changeTheme" 
+                                emitName="changeTheme" checkName="theme"
+                                icon="fa-solid fa-moon" className="theme-toggle"/>
                         </li>
                     </ul>
                 </div>
@@ -77,6 +89,7 @@ header{
     li{
         padding:.4rem 0;
         a{
+            padding:.4rem 0;
             text-decoration: none;
             display:inline;
             border-bottom: 2px solid #0000;
