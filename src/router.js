@@ -12,6 +12,16 @@ const router = createRouter({
             component : AppHome
         },
         {
+            path : '/projects',
+            name : 'projects',
+            component : AppHome
+        },
+        {
+            path : '/about-me',
+            name : 'about',
+            component : AppHome
+        },
+        {
             path: '/404', 
             name: '404', 
             component: AppPageNotFound
