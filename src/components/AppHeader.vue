@@ -14,21 +14,28 @@ export default {
                 {
                     name:'home',
                     icon:'fa-solid fa-house'
-                }
+                },
+                {
+                    name:'projects',
+                    icon:'fa-solid fa-compass-drafting'
+                },
+                {
+                    name:'about',
+                    icon:'fa-solid fa-circle-info'
+                },
             ]
         }
     },    
     methods: {
         /**
-         * change the theme of the website by changing the class of the html tag
-         * @param {boolean} isDark - true to activate dark mode
+         * set the theme to dark|light state with a temporary transition effect and then set the meta theme-color
+         * @param {boolean} state 
          */
-        changeTheme(isDark){
-            // console.log(isDark);
-            this.isDarkTheme = isDark;
-
+        setTheme(state){
             this.transition();
-            document.documentElement.setAttribute('data-theme', (isDark) ? 'dark' : 'light');
+            this.isDarkTheme = state;
+            document.documentElement.setAttribute('data-theme', (this.isDarkTheme) ? 'dark' : 'light');
+            // console.log(this.isDarkTheme);
 
             //change the meta theme-color color
             let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
@@ -45,16 +52,18 @@ export default {
         }
     },
     created() {
-        this.changeTheme(false);
+        //change the meta theme-color color
+        let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
+        document.getElementById('metaThemeColor').setAttribute('content', color);
     },
 }
 </script>
 
 <template lang="">
-    <header>
-        <nav class="navbar navbar-expand-fluid" :class="(isDarkTheme) ?'navbar-dark' :''">
+    <header class="sticky-bottom">
+        <nav class="navbar navbar-expand-fluid" :class="(this.isDarkTheme) ?'navbar-dark' :''">
             <div class="container-lg position-relative">
-                <h1 class="m-0 text-capitalize">{{ $route.name}}</h1>
+                <h1 class="m-0 text-capitalize">{{ $route.name }}</h1>
                 <a class="navbar-brand position-absolute translate-middle top-50 start-50" href="#">
                     <img src="@/assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </a>
@@ -65,15 +74,14 @@ export default {
             <div class="container-lg">
                 <div class="navbar-collapse" :class="(isNavbarOpen)?'':'collapse' " id="navbarNav">
                     <ul class="navbar-nav text-end">
-                        <li class="nav-item" v-for:="navLink in navLinks">
-                            <router-link class="transition active text-capitalize fw-bold" :to="{name:navLink.name}">
+                        <li class="nav-item" :class="($route.name == navLink.name)? 'active fw-bold' : ''" v-for:="navLink in navLinks">
+                            <router-link class="transition text-capitalize" :to="{name:navLink.name}">
                                 {{ navLink.name }}
                                 <i :class="navLink.icon"></i>
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <AppSwitchToggle @change-theme="changeTheme" 
-                                emitName="changeTheme" checkName="theme"
+                            <AppSwitchToggle @toggle="setTheme" checkName="theme"
                                 icon="fa-solid fa-moon" className="theme-toggle"/>
                         </li>
                     </ul>
@@ -88,16 +96,20 @@ header{
     background: linear-gradient($primary-darken-color, #0000);
     li{
         padding:.4rem 0;
-        a{
-            padding:.4rem 0;
-            text-decoration: none;
-            display:inline;
-            border-bottom: 2px solid #0000;
+        &.active{
+            font-size: 1.5rem;
+            padding:.5rem 0;
         }
-        &:hover{
-            a{
-                border-bottom: 2px solid;
-            }
+        &:not(.active) a:hover{/* every a but the a of .active */
+            padding:.4rem 0;
+            border-bottom: 2px solid;
+            
+            font-size: 1.3rem;
+        }
+        a{
+            text-decoration: none;
+            padding:.15rem 0;
+            border-bottom: 2px solid #0000;
         }
     }
 }
