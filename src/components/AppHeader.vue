@@ -44,7 +44,7 @@ export default {
          */
         setMetaThemeColor(){
             //change the meta theme-color color
-            let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
+            let color = getComputedStyle(document.documentElement).getPropertyValue('--dominant-darken-color');
             document.getElementById('metaThemeColor').setAttribute('content', color);
         },
         /**
@@ -75,7 +75,7 @@ export default {
 
 <template lang="">
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-fluid" :class="(this.isDarkTheme) ?'navbar-dark' :''">
+        <nav class="navbar navbar-expand-fluid">
             <div class="container-lg position-relative">
                 <div class="text-capitalize">{{ $route.name }}</div>
                 <router-link class="navbar-brand position-absolute translate-middle top-50 start-50" :to="{name:navLinks[0].name}">
@@ -108,7 +108,7 @@ export default {
 
 <style lang="scss" scoped>
 header{
-    background: linear-gradient($primary-darken-color, #0000);
+    background: linear-gradient($dominant-darken-color, #0000);
     li{
         padding:.4rem 0;
         &.active{

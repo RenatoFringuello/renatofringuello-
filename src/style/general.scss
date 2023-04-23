@@ -11,21 +11,26 @@ body{
             flex-grow: 1;
             padding-top: 54px;
         }
+
+        button{
+            border:0;
+            cursor: pointer;
+        }
     }
 
-    background-color: $primary-color;
-    color: $text-color;
+    background-color: $dominant-color;
+    color: $accent-color;
     a{
-        color: $text-link-color !important;
+        color: $complementary-color !important;
     }
     .my-text-secondary{
         color: $secondary-color !important;
     }
-    .my-bg-primary{
-        background-color: $primary-color !important;
+    .my-bg-dominant{
+        background-color: $dominant-color !important;
     }
-    .my-bg-primary-darken{
-        background-color: $primary-darken-color !important;
+    .my-bg-dominant-darken{
+        background-color: $dominant-darken-color !important;
     }
     *{
         color:inherit;

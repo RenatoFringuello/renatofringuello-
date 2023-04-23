@@ -49,7 +49,7 @@ export default {
 
     label {
         &.theme-toggle{
-            background: $text-link-color !important;
+            background: $complementary-color !important;
         }
         cursor: pointer;
         width: 55px;
@@ -80,7 +80,7 @@ export default {
     }
 
     input:checked + label {
-        background: $text-link-color;
+        background: $complementary-color;
         i{
             left: calc(100% - 5px);
             -webkit-transform: translateX(-100%);

@@ -1,23 +1,42 @@
 html{
+    .navbar-toggler{
+        filter: invert(1);
+        -webkit-filter: invert(1);
+    }
+
     //light theme  
-    --primary-color: #DDDCC5; //50
-    --primary-darken-color: #B1B09E; //10
-    --secondary-color: #6A6A61; //5 
-    --text-color: #1D2326; //20
-    --text-link-color: #7c0d29; //5 
+    --dominant-color: #035959; //dominant
+    --dominant-darken-color: #02403A; //dominant
+    --secondary-color: #949494;
+    --accent-color: #fff; //accent
+    --accent-comp-color: #000; //accent2
+    --complementary-color: #D9B343; //complementary
+    --complementary-darken-color: #D99B29; //complementary
     
     //dark theme 
     &[data-theme='dark']{
-        --primary-color: #1D2326 ; //50
-        --primary-darken-color: #070909 ; //10
-        --secondary-color: #a0a08c ; //5 
-        --text-color: #DDDCC5 ; //20
-        --text-link-color: #f3ef31 ; //5 
+        filter: invert(1);
+        -webkit-filter: invert(1);
+        img{
+            filter: invert(1);
+            -webkit-filter: invert(1);
+        }
     } 
+    
+    // //dark theme 
+    // &[data-theme='dark']{
+    //     --dominant-color: #1D2326 ;
+    //     --dominant-darken-color: #070909 ;
+    //     --secondary-color: #a0a08c ;
+    //     --accent-color: #DDDCC5 ;
+    //     --complementary-color: #f3ef31 ;
+    // } 
 }
 
-$primary-color: var(--primary-color); //50
-$primary-darken-color: var(--primary-darken-color); //10
-$secondary-color: var(--secondary-color); //5 
-$text-color: var(--text-color); //20
-$text-link-color: var(--text-link-color); //5 
+$dominant-color: var(--dominant-color);
+$dominant-darken-color: var(--dominant-darken-color);
+$secondary-color: var(--secondary-color);
+$accent-color: var(--accent-color);
+$accent-comp-color: var(--accent-comp-color);
+$complementary-color: var(--complementary-color);
+$complementary-darken-color: var(--complementary-darken-color);

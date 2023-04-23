@@ -63,9 +63,9 @@ export default {
 
 <style lang="scss" scoped>
     .error-code{
-        color:$text-link-color;
-        font-size: clamp(9rem, 25vw, 16rem);
+        color:$complementary-color;
         line-height: 1;
-        text-shadow: clamp(7px, 1vw, 10px) clamp(7px, 1vw, 10px) 0 $text-color;
+        font-size: clamp(9rem, 25vw, 16rem);
+        text-shadow: clamp(7px, 1vw, 10px) clamp(7px, 1vw, 10px) 0 $accent-color;
     }
 </style>
