@@ -12,7 +12,7 @@ export default {
             isNavbarOpen : false,
             navLinks:[
                 {
-                    name:'home',
+                    name:'home',//home must be the first, beacuse of the logo router-link
                     icon:'fa-solid fa-house'
                 },
                 {
@@ -37,6 +37,12 @@ export default {
             document.documentElement.setAttribute('data-theme', (this.isDarkTheme) ? 'dark' : 'light');
             // console.log(this.isDarkTheme);
 
+            this.setMetaThemeColor();
+        },
+        /**
+         * set the content of the meta tag name="theme-color" to match the header gradient
+         */
+        setMetaThemeColor(){
             //change the meta theme-color color
             let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
             document.getElementById('metaThemeColor').setAttribute('content', color);
@@ -49,33 +55,42 @@ export default {
             window.setTimeout(() => {
                 document.documentElement.classList.remove('transition');
             }, 1000)
+        },
+        /**
+         * open | close the nav bar after an amount of milliseconds
+         * @param {boolean} state open = true | closed = false
+         * @param {int} millis the delay before change state - default = 0ms
+         */
+        navbarStateTo(state, millis = 0){
+            setTimeout(()=>{
+                this.isNavbarOpen = state;
+            }, millis)
         }
     },
     created() {
-        //change the meta theme-color color
-        let color = getComputedStyle(document.documentElement).getPropertyValue('--primary-darken-color');
-        document.getElementById('metaThemeColor').setAttribute('content', color);
+        this.setMetaThemeColor();
     },
 }
 </script>
 
 <template lang="">
-    <header class="sticky-bottom">
+    <header class="fixed-top">
         <nav class="navbar navbar-expand-fluid" :class="(this.isDarkTheme) ?'navbar-dark' :''">
             <div class="container-lg position-relative">
-                <h1 class="m-0 text-capitalize">{{ $route.name }}</h1>
-                <a class="navbar-brand position-absolute translate-middle top-50 start-50" href="#">
+                <div class="text-capitalize">{{ $route.name }}</div>
+                <router-link class="navbar-brand position-absolute translate-middle top-50 start-50" :to="{name:navLinks[0].name}">
                     <img src="@/assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler border-0" @click="isNavbarOpen = !isNavbarOpen" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                </router-link>
+                <button class="navbar-toggler border-0" @click="navbarStateTo(!isNavbarOpen)" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            <!-- links -->
             <div class="container-lg">
-                <div class="navbar-collapse" :class="(isNavbarOpen)?'':'collapse' " id="navbarNav">
+                <div class="navbar-collapse" :class="(isNavbarOpen)?'open':'closed' " id="navbarNav">
                     <ul class="navbar-nav text-end">
                         <li class="nav-item" :class="($route.name == navLink.name)? 'active fw-bold' : ''" v-for:="navLink in navLinks">
-                            <router-link class="transition text-capitalize" :to="{name:navLink.name}">
+                            <router-link class="transition text-capitalize" @click="navbarStateTo(false, 150)" :to="{name:navLink.name}">
                                 {{ navLink.name }}
                                 <i :class="navLink.icon"></i>
                             </router-link>
@@ -110,6 +125,17 @@ header{
             text-decoration: none;
             padding:.15rem 0;
             border-bottom: 2px solid #0000;
+        }
+    }
+    
+    #navbarNav{
+        transition: all .7s ease-in;
+        overflow-y: hidden;
+        &.open{
+            max-height: 500px;
+        }
+        &.closed{
+            max-height: 0;
         }
     }
 }
