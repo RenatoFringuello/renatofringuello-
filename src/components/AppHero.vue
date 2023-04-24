@@ -1,9 +1,12 @@
 <script>
 import AppMainButton from './partials/AppMainButton.vue';
+import AppTitle from './partials/AppTitle.vue';
+
 export default {
     name:'AppHero',
     components:{
-        AppMainButton
+        AppMainButton,
+        AppTitle
     },
     methods: {
         sendEmail(){
@@ -14,21 +17,29 @@ export default {
 </script>
 
 <template lang="">
-    <section id="hero">
+    <section class="bg-dominant" id="hero">
         <div class="container-lg">
-            <div class="row">
-                <div class="col-12 col-lg-6">
+            <div class="row hero">
+                <div class="col-12 col-md-8">
                     <div class="wrapper">
                         <div class="my-auto">
-                            <div class="main-title mb-3">Renato Fringuello</div>
-                            <div class="subTitle mb-5">Hi my name is Renato and I am a Full-stack Web Developer, based in Sassari</div>
-                            <AppMainButton content="Say Hi" @click="sendEmail()"/>
+                            <AppTitle content="Renato Fringuello" className="main-title archivo-black-font mb-3"/>
+                            <div class="ms-5">
+                                <div class="mb-4">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-7">
+                                            <AppTitle content="Hi my name is Renato and I am a Full-stack Web Developer, based in Sassari" className="sub-title"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <AppMainButton content="Say Hi" @click="sendEmail()"/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="wrapper">
-                        <img src="@/assets/logo.png" class="img-fluid m-auto">
+                <div class="col-12 col-md-4">
+                    <div class="wrapper profile-pic">
+                        <img src="@/assets/images/logo.png" class="img-fluid m-auto">
                     </div>
                 </div>
             </div>
@@ -38,19 +49,13 @@ export default {
 
 <style lang="scss" scoped>
     #hero{
-        .row{
+        .row.hero{
             min-height: 80vh;
 
             .wrapper{
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-
-                .main-title{
-                    color:$complementary-color;
-                    line-height: 1;
-                    font-size: clamp(3rem, 10vw, 9rem);
-                }
             }
         }
     }
