@@ -74,7 +74,7 @@ export default {
 </script>
 
 <template lang="">
-    <header class="fixed-top" :class="(isNavbarOpen)?'open':'closed'">
+    <header class="fixed-top bg-dominant" :class="(isNavbarOpen)?'open':'closed'">
         <div class="toggle-transition position-absolute h-100 w-100">
             <!-- this is to make a transition from header gradient to solid color and v.v. -->
         </div>
