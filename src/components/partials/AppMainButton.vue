@@ -19,7 +19,7 @@ export default {
         color: $dominant-color !important;
         padding: .5rem 2rem;
         position: relative;
-
+        
         &:hover::after{
             top:0px;
             left:0px;
@@ -28,7 +28,6 @@ export default {
         &::after{
             content: '';
             position: absolute;
-            z-index: -1;
             top:10px;
             left:10px;
             height: 100%;
