@@ -1,9 +1,4 @@
 html{
-    .navbar-toggler{
-        filter: invert(1);
-        -webkit-filter: invert(1);
-    }
-
     //light theme  
     --dominant-color: #035959; //dominant
     --dominant-darken-color: #02403A; //dominant
@@ -12,25 +7,17 @@ html{
     --accent-comp-color: #000; //accent2
     --complementary-color: #D9B343; //complementary
     --complementary-darken-color: #D99B29; //complementary
-    
+
     //dark theme 
     &[data-theme='dark']{
-        filter: invert(1);
-        -webkit-filter: invert(1);
-        img{
-            filter: invert(1);
-            -webkit-filter: invert(1);
-        }
+        --dominant-color: #fca5a5; //dominant
+        --dominant-darken-color: #fdbfc5; //dominant
+        --secondary-color: #949494;
+        --accent-color: #000; //accent
+        --accent-comp-color: #fff; //accent2
+        --complementary-color: #254bbb; //complementary
+        --complementary-darken-color: #2563d6; //complementary
     } 
-    
-    // //dark theme 
-    // &[data-theme='dark']{
-    //     --dominant-color: #1D2326 ;
-    //     --dominant-darken-color: #070909 ;
-    //     --secondary-color: #a0a08c ;
-    //     --accent-color: #DDDCC5 ;
-    //     --complementary-color: #f3ef31 ;
-    // } 
 }
 
 $dominant-color: var(--dominant-color);
