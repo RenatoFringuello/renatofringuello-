@@ -32,7 +32,7 @@ export default {
                                         </div>
                                     </div>
                                 </div>
-                                <AppMainButton class="archivo-black-font" content="Say Hi" @click="sendEmail()"/>
+                                <AppMainButton content="Say Hi" @click="sendEmail()"/>
                             </div>
                         </div>
                     </div>
