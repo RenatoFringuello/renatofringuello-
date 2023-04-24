@@ -2,6 +2,10 @@
 
 //themes
 body{
+    background-color: $dominant-color;
+    color: $accent-color;
+    font-family: 'Nunito Sans';
+
     #app{
         display: flex;
         flex-direction: column;
@@ -17,20 +21,39 @@ body{
             cursor: pointer;
         }
     }
-
-    background-color: $dominant-color;
-    color: $accent-color;
+    
+    .archivo-black-font{
+        font-family: 'Archivo Black';
+    }
     a{
         color: $complementary-color !important;
     }
     .my-text-secondary{
         color: $secondary-color !important;
     }
-    .my-bg-dominant{
+    .text-dominant{
+        color: $dominant-color !important;
+    }
+    .text-dominant-darken{
+        color: $dominant-darken-color !important;
+    }
+    .text-complementary{
+        color: $complementary-color !important;
+    }
+    .text-complementary-darken{
+        color: $complementary-darken-color !important;
+    }
+    .bg-dominant{
         background-color: $dominant-color !important;
     }
-    .my-bg-dominant-darken{
+    .bg-dominant-darken{
         background-color: $dominant-darken-color !important;
+    }
+    .bg-complementary{
+        background-color: $complementary-color !important;
+    }
+    .bg-complementary-darken{
+        background-color: $complementary-darken-color !important;
     }
     *{
         color:inherit;
