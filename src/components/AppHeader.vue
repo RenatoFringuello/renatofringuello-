@@ -74,21 +74,25 @@ export default {
 </script>
 
 <template lang="">
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand-fluid">
+    <header class="fixed-top" :class="(isNavbarOpen)?'open':'closed'">
+        <div class="toggle-transition position-absolute h-100 w-100">
+            <!-- this is to make a transition from header gradient to solid color and v.v. -->
+        </div>
+        <nav class="navbar navbar-expand-fluid" :class="isDarkTheme ? '' : 'navbar-dark'">
             <div class="container-lg position-relative">
                 <div class="text-capitalize">{{ $route.name }}</div>
                 <router-link class="navbar-brand position-absolute translate-middle top-50 start-50" :to="{name:navLinks[0].name}">
-                    <img src="@/assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <img src="@/assets/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </router-link>
-                <button class="navbar-toggler border-0" @click="navbarStateTo(!isNavbarOpen)" type="button" aria-label="Toggle navigation">
+                <button class="navbar-toggler position-relative border-0" @click="navbarStateTo(!isNavbarOpen)" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon position-absolute translate-middle-x start-50"></span>
                 </button>
             </div>
             <!-- links -->
             <div class="container-lg">
                 <div class="navbar-collapse" :class="(isNavbarOpen)?'open':'closed' " id="navbarNav">
-                    <ul class="navbar-nav text-end">
+                    <ul class="navbar-nav text-end pt-3">
                         <li class="nav-item" :class="($route.name == navLink.name)? 'active fw-bold' : ''" v-for:="navLink in navLinks">
                             <router-link class="transition text-capitalize" @click="navbarStateTo(false, 150)" :to="{name:navLink.name}">
                                 {{ navLink.name }}
@@ -108,7 +112,18 @@ export default {
 
 <style lang="scss" scoped>
 header{
-    background: linear-gradient($dominant-darken-color, #0000);
+    &.open{
+        .toggle-transition{
+            opacity: 1;
+            box-shadow: 0 1px 15px 5px #0004;
+        }
+    }
+    .toggle-transition{
+        opacity: 0;
+        background-color: $dominant-darken-color;
+        transition: .7s ease-in-out;
+    }
+    
     li{
         padding:.4rem 0;
         &.active{
@@ -118,7 +133,6 @@ header{
         &:not(.active) a:hover{/* every a but the a of .active */
             padding:.4rem 0;
             border-bottom: 2px solid;
-            
             font-size: 1.3rem;
         }
         a{
@@ -128,6 +142,10 @@ header{
         }
     }
     
+    .navbar-toggler:focus{
+        box-shadow: none !important;
+    }
+
     #navbarNav{
         transition: all .7s ease-in;
         overflow-y: hidden;
