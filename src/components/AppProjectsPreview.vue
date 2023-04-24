@@ -14,7 +14,7 @@ export default {
 <template lang="">
     <section class="container-fluid overflow-x-hidden color-scheme-b">
         <div class="row flex-md-row-reverse">
-            <div class="col-12 col-md-5 position-relative">
+            <div class="col-12 col-md-5 position-relative pb-5">
                 <div class="py-5 px-3">
                     <AppTitle content="More than +10 projects" className="title fw-800 archivo-black-font text-complementary-darken"/>
                     <AppTitle class="mb-3" className="sub-title" content="See the projects I developed during my studies in the Boolean Accademy Course 'Full-Stack Web Developer'"/>
@@ -24,7 +24,7 @@ export default {
                 </div>
                 <img class="snap" src="@/assets/images/boolflix/boolflix_1.png" alt="Boolflix Project snapshot1">
             </div>
-            <div class="col-12 col-md-7 bg-danger position-relative p-0">
+            <div class="col-12 col-md-7 position-relative p-0">
                 <img class="snap" src="@/assets/images/boolzapp/boolzapp_1.png" alt="Boolzapp Project snapshot1">
                 <img class="snap" src="@/assets/images/discord/discord_full.png" alt="Discord Project snapshot_full">
             </div>
@@ -40,6 +40,7 @@ export default {
     height: 100%;
     max-height: 65vh;
     max-width: 100%; 
+    margin-top: -50px;
     
     &:nth-child(2){//select all 2nd child
         max-height: 45vh;
