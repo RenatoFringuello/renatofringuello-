@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from './pages/AppHome.vue';
+import AppProjects from './pages/AppProjects.vue';
 import AppPageStatusCode from './pages/AppPageStatusCode.vue';
 
 const router = createRouter({
@@ -14,7 +15,7 @@ const router = createRouter({
         {
             path : '/projects',
             name : 'projects',
-            component : AppHome
+            component : AppProjects
         },
         {
             path : '/about-me',
