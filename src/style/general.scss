@@ -28,6 +28,15 @@ body{
         a{
             color: $complementary-color !important;
         }
+        button.main-button{
+            background-color: $complementary-color;
+            color: $dominant-color !important;
+
+            &::after{
+                content: '';
+                border:2px solid $complementary-color;
+            }
+        }
     }
     .color-scheme-b{
         background-color: $accent-color;
@@ -35,7 +44,16 @@ body{
         font-family: 'Nunito Sans';
 
         a{
-            color: $complementary-color !important;
+            color: $dominant-darken-color !important;
+        }
+        button.main-button{
+            background-color: $accent-comp-color;
+            color: $accent-color !important;
+
+            &::after{
+                content: '';
+                border:2px solid $accent-comp-color;
+            }
         }
     }
 

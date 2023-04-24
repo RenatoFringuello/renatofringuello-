@@ -10,13 +10,11 @@ export default {
 </script>
 
 <template lang="">
-    <button>{{ content }}</button>
+    <button class="main-button archivo-black-font text-uppercase">{{ content }}</button>
 </template>
 
 <style lang="scss" scoped>
     button{
-        background-color: $complementary-color;
-        color: $dominant-color !important;
         padding: .5rem 2rem;
         position: relative;
         
@@ -32,7 +30,6 @@ export default {
             left:10px;
             height: 100%;
             width: 100%;
-            border:2px solid $complementary-color;
             transition: all .5s ease-in-out;
         }
     }
