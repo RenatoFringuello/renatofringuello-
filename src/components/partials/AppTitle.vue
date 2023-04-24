@@ -24,11 +24,11 @@ export default {
     .main-title{
         color:$complementary-color;
         line-height: 1;
-        font-size: clamp(3rem, 10vw, 9rem);
+        font-size: clamp(4rem, 10vw, 9rem);
         margin-left: -6px;
     }
     .title{
-        font-size: 2rem;   
+        font-size: 2.5rem;
     }
     .sub-title{
         font-size: 1.5rem;   
