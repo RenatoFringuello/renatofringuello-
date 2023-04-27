@@ -1,5 +1,5 @@
 //carousel
-@mixin carousel($width, $height, $direction:row, $snap-type:x mandatory, $snap-align:start){
+@mixin carousel($width, $height, $scrollbar : 'true', $direction:row, $snap-type:x mandatory, $snap-align:start){
     
     width: $width;
     height: $height;
@@ -7,6 +7,14 @@
     flex-direction: $direction;
     overflow: auto;
     scroll-snap-type: $snap-type;
+
+    @if $scrollbar == 'false' {
+        -ms-overflow-style: none;
+        scrollbar-width: none;  
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
     .item{
         width: 100%;
