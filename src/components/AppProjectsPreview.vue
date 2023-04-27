@@ -22,11 +22,11 @@ export default {
                         <AppMainButton content="Project Highlight"/>
                     </router-link>
                 </div>
-                <img class="snap" src="@/assets/images/boolflix/boolflix_1.png" alt="Boolflix Project snapshot1">
+                <img class="snap" src="@/assets/images/projects/boolflix/boolflix_1.png" alt="Boolflix Project snapshot1">
             </div>
             <div class="col-12 col-md-7 position-relative p-0">
-                <img class="snap" src="@/assets/images/boolzapp/boolzapp_1.png" alt="Boolzapp Project snapshot1">
-                <img class="snap" src="@/assets/images/discord/discord_full.png" alt="Discord Project snapshot_full">
+                <img class="snap" src="@/assets/images/projects/boolzapp/boolzapp_1.png" alt="Boolzapp Project snapshot1">
+                <img class="snap" src="@/assets/images/projects/discord/discord_full.png" alt="Discord Project snapshot_full">
             </div>
         </div>
     </section>
