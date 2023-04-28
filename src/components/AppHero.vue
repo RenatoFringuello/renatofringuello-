@@ -32,7 +32,7 @@ export default {
                                         </div>
                                     </div>
                                 </div>
-                                <AppMainButton content="Say Hi" @click="sendEmail()"/>
+                                <AppMainButton content="Say Hi" class="comp-dom" @click="sendEmail()"/>
                             </div>
                         </div>
                     </div>

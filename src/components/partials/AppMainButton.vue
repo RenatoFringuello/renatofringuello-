@@ -32,5 +32,33 @@ export default {
             width: 100%;
             transition: all .5s ease-in-out;
         }
+        //colors
+        &.comp-dom{
+            background-color: $complementary-color;
+            color: $dominant-color !important;
+
+            &::after{
+                content: '';
+                border:2px solid $complementary-color;
+            }
+        }
+        &.black-white{
+            background-color: $accent-comp-color;
+            color: $accent-color !important;
+
+            &::after{
+                content: '';
+                border:2px solid $accent-comp-color;
+            }
+        }
+        &.white-black{
+            background-color: $accent-color;
+            color: $accent-comp-color !important;
+
+            &::after{
+                content: '';
+                border:2px solid $accent-color;
+            }
+        }
     }
 </style>
