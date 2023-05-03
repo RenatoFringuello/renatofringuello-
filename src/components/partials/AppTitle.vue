@@ -24,7 +24,7 @@ export default {
     .main-title{
         color:$complementary-color;
         line-height: 1;
-        font-size: clamp(4rem, 10vw, 9rem);
+        font-size: clamp(4rem, 10vw, 6rem);
         margin-left: -6px;
     }
     .title{
