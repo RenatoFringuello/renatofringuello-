@@ -44,7 +44,7 @@ export default {
          */
         setMetaThemeColor(){
             //change the meta theme-color color
-            let color = getComputedStyle(document.documentElement).getPropertyValue('--dominant-darken-color');
+            let color = getComputedStyle(document.documentElement).getPropertyValue('--dominant-color');
             document.getElementById('metaThemeColor').setAttribute('content', color);
         },
         /**
