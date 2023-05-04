@@ -1,10 +1,14 @@
 <script>
 import { store } from "@/store";
+
 import AppMainButton from "@/components/partials/AppMainButton.vue";
+import AppScrollAnimation from "@/components/partials/AppScrollAnimation.vue";
+
 export default {
     name:'AppProjects',
     components:{
-        AppMainButton
+        AppMainButton,
+        AppScrollAnimation,
     },
     data() {
         return {
@@ -89,25 +93,25 @@ export default {
                 <img class="img-fluid" :src="getImageSnap(project)" alt="">
                 <div class="hint position-absolute p-5 top-0 start-0" :class="(isHintActive)?'d-block' : 'd-none'">
                     <div class="d-flex flex-column justify-content-between w-100 h-100">
-                        <div class="d-flex">
-                            <div class="m-auto text-center">
-                                <div class="mb-2">
-                                    Scroll up | down 
-                                </div>
-                                <img src="@/assets/images/logo.png" class="mb-2" width="80" height="80" alt="">
-                                <div>
-                                    to see the full page snapshot
-                                </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="mb-3">
+                                Scroll up | down 
+                            </div>
+                            <AppScrollAnimation class="mb-3 d-none d-lg-flex" scrollType="mouse mouse-up-down"/>
+                            <AppScrollAnimation class="mb-3 d-flex d-lg-none" scrollType="phone phone-up-down"/>
+                            <div>
+                                to see the full page snapshot
                             </div>
                         </div>                        
                         <div class="d-flex">
                             <div class="m-auto text-center">
                                 <div class="mb-2">
-                                    Scroll up | down 
+                                    Scroll left | right
                                 </div>
-                                <img src="@/assets/images/logo.png" class="mb-2" width="80" height="80" alt="">
+                                <AppScrollAnimation class="mb-3 d-none d-lg-flex" scrollType="mouse mouse-left-right"/>
+                                <AppScrollAnimation class="mb-3 d-flex d-lg-none" scrollType="phone phone-left-right"/>
                                 <div>
-                                    to see the full page snapshot
+                                    to see previews of other projects
                                 </div>
                             </div>
                         </div>                        
