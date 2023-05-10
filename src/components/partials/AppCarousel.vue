@@ -1,17 +1,32 @@
 <script>
+import { store } from "@/store";
+
 import AppMainButton from "@/components/partials/AppMainButton.vue";
 import AppScrollAnimation from "@/components/partials/AppScrollAnimation.vue";
 
 export default {
     name:'AppCarousel',
     props:{
-
+        /**
+         * it's the boolean value to toggle the hint of scrolling of the carousel
+         */
         isHintActiveP:{
             type:Boolean,
             default:false
         },
-        projects:{
+        /**
+         * it's the list of imgs relative path
+         * ex. [discord/discord_1.png, discord/discord_2.png, discord/discord_full.png]
+         */
+        imgs:{
             type:Array,
+        },
+        /**
+         * the folder name in images that contains the snapshots
+         * ex. working with projects snapshots => 'projects'
+         */
+        imgsLocation:{
+            type:String
         }
     },
     components:{
@@ -20,12 +35,8 @@ export default {
     },
     data() {
         return {
-            isHintActive:false 
-        }
-    },
-    methods: {
-        getImageSnap(project){
-            return require(`@/assets/images/projects/${project.name}/${project.name}_${project.snapshots[project.snapshots.length -1]}`);
+            isHintActive:false,
+            store,
         }
     },
     created() {
@@ -39,7 +50,7 @@ export default {
         <!-- hint -->
         <div class="hint position-absolute p-5 top-0" :class="(isHintActive)?'d-block' : 'd-none'">
             <div class="d-flex flex-column justify-content-between w-100 h-100">
-                <div class="d-flex flex-column align-items-center">
+                <div class="d-flex flex-column align-imgs-center">
                     <div class="mb-3">
                         Scroll up | down 
                     </div>
@@ -67,8 +78,8 @@ export default {
             </div>
         </div>
         <!-- item -->
-        <div class="item project-card mx-3" v-for:="project in projects">
-            <img class="img-fluid" :src="getImageSnap(project)" alt="">
+        <div class="item mx-3" v-for:="(imgPath, i) in imgs">
+            <img class="img-fluid" :src="store.getImageSnap(imgsLocation, imgPath)" alt="">
         </div>
     </div>
 </template>
@@ -85,7 +96,7 @@ export default {
             background-color: #000a;
             left:1rem;
         }
-        .project-card{
+        .item{
             overflow-y: auto;
             height: 100%;
         }
