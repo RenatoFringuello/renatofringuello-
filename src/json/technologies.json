@@ -1,46 +1,69 @@
 [
     {
         "name": "html 5",
-        "logo": "html5.svg"
+        "logo": "html5.svg",
+        "bgColor": "#f60",
+        "fgColor": "#eee"
+
     },
     {
         "name": "css 3",
-        "logo": "css3.svg"
+        "logo": "css3.svg",
+        "bgColor": "#06f",
+        "fgColor": "#eee"
     },
     {
         "name": "bootstrap",
-        "logo": "bootstrap.svg"
+        "logo": "bootstrap.svg",
+        "bgColor": "linear-gradient(80deg, #206, #413)",
+        "fgColor": "#eee"
     },
     {
         "name": "sass",
-        "logo": "sass.svg"
+        "logo": "sass.svg",
+        "bgColor": "#fff",
+        "fgColor": "#f0b"
     },
     {
         "name": "js ES6",
-        "logo": "javascript.svg"
+        "logo": "javascript.svg",
+        "bgColor": "#ed0",
+        "fgColor": "#222"
     },
     {
         "name": "axios",
-        "logo": ""
+        "logo": "axios.png",
+        "bgColor": "#fff",
+        "fgColor": "#70f"
     },
     {
         "name": "vue 3",
-        "logo": "vuejs.svg"
+        "logo": "vuejs.svg",
+        "bgColor": "#0a7",
+        "fgColor": "#eee"
     },
     {
         "name": "php 8",
-        "logo": ""
+        "logo": "php.png",
+        "bgColor": "#55a",
+        "fgColor": "#eee"
     },
     {
         "name": "laravel 9",
-        "logo": ""
+        "logo": "laravel.png",
+        "bgColor": "#fff",
+        "fgColor": "#f00"
     },
     {
         "name": "npm",
-        "logo": "npm.svg"
+        "logo": "npm.svg",
+        "bgColor": "#c00",
+        "fgColor": "#eee"
     },
     {
         "name": "composer",
-        "logo": ""
+        "logo": "composer.png",
+        "bgColor": "#da0",
+        "fgColor": "#000"
     }
 ]
