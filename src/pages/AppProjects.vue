@@ -19,9 +19,6 @@ export default {
             baseGitHubUri:'https://github.com/RenatoFringuello/',
         }
     },
-    created() {
-        console.log(projects);
-    },
 }
 </script>
 
@@ -32,12 +29,13 @@ export default {
                 <div class="project-card position-relative">
                     <div class="info-card position-absolute bottom-0 d-flex flex-column justify-content-between">
                         <div class="description">
-                            <AppTitle :content="project.name" class="title archivo-black-font"/>
+                            <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
                             <AppTitle :content="project.description"/>
                         </div>
                         <div class="tags-container d-flex flex-wrap">
-                            <div class="tag d-flex me-2" v-for:="techId in project.technologies">
-                                <div class="d-none d-lg-block">
+                            <div class="tag d-flex me-2 mt-2"  :style="`background:${technologies[techId].bgColor}; color:${technologies[techId].fgColor}`"
+                                v-for:="techId in project.technologies">
+                                <div class="d-none d-lg-block text-capitalize fw-bold">
                                     {{ technologies[techId].name }}
                                 </div>
                                 <div class="d-block d-lg-none m-auto">
@@ -46,7 +44,7 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <img class="img-fluid" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
+                    <img class="snapshot" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
                 </div>
             </div>
         </div>
@@ -55,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
     .project-card{
-        height: 100%;
+        height: 300px;
         max-height: 300px;
         overflow: hidden;
         transition: .5s ease-in-out;
@@ -102,12 +100,20 @@ export default {
                     background-color: $accent-color;
                     color: $accent-comp-color;
                     border-radius: $border-radius-3;
+                    font-size: .8rem;
                     
                     img{
                         width:25px ;
                     }
                 }
             }
+        }
+
+        img.snapshot{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
     }
     @media screen and (min-width:992px) {
