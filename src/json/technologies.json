@@ -65,5 +65,23 @@
         "logo": "composer.png",
         "bgColor": "#da0",
         "fgColor": "#000"
+    },
+    {
+        "name": "vite",
+        "logo": "vite.svg",
+        "bgColor": "linear-gradient(-45deg, #d0f, #28f)",
+        "fgColor": "#fd0"
+    },
+    {
+        "name": "mySQL",
+        "logo": "mysql.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
+    },
+    {
+        "name": "node JS",
+        "logo": "nodejs.svg",
+        "bgColor": "#000",
+        "fgColor": "#9d6"
     }
 ]
