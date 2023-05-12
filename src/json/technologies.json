@@ -1,0 +1,46 @@
+[
+    {
+        "name": "html 5",
+        "logo": "html5.svg"
+    },
+    {
+        "name": "css 3",
+        "logo": "css3.svg"
+    },
+    {
+        "name": "bootstrap",
+        "logo": "bootstrap.svg"
+    },
+    {
+        "name": "sass",
+        "logo": "sass.svg"
+    },
+    {
+        "name": "js ES6",
+        "logo": "javascript.svg"
+    },
+    {
+        "name": "axios",
+        "logo": ""
+    },
+    {
+        "name": "vue 3",
+        "logo": "vuejs.svg"
+    },
+    {
+        "name": "php 8",
+        "logo": ""
+    },
+    {
+        "name": "laravel 9",
+        "logo": ""
+    },
+    {
+        "name": "npm",
+        "logo": "npm.svg"
+    },
+    {
+        "name": "composer",
+        "logo": ""
+    }
+]

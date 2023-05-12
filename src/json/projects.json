@@ -1,0 +1,25 @@
+[
+    {
+        "name":"discord",
+        "snapshots":[
+            "discord/discord_1.png",
+            "discord/discord_2.png",
+            "discord/discord_3.png",
+            "discord/discord_full.png"
+        ],
+        "description":"This is a front-end project where I developed a full home page repica of the Discord website. During this exercise I had to recreate the same template I received from the web designer",
+        "technologies":[0,1],
+        "projectRepo":"htmlcss-discord"
+    },
+    {
+        "name":"boolzapp",
+        "snapshots":[
+            "boolzapp/boolzapp_1.png",
+            "boolzapp/boolzapp_2.png",
+            "boolzapp/boolzapp_3.png"
+        ],
+        "description":"This is a front-end project where I developed a Whatsapp Web look alike app. During this exercise I had to recreate the same template I received from the web designer and implement some algorithms to search open chats and to update datetime (I used the framework Luxon)",
+        "technologies":[0,1,2,4,6],
+        "projectRepo":"vue-boolzapp"
+    }
+]

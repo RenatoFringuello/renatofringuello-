@@ -1,5 +1,7 @@
 <script>
 import { store } from "@/store";
+import projects from "@/json/projects.json";
+import technologies from "@/json/technologies.json";
 
 import AppTitle from "@/components/partials/AppTitle.vue";
 
@@ -12,81 +14,14 @@ export default {
         return {
             store,
             //I had to to this because the backoffice isn't ready so I can't do api call to get the data
-            technologies:[
-                {
-                    name: 'html 5',
-                    logo: 'html5.svg'
-                },
-                {
-                    name: 'css 3',
-                    logo: 'css3.svg'
-                },
-                {
-                    name: 'bootstrap',
-                    logo: 'bootstrap.svg'
-                },
-                {
-                    name: 'sass',
-                    logo: 'sass.svg'
-                },
-                {
-                    name: 'js ES6',
-                    logo: 'javascript.svg'
-                },
-                {
-                    name: 'axios',
-                    logo: ''
-                },
-                {
-                    name: 'vue 3',
-                    logo: 'vuejs.svg'
-                },
-                {
-                    name: 'php 8',
-                    logo: ''
-                },
-                {
-                    name: 'laravel 9',
-                    logo: ''
-                },
-                {
-                    name: 'npm',
-                    logo: 'npm.svg'
-                },
-                {
-                    name: 'composer',
-                    logo: ''
-                },
-            ],
-            projects:[
-                {
-                    name:'discord',
-                    snapshots:[
-                        'discord/discord_1.png',
-                        'discord/discord_2.png',
-                        'discord/discord_3.png',
-                        'discord/discord_full.png',
-                    ],
-                    description:'This is a front-end project where I developed a full home page repica of the Discord website. During this exercise I had to recreate the same template I received from the web designer',
-                    technologies:[1,2,3],
-                    projectRepo:'htmlcss-discord'
-                },
-                {
-                    name:'discord',
-                    snapshots:[
-                        'discord/discord_1.png',
-                        'discord/discord_2.png',
-                        'discord/discord_3.png',
-                        'discord/discord_full.png',
-                    ],
-                    description:'This is a front-end project where I developed a full home page repica of the Discord website. During this exercise I had to recreate the same template I received from the web designer',
-                    technologies:[1,2,3],
-                    projectRepo:'htmlcss-discord'
-                },
-            ], 
+            technologies,
+            projects,
             baseGitHubUri:'https://github.com/RenatoFringuello/',
         }
-    }
+    },
+    created() {
+        console.log(projects);
+    },
 }
 </script>
 
@@ -99,7 +34,6 @@ export default {
                         <div class="description">
                             <AppTitle :content="project.name" class="title archivo-black-font"/>
                             <AppTitle :content="project.description"/>
-                            <!-- <img class="img-fluid" :src="store.getImageSnap('technologies', technologies[0].logo)" :alt="technologies[0].name"> -->
                         </div>
                         <div class="tags-container d-flex flex-wrap">
                             <div class="tag d-flex me-2" v-for:="techId in project.technologies">
@@ -121,6 +55,7 @@ export default {
 
 <style lang="scss" scoped>
     .project-card{
+        height: 100%;
         max-height: 300px;
         overflow: hidden;
         transition: .5s ease-in-out;
@@ -130,7 +65,6 @@ export default {
             .description:hover,
             .description:hover + .tags-container{
                 opacity: 0;
-                
             }
             box-shadow: 0 0 5px 5px #0002;
         }
@@ -168,7 +102,6 @@ export default {
                     background-color: $accent-color;
                     color: $accent-comp-color;
                     border-radius: $border-radius-3;
-
                     
                     img{
                         width:25px ;
