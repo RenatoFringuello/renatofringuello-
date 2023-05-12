@@ -34,7 +34,7 @@ export default {
                         </div>
                         <div class="tags-container d-flex flex-wrap">
                             <div class="tag d-flex me-2 mt-2"  :style="`background:${technologies[techId].bgColor}; color:${technologies[techId].fgColor}`"
-                                v-for:="techId in project.technologies">
+                                v-for:="techId in project.technologies" :title="technologies[techId].name">
                                 <div class="d-none d-lg-block text-capitalize fw-bold">
                                     {{ technologies[techId].name }}
                                 </div>
