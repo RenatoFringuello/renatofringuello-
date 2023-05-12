@@ -1,13 +1,11 @@
 <script>
 import { store } from "@/store";
 
-// import AppCarousel from "@/components/partials/AppCarousel.vue";
 import AppTitle from "@/components/partials/AppTitle.vue";
 
 export default {
     name:'AppProjects',
     components:{
-        // AppCarousel,
         AppTitle,
     },
     data() {
@@ -118,7 +116,6 @@ export default {
                 </div>
             </div>
         </div>
-        <!-- <AppCarousel isHintActiveP="true" :imgs="projects[0].snapshots" imgsLocation="projects"/> -->
     </div>
 </template>
 
