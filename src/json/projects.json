@@ -9,7 +9,7 @@
         ],
         "description":"This is a front-end project where I developed a full home page repica of the Discord website. During this exercise I had to recreate the same template I received from the web designer",
         "technologies":[0,1],
-        "projectRepo":"htmlcss-discord"
+        "projectRepo":["htmlcss-discord","htmlcss-struttura-discord"]
     },
     {
         "name":"boolzapp",
@@ -18,8 +18,149 @@
             "boolzapp/boolzapp_2.png",
             "boolzapp/boolzapp_3.png"
         ],
-        "description":"This is a front-end project where I developed a Whatsapp Web look alike app. During this exercise I had to recreate the same template I received from the web designer and implement some algorithms to search open chats and to update datetime (I used the framework Luxon)",
+        "description":"This is a front-end project where I developed a Whatsapp Web look alike app. During this exercise I had to implement some algorithms to search open chats and to update datetime (I used Luxon)",
         "technologies":[0,1,2,4,6],
-        "projectRepo":"vue-boolzapp"
+        "projectRepo":["vue-boolzapp"]
+    },
+    {
+        "name":"dc",
+        "snapshots":[
+            "dc/dc_1.png",
+            "dc/dc_2.png",
+            "dc/dc_3.png",
+            "dc/dc_full.png"
+        ],
+        "description":"There are two project about the DC website, one is made with Vue 3 and the other is made with Laravel 9. Both are handled with Vite",
+        "technologies":[0,1,3,4,7,8,9,10,11,12,13],
+        "projectRepo":["vite-comics", "laravel-dc-comics"]
+    },
+    {
+        "name":"boolflix",
+        "snapshots":[
+            "boolflix/boolflix_1.png",
+            "boolflix/boolflix_full.png"
+        ],
+        "description":"In this project I made a replica of the home page of Netflix using The Movie Database (TMDB) API",
+        "technologies":[0,1,3,4,5,6,9,11,13],
+        "projectRepo":["vite-boolflix"]
+    },
+    {
+        "name":"minesweeper", 
+        "snapshots":[
+            "campo/campo_1.png",
+            "campo/campo_2.png",
+            "campo/campo_3.png"
+        ],
+        "description":"These two project are the milestones of the creation of minewseeper game. In js-campominato-grid I did the generation of the game field and in the other one I've implemented the game",
+        "technologies":[0,1,2,4,14],
+        "projectRepo":["js-campominato-dom","js-campominato-grid"]
+    },
+    {
+        "name":"dropbox",
+        "snapshots":[
+            "dropbox/dropbox_1.png",
+            "dropbox/dropbox_2.png",
+            "dropbox/dropbox_3.png",
+            "dropbox/dropbox_full.png"
+        ],
+        "description":"This project I learn the utility of displaying elements in flex",
+        "technologies":[0,1],
+        "projectRepo":["htmlcss-dropbox"]
+    },
+    {
+        "name":"locomotive",
+        "snapshots":[
+            "locomotive/locomotive_1.png",
+            "locomotive/locomotive_2.png",
+            "locomotive/locomotive_3.png",
+            "locomotive/locomotive_full.png"
+        ],
+        "description":"In the first project (js-biglietto-treno) I made the algorithm to buy a ticket where the price value is based on age and distance. The second part (js-biglietto-treno-form) is my first UI/UX project where I tried to make a full website of a old trains company that let you ride around the country just for fun",
+        "technologies":[0,1,2,4,14],
+        "projectRepo":["js-biglietto-treno","js-biglietto-treno-form"]
+    },
+    {
+        "name":"playstation",
+        "snapshots":[
+            "playstation/playstation_1.png",
+            "playstation/playstation_2.png",
+            "playstation/playstation_3.png",
+            "playstation/playstation_full.png"
+        ],
+        "description":"With this work I've made the front-end home page of the sony playstation website full responsive in all devices",
+        "technologies":[0,1,2,14],
+        "projectRepo":["htmlcss-playstation"]
+    },
+    {
+        "name":"yu-gi-oh!",
+        "snapshots":[
+            "yugioh/yugioh_1.png",
+            "yugioh/yugioh_full.png"
+        ],
+        "description":"This is one of the first project where I've worked with API REST. For this specific work I used ygoprodeck API",
+        "technologies":[0,1,3,4,5,6,9,11,13],
+        "projectRepo":["vite-breaking-bad"]
+    },
+    {
+        "name":"spotify",
+        "snapshots":[
+            "spotify/spotify_1.png",
+            "spotify/spotify_2.png",
+            "spotify/spotify_3.png"
+        ],
+        "description":"This is my first work full responsive (desktop-first) using media queries where I made a replica of the spotify web app",
+        "technologies":[0,1,14],
+        "projectRepo":["html-css-spotifyweb"]
+    },
+    {
+        "name":"MaxCoach",
+        "snapshots":[
+            "artist/screenshot.png"
+        ],
+        "description":"This is the midterm front-end exam where I had to make this page of the portfolio based on a sketch of the web designer. After the deadline I had to do a presentation of the work",
+        "technologies":[0,1,3,4,6,9,11,13],
+        "projectRepo":["proj-html-vuejs"]
+    },
+    {
+        "name":"backoffice",
+        "snapshots":[
+            "backoffice/backoffice_1.png",
+            "backoffice/backoffice_2.png",
+            "backoffice/backoffice_3.png",
+            "backoffice/backoffice_4.png"
+        ],
+        "description":"In this project I've worked on a backoffice for my portfolio (check renatofringuello backoffice to see the real one)",
+        "technologies":[0,1,2,3,4,7,8,10,11,12,14],
+        "projectRepo":["laravel-auth", "laravel-auth-2"]
+    },
+    {
+        "name":"BDoctor",
+        "snapshots":[
+            "bdoctor/bdoctor_1.png",
+            "bdoctor/bdoctor_2.png",
+            "bdoctor/bdoctor_3.png",
+            "bdoctor/bdoctor_4.png",
+            "bdoctor/bdoctor_5.png",
+            "bdoctor/bdoctor_6.png",
+            "bdoctor/bdoctor_full.png"
+        ],
+        "description":"This is my first project in team and it's the final course project where we had to work server-side, client-side and also at the presentation",
+        "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+        "projectRepo":["BDoctor-backoffice-api", "BDoctor-frontoffice"]
+    },
+    {
+        "name":"renatofringuello.com",
+        "snapshots":[
+            "bdoctor/bdoctor_1.png",
+            "bdoctor/bdoctor_2.png",
+            "bdoctor/bdoctor_3.png",
+            "bdoctor/bdoctor_4.png",
+            "bdoctor/bdoctor_5.png",
+            "bdoctor/bdoctor_6.png",
+            "bdoctor/bdoctor_full.png"
+        ],
+        "description":"Also this portfolio is a project and I developed it by my self using everything I lernt during the Full-Stack Web Developer Course at Boolean Careers",
+        "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+        "projectRepo":["renatofringuello_portfolio", "renatofringuello_portfolio-backoffice"]
     }
 ]
