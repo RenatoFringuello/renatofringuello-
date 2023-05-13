@@ -1,6 +1,6 @@
 <script>
-import AppTitle from './partials/AppTitle.vue';
-import AppMainButton from './partials/AppMainButton.vue';
+import AppTitle from '../partials/AppTitle.vue';
+import AppMainButton from '../partials/AppMainButton.vue';
 
 export default {
     name:'AppProjectsPreview',

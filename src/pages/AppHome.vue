@@ -1,6 +1,6 @@
 <script>
-import AppHero from "../components/AppHero.vue";
-import AppProjectsPreview from "../components/AppProjectsPreview.vue";
+import AppHero from "../components/Home/AppHero.vue";
+import AppProjectsPreview from "../components/Home/AppProjectsPreview.vue";
 
 export default {
     name:'AppHome',

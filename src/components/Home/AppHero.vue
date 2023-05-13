@@ -1,6 +1,6 @@
 <script>
-import AppMainButton from './partials/AppMainButton.vue';
-import AppTitle from './partials/AppTitle.vue';
+import AppMainButton from '../partials/AppMainButton.vue';
+import AppTitle from '../partials/AppTitle.vue';
 
 export default {
     name:'AppHero',
