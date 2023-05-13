@@ -30,7 +30,7 @@ export default {
                     <div class="info-card position-absolute bottom-0 d-flex flex-column justify-content-between">
                         <div class="description">
                             <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
-                            <AppTitle :content="project.description"/>
+                            <AppTitle :content="`${project.description}.`"/>
                         </div>
                         <div class="tags-container d-flex flex-wrap">
                             <div class="tag d-flex me-2 mt-2"  :style="`background:${technologies[techId].bgColor}; color:${technologies[techId].fgColor}`"
@@ -70,7 +70,7 @@ export default {
         .info-card{
             width: 100%;
             height: 100%;
-            color: $accent-color;;
+            color: white;
             cursor: pointer;
             padding: 1rem;
             
@@ -85,7 +85,7 @@ export default {
                     content: '';
                     z-index: -1;//to put it 1 level under its relative .description
                     position: absolute;
-                    background: #0007;
+                    background: #000000a8;
                     top:0;
                     left:0;
                     transform: translate(-1rem,-1rem);// 1 rem is the padding of .info-card
