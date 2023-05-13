@@ -25,7 +25,7 @@ export default {
 <template lang="">
     <div class="container-lg">
         <div class="row g-3 g-md-4">
-            <div class="col-12 col-md-6 col-lg-4" v-for:="project in projects">
+            <div class="col-12 col-md-6 col-xl-4" v-for:="project in projects">
                 <div class="project-card position-relative">
                     <div class="info-card position-absolute bottom-0 d-flex flex-column justify-content-between">
                         <div class="description">
@@ -33,12 +33,12 @@ export default {
                             <AppTitle :content="`${project.description}.`"/>
                         </div>
                         <div class="tags-container d-flex flex-wrap">
-                            <div class="tag d-flex me-2 mt-2"  :style="`background:${technologies[techId].bgColor}; color:${technologies[techId].fgColor}`"
+                            <div class="tag d-flex"  :style="`background:${technologies[techId].bgColor}; color:${technologies[techId].fgColor}`"
                                 v-for:="techId in project.technologies" :title="technologies[techId].name">
-                                <div class="d-none d-lg-block text-capitalize fw-bold">
+                                <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold">
                                     {{ technologies[techId].name }}
                                 </div>
-                                <div class="d-block d-lg-none m-auto">
+                                <div class="d-block d-sm-none d-md-block d-lg-none m-auto">
                                     <img :src="store.getImageSnap('technologies', technologies[techId].logo)" :alt="technologies[techId].name">
                                 </div>
                             </div>
@@ -53,8 +53,7 @@ export default {
 
 <style lang="scss" scoped>
     .project-card{
-        height: 300px;
-        max-height: 300px;
+        height: 350px;
         overflow: hidden;
         transition: .5s ease-in-out;
         border-radius: $border-radius-2;
@@ -101,24 +100,39 @@ export default {
                     color: $accent-comp-color;
                     border-radius: $border-radius-3;
                     font-size: .8rem;
+                    width: calc((100% - (.5rem * 5)) / 6);
+                    height: 45px;
+
+                    margin-top: .5rem;
+                    &:not(:nth-child(6n)){
+                        margin-right: .5rem;
+                    }
                     
                     img{
-                        width:25px ;
+                        width: 25px;
                     }
                 }
             }
         }
 
         img.snapshot{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
+            @include image(cover,top);
         }
     }
-    @media screen and (min-width:992px) {
+    
+    @media screen and (min-width:576px) and (max-width:767px), (min-width:992px){
+        //when the screen is min 567px AND max 767px (sm) OR min is 992px (lg and more)        
+        .project-card .info-card .tags-container .tag{                    
+            width:auto;
+            height:auto;
+            margin: .5rem .5rem 0 0;
+        }
+    }
+    @media screen and (min-width:992px){
+        //when the screen is min 992px (lg and more)        
         .project-card:hover{
             transform: scale(1.05);
         }
     }
+
 </style>
