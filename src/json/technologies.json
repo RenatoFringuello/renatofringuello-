@@ -83,5 +83,11 @@
         "logo": "nodejs.svg",
         "bgColor": "#000",
         "fgColor": "#9d6"
+    },
+    {
+        "name": "responsiveness",
+        "logo": "responsiveness.png",
+        "bgColor": "#fff",
+        "fgColor": "#222"
     }
 ]
