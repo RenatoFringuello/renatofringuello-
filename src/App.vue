@@ -1,5 +1,5 @@
 <script>
-import AppHeader from './components/AppHeader.vue';
+import AppHeader from './components/partials/AppHeader.vue';
 
 export default {
   name: "App",
