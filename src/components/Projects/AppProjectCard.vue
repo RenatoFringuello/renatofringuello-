@@ -1,6 +1,5 @@
 <script>
 import { store } from "@/store";
-import technologies from "@/json/technologies.json";
 
 import AppTitle from "@/components/partials/AppTitle.vue";
 import AppTag from "@/components/partials/AppTag.vue";
@@ -25,8 +24,6 @@ export default {
     data() {
         return {
             store,
-            //I will remove technologies using an API to get the technologies from a server
-            technologies,
         }
     },
 }
@@ -40,7 +37,7 @@ export default {
                 <AppTitle :content="`${project.description}.`"/>
             </div>
             <div class="tags-container d-flex flex-wrap">
-                <AppTag v-for:="techId in project.technologies" :technology="technologies[techId]"/>
+                <AppTag v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
             </div>
         </div>
         <img class="snapshot" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
