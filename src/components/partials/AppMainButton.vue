@@ -43,21 +43,21 @@ export default {
             }
         }
         &.black-white{
-            background-color: $accent-comp-color;
-            color: $accent-color !important;
+            background-color: black;
+            color: white !important;
 
             &::after{
                 content: '';
-                border:2px solid $accent-comp-color;
+                border:2px solid black;
             }
         }
         &.white-black{
-            background-color: $accent-color;
-            color: $accent-comp-color !important;
+            background-color: white;
+            color: black !important;
 
             &::after{
                 content: '';
-                border:2px solid $accent-color;
+                border:2px solid white;
             }
         }
     }
