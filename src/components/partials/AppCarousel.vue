@@ -94,6 +94,7 @@ export default {
             width: 100%;
             height: 100%;
             background-color: #000a;
+            color:white;
             left:1rem;
             border-radius: inherit;
         }
