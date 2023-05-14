@@ -27,7 +27,6 @@
         "snapshots":[
             "dc/dc_1.png",
             "dc/dc_2.png",
-            "dc/dc_3.png",
             "dc/dc_full.png"
         ],
         "description":"There are two project about the DC website, one is made with Vue 3 and the other is made with Laravel 9. Both are handled with Vite",
