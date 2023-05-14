@@ -57,7 +57,7 @@ export default {
 
     @media screen and (min-width:576px) and (max-width:767px), (min-width:992px){
         //when the screen is min 567px AND max 767px (sm) OR min is 992px (lg and more)        
-        .project-card .info-card .tags-container .tag{                    
+        .tag{                    
             width:auto;
             height:auto;
             margin: .5rem .5rem 0 0;
