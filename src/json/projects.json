@@ -9,7 +9,7 @@
         ],
         "description":"This is a front-end project where I developed a full home page repica of the Discord website. During this exercise I had to recreate the same template I received from the web designer",
         "technologies":[0,1],
-        "projectRepos":["htmlcss-discord","htmlcss-struttura-discord"]
+        "repos":["htmlcss-discord","htmlcss-struttura-discord"]
     },
     {
         "name":"boolzapp",
@@ -20,7 +20,7 @@
         ],
         "description":"This is a front-end project where I developed a Whatsapp Web look alike app. During this exercise I had to implement some algorithms to search open chats and to update datetime (I used Luxon)",
         "technologies":[0,1,2,4,6],
-        "projectRepos":["vue-boolzapp"]
+        "repos":["vue-boolzapp"]
     },
     {
         "name":"dc",
@@ -31,7 +31,7 @@
         ],
         "description":"There are two project about the DC website, one is made with Vue 3 and the other is made with Laravel 9. Both are handled with Vite",
         "technologies":[0,1,3,4,7,8,9,10,11,12,13],
-        "projectRepos":["vite-comics", "laravel-dc-comics"]
+        "repos":["vite-comics", "laravel-dc-comics"]
     },
     {
         "name":"boolflix",
@@ -41,7 +41,7 @@
         ],
         "description":"In this project I made a replica of the home page of Netflix using The Movie Database (TMDB) API",
         "technologies":[0,1,3,4,5,6,9,11,13],
-        "projectRepos":["vite-boolflix"]
+        "repos":["vite-boolflix"]
     },
     {
         "name":"minesweeper", 
@@ -52,7 +52,7 @@
         ],
         "description":"These two project are the milestones of the creation of minewseeper game. In js-campominato-grid I did the generation of the game field and in the other one I've implemented the game",
         "technologies":[0,1,2,4,14],
-        "projectRepos":["js-campominato-dom","js-campominato-grid"]
+        "repos":["js-campominato-dom","js-campominato-grid"]
     },
     {
         "name":"dropbox",
@@ -64,7 +64,7 @@
         ],
         "description":"This project I learn the utility of displaying elements in flex",
         "technologies":[0,1],
-        "projectRepos":["htmlcss-dropbox"]
+        "repos":["htmlcss-dropbox"]
     },
     {
         "name":"locomotive",
@@ -76,7 +76,7 @@
         ],
         "description":"In the first project (js-biglietto-treno) I made the algorithm to buy a ticket where the price value is based on age and distance. The second part (js-biglietto-treno-form) is my first UI/UX project where I tried to make a full website of a old trains company that let you ride around the country just for fun",
         "technologies":[0,1,2,4,14],
-        "projectRepos":["js-biglietto-treno","js-biglietto-treno-form"]
+        "repos":["js-biglietto-treno","js-biglietto-treno-form"]
     },
     {
         "name":"playstation",
@@ -88,7 +88,7 @@
         ],
         "description":"With this work I've made the front-end home page of the sony playstation website full responsive in all devices",
         "technologies":[0,1,2,14],
-        "projectRepos":["htmlcss-playstation"]
+        "repos":["htmlcss-playstation"]
     },
     {
         "name":"yu-gi-oh!",
@@ -98,7 +98,7 @@
         ],
         "description":"This is one of the first project where I've worked with API REST. For this specific work I used ygoprodeck API",
         "technologies":[0,1,3,4,5,6,9,11,13],
-        "projectRepos":["vite-breaking-bad"]
+        "repos":["vite-breaking-bad"]
     },
     {
         "name":"spotify",
@@ -109,7 +109,7 @@
         ],
         "description":"This is my first work full responsive (desktop-first) using media queries where I made a replica of the spotify web app",
         "technologies":[0,1,14],
-        "projectRepos":["html-css-spotifyweb"]
+        "repos":["html-css-spotifyweb"]
     },
     {
         "name":"MaxCoach",
@@ -118,7 +118,7 @@
         ],
         "description":"This is the midterm front-end exam where I had to make this page of the portfolio based on a sketch of the web designer. After the deadline I had to do a presentation of the work",
         "technologies":[0,1,3,4,6,9,11,13],
-        "projectRepos":["proj-html-vuejs"]
+        "repos":["proj-html-vuejs"]
     },
     {
         "name":"backoffice",
@@ -130,7 +130,7 @@
         ],
         "description":"In this project I've worked on a backoffice for my portfolio (check renatofringuello backoffice to see the real one)",
         "technologies":[0,1,2,3,4,7,8,10,11,12,14],
-        "projectRepos":["laravel-auth", "laravel-auth-2"]
+        "repos":["laravel-auth", "laravel-auth-2"]
     },
     {
         "name":"BDoctor",
@@ -145,7 +145,7 @@
         ],
         "description":"This is my first project in team and it's the final course project where we had to work server-side, client-side and also at the presentation",
         "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-        "projectRepos":["BDoctor-backoffice-api", "BDoctor-frontoffice"]
+        "repos":["BDoctor-backoffice-api", "BDoctor-frontoffice"]
     },
     {
         "name":"renatofringuello",
@@ -160,6 +160,6 @@
         ],
         "description":"Also this portfolio is a project and I developed it by my self using everything I lernt during the Full-Stack Web Developer Course at Boolean Careers",
         "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-        "projectRepos":["renatofringuello_portfolio", "renatofringuello_portfolio-backoffice"]
+        "repos":["renatofringuello_portfolio", "renatofringuello_portfolio-backoffice"]
     }
 ]
