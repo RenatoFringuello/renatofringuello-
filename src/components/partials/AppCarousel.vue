@@ -77,8 +77,8 @@ export default {
             </div>
         </div>
         <!-- item -->
-        <div class="item mx-3" v-for:="(imgPath, i) in imgs">
-            <img class="img-fluid" :src="store.getImageSnap(imgsLocation, imgPath)" alt="">
+        <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
+            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" class="m-auto">
         </div>
     </div>
 </template>
@@ -87,8 +87,7 @@ export default {
     .carousel{
         @include carousel(100%, 100%, 'false');
         margin: 2rem 0;
-        height: 100vh;
-        max-height: 80vh;
+        height: 85vh;
         border-radius: $border-radius-2;
         
         .hint{
@@ -101,9 +100,11 @@ export default {
         .item{
             overflow-y: auto;
             height: 100%;
+            max-height: 85vh;
             
             img{
                 border-radius: $border-radius-2;
+                width: 100%;
             }
         }
     }
