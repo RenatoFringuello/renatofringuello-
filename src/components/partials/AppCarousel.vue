@@ -96,10 +96,15 @@ export default {
             height: 100%;
             background-color: #000a;
             left:1rem;
+            border-radius: inherit;
         }
         .item{
             overflow-y: auto;
             height: 100%;
+            
+            img{
+                border-radius: $border-radius-2;
+            }
         }
     }
     
