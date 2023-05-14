@@ -1,0 +1,77 @@
+<script>
+import { store } from "@/store";
+
+import AppTitle from "@/components/partials/AppTitle.vue";
+import AppTag from "@/components/partials/AppTag.vue";
+
+export default {
+    name:'AppProjectInfo',
+    props:{
+        /**
+         * this is a literal object with these properties : 
+         * - name:String
+         * - snapshots:Array
+         * - description:String
+         * - technologies:Array
+         * - projectRepos:Array
+         */
+        project:Object,
+    },
+    components:{
+        AppTitle,
+        AppTag,
+    },
+    data() {
+        return {
+            store,
+            baseGitHubUri:'https://github.com/RenatoFringuello/',
+        }
+    },
+}
+</script>
+
+<template lang="">
+    <div class="info-card d-flex flex-column justify-content-between">
+        <div class="description mb-2">
+            <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
+            <div class="d-flex flex-wrap mb-2">
+                <a :href="baseGitHubUri + repo" target="_blank" class="me-3" v-for:="repo in project.repos">
+                    <AppTitle  :content="repo" class="sub-title archivo-black-font"/>
+                </a>
+            </div>
+            <!-- add a full descirption maybe step by step -->
+            <AppTitle :content="`${project.description}.`"/>
+        </div>
+        <div class="tags-container d-flex flex-wrap">
+            <AppTag v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
+        </div>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+    .info-card{
+        width: 100%;
+        height: 100%;
+        color: $accent-comp-color;
+        background: $complementary-color;
+        padding: 1rem;
+        border-radius: $border-radius-2;
+
+        .description{
+            a{
+                color: $dominant-color !important;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    right: -7px;
+                    width: 10px;
+                    aspect-ratio: 1/1;
+                    border-top:   3px solid;
+                    border-right: 3px solid;
+                }
+            }
+        }
+    }
+</style>
