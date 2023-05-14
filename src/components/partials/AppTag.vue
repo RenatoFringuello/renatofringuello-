@@ -4,6 +4,13 @@ import { store } from "@/store";
 export default {
     name:'AppTag',
     props:{
+        /**
+         * this is a literal object with these properties : 
+         * - name:String
+         * - logo:String
+         * - bgColor:String
+         * - fgColor:String
+         */
         technology:Object,
     },
     data() {
@@ -18,9 +25,11 @@ export default {
     <div class="tag d-flex" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
          :title="technology.name">
         <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold">
+            <!-- when sm or from lg forward show this -->
             {{ technology.name }}
         </div>
         <div class="d-block d-sm-none d-md-block d-lg-none m-auto">
+            <!-- when xs or md-->
             <img :src="store.getImageSnap('technologies', technology.logo)" :alt="technology.name">
         </div>
     </div>
@@ -37,6 +46,7 @@ export default {
         
         margin-top: .5rem;
         &:not(:nth-child(6n)){
+            //give margin to all the tags but the multiple of 6
             margin-right: .5rem;
         }
         
