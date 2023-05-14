@@ -86,6 +86,7 @@ export default {
                     transform: translate(-1rem,-1rem);// 1 rem is the padding of .info-card
                     width: 100vw;
                     height: 100vh;
+                    border-radius: $border-radius-2;
                 }
             }
             .tags-container{
