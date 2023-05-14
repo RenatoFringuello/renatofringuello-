@@ -10,9 +10,8 @@ export default {
         /**
          * it's the boolean value to toggle the hint of scrolling of the carousel
          */
-        isHintActiveP:{
+        isHintActive:{
             type:Boolean,
-            default:false
         },
         /**
          * it's the list of imgs relative path
@@ -35,22 +34,22 @@ export default {
     },
     data() {
         return {
-            isHintActive:false,
             store,
+            hintActive : false,
         }
     },
-    created() {
-        this.isHintActive = this.isHintActiveP;
-    },
+    created(){
+        this.hintActive = this.isHintActive;
+    }
 }
 </script>
 
 <template lang="">
-    <div class="carousel position-relative" :class="(isHintActive)?'overflow-hidden' : 'overflow-auto'">
+    <div class="carousel position-relative" :class="(hintActive)?'overflow-hidden' : 'overflow-auto'">
         <!-- hint -->
-        <div class="hint position-absolute p-5 top-0" :class="(isHintActive)?'d-block' : 'd-none'">
+        <div class="hint position-absolute p-5 top-0" :class="(hintActive)?'d-block' : 'd-none'">
             <div class="d-flex flex-column justify-content-between w-100 h-100">
-                <div class="d-flex flex-column align-imgs-center">
+                <div class="d-flex flex-column align-items-center">
                     <div class="mb-3">
                         Scroll up | down 
                     </div>
@@ -73,7 +72,7 @@ export default {
                     </div>
                 </div>                        
                 <div class="d-flex">
-                    <AppMainButton content="Ok, I get it" class="m-auto white-black" @click="isHintActive = false"/>
+                    <AppMainButton content="Ok, I get it" class="m-auto white-black" @click="changeState(false)"/>
                 </div>
             </div>
         </div>
@@ -90,6 +89,8 @@ export default {
         margin: 2rem 0;
         height: 100vh;
         max-height: 80vh;
+        border-radius: $border-radius-2;
+        
         .hint{
             width: 100%;
             height: 100%;
