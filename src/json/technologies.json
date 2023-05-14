@@ -89,5 +89,11 @@
         "logo": "responsiveness.png",
         "bgColor": "#fff",
         "fgColor": "#222"
+    },
+    {
+        "name": "babel",
+        "logo": "babel.png",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
     }
 ]
