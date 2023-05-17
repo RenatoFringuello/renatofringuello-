@@ -43,7 +43,7 @@ export default {
             <AppTitle :content="`${project.description}.`"/>
         </div>
         <div class="tags-container d-flex flex-wrap">
-            <AppTag v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
+            <AppTag class="link" v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
         </div>
     </div>
 </template>

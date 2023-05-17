@@ -49,6 +49,14 @@ export default {
             //give margin to all the tags but the multiple of 6
             margin-right: .5rem;
         }
+        &.link{
+            box-shadow: 0 2px 2px 2px #0004;
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                box-shadow: 0 2px 2px 2px #0000;
+            }
+        }
         
         img{
             @include image(contain, center, 100%, 35px);
