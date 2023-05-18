@@ -36,6 +36,7 @@ export default {
         return {
             store,
             hintActive : false,
+            isLandscape:true,
         }
     },
     created(){
@@ -67,7 +68,7 @@ export default {
                         <AppScrollAnimation class="mb-3 d-none d-lg-flex" scrollType="mouse mouse-left-right"/>
                         <AppScrollAnimation class="mb-3 d-flex d-lg-none" scrollType="phone phone-left-right"/>
                         <div>
-                            to see previews of other projects
+                            to see previews of other snapshot
                         </div>
                     </div>
                 </div>                        
@@ -77,17 +78,17 @@ export default {
             </div>
         </div>
         <!-- item -->
-        <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
-            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" class="m-auto">
+        <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs" ref="snaps">
+            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="(!imgPath.includes('full'))?'not-full' : ''" class="m-auto">
+            <!-- <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="(!imgPath.includes('full'))?'not-full' : ''" class="m-auto"> -->
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
     .carousel{
-        @include carousel(100%, 100%, 'false');
+        @include carousel(100%, 85vh, 'false');
         margin: 2rem 0;
-        height: 85vh;
         border-radius: $border-radius-2;
         
         .hint{
@@ -100,19 +101,27 @@ export default {
         }
         .item{
             overflow-y: auto;
-            height: 100%;
-            max-height: 85vh;
             
             img{
                 border-radius: $border-radius-2;
                 width: 100%;
+                &.not-full{
+                    @include image(contain, center, auto)
+                }
             }
         }
     }
     
     @media screen and (max-width:767px) {
+        //xs or sm
         .carousel{
             max-height: 70vh;
+        }
+    }
+    @media screen and (max-width:1200px) {
+        //from xs to lg
+        .carousel .item img.not-full{
+            @include image(contain, center, 100%, auto)
         }
     }
 </style>
