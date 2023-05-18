@@ -24,7 +24,7 @@ export default {
             this.projectActiveId = projectId;
             const carousel = document.getElementById(this.carouselId);
             carousel.scrollIntoView();
-            carousel.childNodes[0].scrollTo(0,0);
+            carousel.childNodes[0].scrollTo(0,0);//reset to first slide 
         }
     }
 }
