@@ -93,6 +93,9 @@ export default {
         @include carousel(100%, 85vh, 'false');
         margin: 2rem 0;
         border-radius: $border-radius-2;
+        > div{
+            border-radius: inherit;
+        }
         
         .hint{
             width: 100%;
@@ -100,13 +103,12 @@ export default {
             background-color: #000a;
             color:white;
             left:1rem;
-            border-radius: inherit;
         }
         .item{
             overflow-y: auto;
             
             img{
-                border-radius: $border-radius-2;
+                border-radius: inherit;
                 &.full{
                     width: 100%;
                 }
