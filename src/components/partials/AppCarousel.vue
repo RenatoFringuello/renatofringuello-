@@ -36,7 +36,6 @@ export default {
         return {
             store,
             hintActive : false,
-            isLandscape:true,
         }
     },
     methods: {
@@ -73,6 +72,7 @@ export default {
                         <AppScrollAnimation class="mb-3 d-none d-lg-flex" scrollType="mouse mouse-left-right"/>
                         <AppScrollAnimation class="mb-3 d-flex d-lg-none" scrollType="phone phone-left-right"/>
                         <div>
+                            to see previews of other snapshot
                             to see previews of other snapshot
                         </div>
                     </div>
@@ -126,6 +126,12 @@ export default {
         //xs or sm
         .carousel{
             max-height: 70vh;
+        }
+    }
+    @media screen and (max-width:1200px) {
+        //from xs to lg
+        .carousel .item img.not-full{
+            @include image(contain, center, 100%, auto)
         }
     }
 </style>
