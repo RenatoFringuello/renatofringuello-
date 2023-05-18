@@ -39,6 +39,10 @@ export default {
         }
     },
     methods: {
+        /**
+         * return a class between 'full', 'portrait' or 'landscape'
+         * @param {*} imgPath is the img's relative path
+         */
         getOrientationClass(imgPath){
             return (imgPath.includes('full')? 'full' : (imgPath.includes('portrait')) ? 'portrait' : 'landscape');
         }
