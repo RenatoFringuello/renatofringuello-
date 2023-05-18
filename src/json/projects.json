@@ -46,8 +46,8 @@
     {
         "name":"minesweeper", 
         "snapshots":[
-            "campo/campo_1.png",
-            "campo/campo_2.png",
+            "campo/campo_1_portrait.png",
+            "campo/campo_2_portrait.png",
             "campo/campo_3.png"
         ],
         "description":"These two project are the milestones of the creation of minewseeper game. In js-campominato-grid I did the generation of the game field and in the other one I've implemented the game",
@@ -103,8 +103,8 @@
     {
         "name":"spotify",
         "snapshots":[
-            "spotify/spotify_1.png",
-            "spotify/spotify_2.png",
+            "spotify/spotify_1_portrait.png",
+            "spotify/spotify_2_portrait.png",
             "spotify/spotify_3.png"
         ],
         "description":"This is my first work full responsive (desktop-first) using media queries where I made a replica of the spotify web app",
@@ -114,7 +114,7 @@
     {
         "name":"MaxCoach",
         "snapshots":[
-            "artist/screenshot.png"
+            "artist/artist_full.png"
         ],
         "description":"This is the midterm front-end exam where I had to make this page of the portfolio based on a sketch of the web designer. After the deadline I had to do a presentation of the work",
         "technologies":[0,1,3,4,6,9,11,13],
