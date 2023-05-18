@@ -73,7 +73,6 @@ export default {
                         <AppScrollAnimation class="mb-3 d-flex d-lg-none" scrollType="phone phone-left-right"/>
                         <div>
                             to see previews of other snapshot
-                            to see previews of other snapshot
                         </div>
                     </div>
                 </div>                        
@@ -83,9 +82,8 @@ export default {
             </div>
         </div>
         <!-- item -->
-        <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs" ref="snaps">
+        <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
             <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="getOrientationClass(imgPath)" class="m-auto">
-            <!-- <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="(!imgPath.includes('full'))?'not-full' : ''" class="m-auto"> -->
         </div>
     </div>
 </template>
@@ -126,12 +124,6 @@ export default {
         //xs or sm
         .carousel{
             max-height: 70vh;
-        }
-    }
-    @media screen and (max-width:1200px) {
-        //from xs to lg
-        .carousel .item img.not-full{
-            @include image(contain, center, 100%, auto)
         }
     }
 </style>
