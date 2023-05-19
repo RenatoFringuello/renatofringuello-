@@ -72,7 +72,9 @@
             "locomotive/locomotive_1.png",
             "locomotive/locomotive_2.png",
             "locomotive/locomotive_3.png",
-            "locomotive/locomotive_full.png"
+            "locomotive/locomotive_smartphone_full.png",
+            "locomotive/locomotive_tablet_full.png",
+            "locomotive/locomotive_desktop_full.png"
         ],
         "description":"In the first project (js-biglietto-treno) I made the algorithm to buy a ticket where the price value is based on age and distance. The second part (js-biglietto-treno-form) is my first UI/UX project where I tried to make a full website of a old trains company that let you ride around the country just for fun",
         "technologies":[0,1,2,4,14],
@@ -84,9 +86,9 @@
             "playstation/playstation_1.png",
             "playstation/playstation_2.png",
             "playstation/playstation_3.png",
-            "playstation/playstation_desktop_full.png",
+            "playstation/playstation_smartphone_full.png",
             "playstation/playstation_tablet_full.png",
-            "playstation/playstation_smartphone_full.png"
+            "playstation/playstation_desktop_full.png"
         ],
         "description":"With this work I've made the front-end home page of the sony playstation website full responsive in all devices",
         "technologies":[0,1,2,14],
@@ -128,7 +130,10 @@
             "backoffice/backoffice_1.png",
             "backoffice/backoffice_2.png",
             "backoffice/backoffice_3.png",
-            "backoffice/backoffice_4.png"
+            "backoffice/backoffice_4_full.png",
+            "backoffice/backoffice_smartphone_full.png",
+            "backoffice/backoffice_tablet_full.png",
+            "backoffice/backoffice_desktop_full.png"
         ],
         "description":"In this project I've worked on a backoffice for my portfolio (check renatofringuello backoffice to see the real one)",
         "technologies":[0,1,2,3,4,7,8,10,11,12,14],
