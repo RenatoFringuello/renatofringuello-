@@ -38,15 +38,6 @@ export default {
             hintActive : false,
         }
     },
-    methods: {
-        /**
-         * return a class between 'full', 'portrait' or 'landscape'
-         * @param {*} imgPath is the img's relative path
-         */
-        getOrientationClass(imgPath){
-            return (imgPath.includes('full')? 'full' : (imgPath.includes('portrait')) ? 'portrait' : 'landscape');
-        }
-    },
     created(){
         this.hintActive = this.isHintActive;
     }
@@ -87,14 +78,14 @@ export default {
         </div>
         <!-- item -->
         <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
-            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="getOrientationClass(imgPath)" class="m-auto">
+            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="(imgPath.includes('full'))? 'full' : ''" class="m-auto">
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
     .carousel{
-        @include carousel(100%, 85vh, 'false');
+        @include carousel(auto, 85vh, 'false');
         margin: 2rem 0;
         border-radius: $border-radius-2;
         > div{
@@ -110,17 +101,11 @@ export default {
         }
         .item{
             overflow-y: auto;
-            
             img{
                 border-radius: inherit;
+                @include image(contain, center, auto, auto);
                 &.full{
-                    width: 100%;
-                }
-                &.landscape{
-                    @include image(contain, center, 100%, auto)
-                }
-                &.portrait{
-                    @include image(contain, center, auto, 100%)
+                    max-height:auto;
                 }
             }
         }
