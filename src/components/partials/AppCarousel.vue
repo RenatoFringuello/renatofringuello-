@@ -126,7 +126,7 @@ export default {
     
     @media screen and (min-width:576px) {
         //sm & more
-        .carousel .item img .smartphone{
+        .carousel .item img.smartphone{
             max-width:500px;
         }
     }
@@ -138,7 +138,7 @@ export default {
     }
     @media screen and (min-width:992px) {
         //lg & more
-        .carousel .item img .tablet{
+        .carousel .item img.tablet{
             max-width:905px;
         }
     }
