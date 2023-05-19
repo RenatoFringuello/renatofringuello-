@@ -1,6 +1,6 @@
 [
     {
-        "name":"discord",
+        "name":"discord replica",
         "snapshots":[
             "discord/discord_1.png",
             "discord/discord_2.png",
@@ -23,7 +23,7 @@
         "repos":["vue-boolzapp"]
     },
     {
-        "name":"dc",
+        "name":"dc comics replica",
         "snapshots":[
             "dc/dc_1.png",
             "dc/dc_2.png",
@@ -55,7 +55,7 @@
         "repos":["js-campominato-dom","js-campominato-grid"]
     },
     {
-        "name":"dropbox",
+        "name":"dropbox replica",
         "snapshots":[
             "dropbox/dropbox_1.png",
             "dropbox/dropbox_2.png",
@@ -79,7 +79,7 @@
         "repos":["js-biglietto-treno","js-biglietto-treno-form"]
     },
     {
-        "name":"playstation",
+        "name":"playstation replica",
         "snapshots":[
             "playstation/playstation_1.png",
             "playstation/playstation_2.png",
@@ -91,7 +91,7 @@
         "repos":["htmlcss-playstation"]
     },
     {
-        "name":"yu-gi-oh!",
+        "name":"yu-gi-oh! replica",
         "snapshots":[
             "yugioh/yugioh_1.png",
             "yugioh/yugioh_full.png"
@@ -101,7 +101,7 @@
         "repos":["vite-breaking-bad"]
     },
     {
-        "name":"spotify",
+        "name":"spotify replica",
         "snapshots":[
             "spotify/spotify_1_portrait.png",
             "spotify/spotify_2_portrait.png",
