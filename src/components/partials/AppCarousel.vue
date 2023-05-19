@@ -105,7 +105,7 @@ export default {
                 border-radius: inherit;
                 @include image(contain, center, auto, auto);
                 &.full{
-                    max-height:auto;
+                    max-height:none;
                 }
             }
         }
