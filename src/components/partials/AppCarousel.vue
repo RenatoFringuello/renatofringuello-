@@ -38,6 +38,19 @@ export default {
             hintActive : false,
         }
     },
+    methods: {
+        /**
+         * get extra classes from image name to assign [full e/o smartphone | tablet | desktop]
+         * e.i. for a project I'm using a smartphone snapshot and it will add a class with this name which give a max-width of 500px to the image
+         * @param {*} imgPath - the path of the image from the imgLocation
+         * @returns {*} a string with the classes extracted 
+         */
+        getExtraClasses(imgPath){
+            const fullCheck = (imgPath.includes('full'))? 'full' : '';
+            const deviceCheck = (imgPath.includes('smartphone'))? 'smartphone' : (imgPath.includes('tablet'))? 'tablet' : 'desktop';
+            return `${fullCheck} ${deviceCheck}`;
+        }
+    },
     created(){
         this.hintActive = this.isHintActive;
     }
@@ -78,14 +91,14 @@ export default {
         </div>
         <!-- item -->
         <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
-            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="(imgPath.includes('full'))? 'full' : ''" class="m-auto">
+            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="getExtraClasses(imgPath)" class="m-auto">
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
     .carousel{
-        @include carousel(auto, 85vh, 'false');
+        @include carousel(auto, 70vh, 'false');
         margin: 2rem 0;
         border-radius: $border-radius-2;
         > div{
@@ -111,10 +124,22 @@ export default {
         }
     }
     
-    @media screen and (max-width:767px) {
-        //xs or sm
+    @media screen and (min-width:576px) {
+        //sm & more
+        .carousel .item img .smartphone{
+            max-width:500px;
+        }
+    }
+    @media screen and (min-width:768px) {
+        //md & more
         .carousel{
-            max-height: 70vh;
+            height: 85vh;
+        }
+    }
+    @media screen and (min-width:992px) {
+        //lg & more
+        .carousel .item img .tablet{
+            max-width:905px;
         }
     }
 </style>
