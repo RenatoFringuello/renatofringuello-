@@ -46,8 +46,8 @@
     {
         "name":"minesweeper", 
         "snapshots":[
-            "campo/campo_1_portrait.png",
-            "campo/campo_2_portrait.png",
+            "campo/campo_1.png",
+            "campo/campo_2.png",
             "campo/campo_3.png"
         ],
         "description":"These two project are the milestones of the creation of minewseeper game. In js-campominato-grid I did the generation of the game field and in the other one I've implemented the game",
@@ -84,7 +84,9 @@
             "playstation/playstation_1.png",
             "playstation/playstation_2.png",
             "playstation/playstation_3.png",
-            "playstation/playstation_full.png"
+            "playstation/playstation_desktop_full.png",
+            "playstation/playstation_tablet_full.png",
+            "playstation/playstation_smartphone_full.png"
         ],
         "description":"With this work I've made the front-end home page of the sony playstation website full responsive in all devices",
         "technologies":[0,1,2,14],
@@ -103,8 +105,8 @@
     {
         "name":"spotify replica",
         "snapshots":[
-            "spotify/spotify_1_portrait.png",
-            "spotify/spotify_2_portrait.png",
+            "spotify/spotify_1.png",
+            "spotify/spotify_2.png",
             "spotify/spotify_3.png"
         ],
         "description":"This is my first work full responsive (desktop-first) using media queries where I made a replica of the spotify web app",
