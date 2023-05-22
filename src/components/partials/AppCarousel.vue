@@ -43,7 +43,7 @@ export default {
          * get extra classes from image name to assign [full e/o smartphone | tablet | desktop]
          * e.i. for a project I'm using a smartphone snapshot and it will add a class with this name which give a max-width of 500px to the image
          * @param {*} imgPath - the path of the image from the imgLocation
-         * @returns {*} a string with the classes extracted 
+         * @returns {*} a string with the extra classes concatenated 
          */
         getExtraClasses(imgPath){
             const fullCheck = (imgPath.includes('full'))? 'full' : '';
