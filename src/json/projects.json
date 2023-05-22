@@ -148,7 +148,9 @@
             "bdoctor/bdoctor_4.png",
             "bdoctor/bdoctor_5.png",
             "bdoctor/bdoctor_6.png",
-            "bdoctor/bdoctor_full.png"
+            "bdoctor/bdoctor_smartphone_full.png",
+            "bdoctor/bdoctor_tablet_full.png",
+            "bdoctor/bdoctor_desktop_full.png"
         ],
         "description":"This is my first project in team and it's the final course project where we had to work server-side, client-side and also at the presentation",
         "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
@@ -163,7 +165,9 @@
             "bdoctor/bdoctor_4.png",
             "bdoctor/bdoctor_5.png",
             "bdoctor/bdoctor_6.png",
-            "bdoctor/bdoctor_full.png"
+            "bdoctor/bdoctor_smartphone_full.png",
+            "bdoctor/bdoctor_tablet_full.png",
+            "bdoctor/bdoctor_desktop_full.png"
         ],
         "description":"Also this portfolio is a project and I developed it by my self using everything I lernt during the Full-Stack Web Developer Course at Boolean Careers",
         "technologies":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
