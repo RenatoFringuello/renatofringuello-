@@ -26,9 +26,12 @@ export default {
         line-height: 1;
         font-size: clamp(3rem, 6vw, 4rem);
         margin-left: -0px;
+        font-family: 'Archivo Black';
     }
     .title{
         font-size: 2rem;
+        line-height: 1;
+        font-family: 'Archivo Black';
     }
     .sub-title{
         font-size: 1.3rem;   

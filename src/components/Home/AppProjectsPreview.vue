@@ -16,7 +16,7 @@ export default {
         <div class="row flex-md-row-reverse">
             <div class="col-12 col-md-5 position-relative pb-5">
                 <div class="py-5 px-3">
-                    <AppTitle content="More than +10 projects" className="title fw-800 archivo-black-font text-complementary-darken"/>
+                    <AppTitle content="More than +10 projects" className="title fw-800 text-complementary-darken"/>
                     <AppTitle class="mb-3" className="sub-title" content="See the projects I developed during my studies in the Boolean Accademy Course 'Full-Stack Web Developer'"/>
                     <router-link to="projects">
                         <AppMainButton content="Project Highlight" class="black-white"/>

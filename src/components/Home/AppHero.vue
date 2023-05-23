@@ -22,7 +22,7 @@ export default {
             <div class="col-12 col-md-8">
                 <div class="wrapper">
                     <AppTitle content="Hi, my name is Renato." className="sub-title mb-2"/>
-                    <AppTitle content="I am a Full Stack Web Developer" className="main-title archivo-black-font mb-2"/>
+                    <AppTitle content="I am a Full Stack Web Developer" className="main-title mb-2"/>
                     <div class="mb-4">
                         <div class="row">
                             <div class="col-12 col-lg-7">
