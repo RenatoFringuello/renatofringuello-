@@ -12,6 +12,13 @@ export default {
          * - fgColor:String
          */
         technology:Object,
+        /**
+         * there are 3 types: tag-image | tag-name | both
+         */
+        type:{
+            type:String,
+            default:'both'
+        }
     },
     data() {
         return {
@@ -22,13 +29,24 @@ export default {
 </script>
 
 <template lang="">
-    <div class="tag d-flex" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
+    <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
          :title="technology.name">
         <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold">
             <!-- when sm or from lg forward show this -->
             {{ technology.name }}
         </div>
         <div class="d-block d-sm-none d-md-block d-lg-none m-auto">
+            <!-- when xs or md-->
+            <img :src="store.getImageSnap('technologies', technology.logo)" :alt="technology.name">
+        </div>
+    </div>
+    <div v-else class="tag d-flex" :class="type" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
+         :title="technology.name">
+        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold">
+            <!-- when sm or from lg forward show this -->
+            {{ technology.name }}
+        </div>
+        <div v-else class="m-auto">
             <!-- when xs or md-->
             <img :src="store.getImageSnap('technologies', technology.logo)" :alt="technology.name">
         </div>
@@ -47,7 +65,7 @@ export default {
         margin-top: .5rem;
         &:not(:nth-child(6n)){
             //give margin to all the tags but the multiple of 6
-            margin-right: .5rem;
+            margin-right: .5rem ;
         }
         &.link{
             box-shadow: 0 2px 2px 2px #0004;
@@ -57,6 +75,9 @@ export default {
                 box-shadow: 0 2px 2px 2px #0000;
             }
         }
+        &.square{
+            aspect-ratio: 1/1;
+        }
         
         img{
             @include image(contain, center, 100%, 35px);
@@ -65,10 +86,15 @@ export default {
 
     @media screen and (min-width:576px) and (max-width:767px), (min-width:992px){
         //when the screen is min 567px AND max 767px (sm) OR min is 992px (lg and more)        
-        .tag{                    
+        .tag.both,
+        .tag.tag-name{
             width:auto;
             height:auto;
-            margin: .5rem .5rem 0 0;
+            margin-top: .5rem ;
+            margin-right:.5rem ;
+            &.square{
+                aspect-ratio: auto;
+            }
         }
     }
 </style>
