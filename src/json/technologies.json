@@ -19,8 +19,20 @@
         "fgColor": "#eee"
     },
     {
+        "name": "tailwind",
+        "logo": "tailwind.svg",
+        "bgColor": "linear-gradient(80deg, #206, #413)",
+        "fgColor": "#eee"
+    },
+    {
         "name": "sass",
         "logo": "sass.svg",
+        "bgColor": "#fff",
+        "fgColor": "#f0b"
+    },
+    {
+        "name": "less",
+        "logo": "less.svg",
         "bgColor": "#fff",
         "fgColor": "#f0b"
     },
@@ -29,6 +41,12 @@
         "logo": "javascript.svg",
         "bgColor": "#ed0",
         "fgColor": "#222"
+    },
+    {
+        "name": "ajax",
+        "logo": "ajax.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
     },
     {
         "name": "axios",
@@ -43,16 +61,64 @@
         "fgColor": "#eee"
     },
     {
+        "name": "react",
+        "logo": "react.svg",
+        "bgColor": "#0a7",
+        "fgColor": "#eee"
+    },
+    {
+        "name": "angular",
+        "logo": "angular.svg",
+        "bgColor": "#0a7",
+        "fgColor": "#eee"
+    },
+    {
+        "name": "ruby",
+        "logo": "ruby.svg",
+        "bgColor": "#55a",
+        "fgColor": "#eee"
+    },
+    {
         "name": "php 8",
         "logo": "php.png",
         "bgColor": "#55a",
         "fgColor": "#eee"
     },
     {
+        "name": "python",
+        "logo": "python.svg",
+        "bgColor": "#55a",
+        "fgColor": "#eee"
+    },
+    {
+        "name": "java",
+        "logo": "java.svg",
+        "bgColor": "#55a",
+        "fgColor": "#eee"
+    },
+    {
+        "name": "spring",
+        "logo": "spring.svg",
+        "bgColor": "#fff",
+        "fgColor": "#f00"
+    },
+    {
         "name": "laravel 9",
         "logo": "laravel.png",
         "bgColor": "#fff",
         "fgColor": "#f00"
+    },
+    {
+        "name": "symfony",
+        "logo": "symfony.svg",
+        "bgColor": "#fff",
+        "fgColor": "#f00"
+    },
+    {
+        "name": "node JS",
+        "logo": "nodejs.svg",
+        "bgColor": "#000",
+        "fgColor": "#9d6"
     },
     {
         "name": "npm",
@@ -79,10 +145,34 @@
         "fgColor": "#005"
     },
     {
-        "name": "node JS",
-        "logo": "nodejs.svg",
-        "bgColor": "#000",
-        "fgColor": "#9d6"
+        "name": "oracle",
+        "logo": "oracle.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
+    },
+    {
+        "name": "mariaDB",
+        "logo": "mariadb.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
+    },
+    {
+        "name": "mongoDB",
+        "logo": "mongodb.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
+    },
+    {
+        "name": "postgresql",
+        "logo": "postgresql.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
+    },
+    {
+        "name": "SQLite",
+        "logo": "sqlite.svg",
+        "bgColor": "#fff",
+        "fgColor": "#005"
     },
     {
         "name": "responsiveness",
@@ -93,6 +183,72 @@
     {
         "name": "babel",
         "logo": "babel.png",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "c#",
+        "logo": "csharp.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "c++",
+        "logo": "cplus.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "c",
+        "logo": "c.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "kotlin",
+        "logo": "kotlin.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "dart",
+        "logo": "dart.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "flutter",
+        "logo": "flutter.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "adobe illustrator",
+        "logo": "illustrator.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "adobe photoshop",
+        "logo": "photoshop.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "adobe xd",
+        "logo": "xd.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "git",
+        "logo": "git.svg",
+        "bgColor": "#000",
+        "fgColor": "#ed0"
+    },
+    {
+        "name": "github",
+        "logo": "github.svg",
         "bgColor": "#000",
         "fgColor": "#ed0"
     }
