@@ -80,7 +80,7 @@ export default {
         }
         
         img{
-            @include image(contain, center, 100%, 35px);
+            @include image(contain, center, 100%, 100%, none, 90px);
         }
     }
 
