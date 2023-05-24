@@ -48,13 +48,13 @@ export default {
 </script>
 
 <template lang="">
-    <div class="row" :class="direction ? 'flex-row' : 'flex-row-reverse'">
-        <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
-            <AppTitle v-show="title != ''" class="title mb-3 text-complementary" :content="title"/>
+    <div class="row g-0" :class="direction ? 'flex-row' : 'flex-row-reverse'">
+        <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center paragraph">
+            <AppTitle v-show="title != ''" class="title mb-3 text-complementary-darken" :content="title"/>
             <AppTitle class="sub-title mb-2" :content="subTitle"/>
         </div>
-        <div class="col-12 col-md-7">
-            <div class="tags-container justify-content-center pb-2 d-flex flex-wrap">
+        <div class="col-12 col-md-6">
+            <div class="tags-container justify-content-center p-2 h-100 d-flex flex-wrap align-items-center">
                 <AppTag :technology="tech" :type="tagType" class="square" v-for:="tech in technologies"/>
             </div>
         </div>
@@ -62,7 +62,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+    .paragraph{
+        background-color: $accent-color;
+        color: $accent-comp-color;
+    }
     .tag{
+        &:nth-child(-n + 6){
+            margin-top: 0;
+        }
         &:nth-last-child(1){
             margin-right: 0;
         }
