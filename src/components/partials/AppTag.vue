@@ -29,9 +29,9 @@ export default {
 </script>
 
 <template lang="">
-    <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
+    <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="`background:${technology.bgColor};`"
          :title="technology.name">
-        <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold">
+        <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold" :style="`color:${technology.fgColor}`">
             <!-- when sm or from lg forward show this -->
             {{ technology.name }}
         </div>
@@ -40,9 +40,9 @@ export default {
             <img :src="store.getImageSnap('technologies', technology.logo)" :alt="technology.name">
         </div>
     </div>
-    <div v-else class="tag d-flex" :class="type" :style="`background:${technology.bgColor}; color:${technology.fgColor}`"
+    <div v-else class="tag d-flex" :class="type" :style="`background:${technology.bgColor};`"
          :title="technology.name">
-        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold">
+        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold" :style="`color:${technology.fgColor}`">
             <!-- when sm or from lg forward show this -->
             {{ technology.name }}
         </div>
