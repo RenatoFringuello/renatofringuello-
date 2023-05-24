@@ -2,27 +2,27 @@
     {
         "name": "html 5",
         "logo": "html5.svg",
-        "bgColor": "#f60",
+        "bgColor": "#ef652a",
         "fgColor": "#eee"
 
     },
     {
         "name": "css 3",
         "logo": "css3.svg",
-        "bgColor": "#06f",
+        "bgColor": "#1c88c7",
         "fgColor": "#eee"
     },
     {
         "name": "bootstrap",
-        "logo": "bootstrap.svg",
-        "bgColor": "linear-gradient(80deg, #206, #413)",
+        "logo": "bootstrap.png",
+        "bgColor": "linear-gradient(-45deg, #8d11fc, #690ff2)",
         "fgColor": "#eee"
     },
     {
         "name": "tailwind",
         "logo": "tailwind.svg",
-        "bgColor": "linear-gradient(80deg, #206, #413)",
-        "fgColor": "#eee"
+        "bgColor": "#eee",
+        "fgColor": "#06b6d4"
     },
     {
         "name": "sass",
@@ -33,20 +33,20 @@
     {
         "name": "less",
         "logo": "less.svg",
-        "bgColor": "#fff",
-        "fgColor": "#f0b"
+        "bgColor": "linear-gradient(#2c4c7e, #182e4d)",
+        "fgColor": "#fff"
     },
     {
         "name": "js ES6",
         "logo": "javascript.svg",
-        "bgColor": "#ed0",
+        "bgColor": "#f7df1e",
         "fgColor": "#222"
     },
     {
         "name": "ajax",
         "logo": "ajax.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#fff",
+        "fgColor": "#318bc9"
     },
     {
         "name": "axios",
@@ -56,51 +56,51 @@
     },
     {
         "name": "vue 3",
-        "logo": "vuejs.svg",
-        "bgColor": "#0a7",
-        "fgColor": "#eee"
+        "logo": "vue.png",
+        "bgColor": "#7d7",
+        "fgColor": "#35495e"
     },
     {
         "name": "react",
         "logo": "react.svg",
-        "bgColor": "#0a7",
-        "fgColor": "#eee"
+        "bgColor": "#fff",
+        "fgColor": "#61dafb"
     },
     {
         "name": "angular",
         "logo": "angular.svg",
-        "bgColor": "#0a7",
-        "fgColor": "#eee"
+        "bgColor": "linear-gradient(90deg, #b52e31 50%, #e23237 50%)",
+        "fgColor": "#eee;"
     },
     {
         "name": "ruby",
         "logo": "ruby.svg",
-        "bgColor": "#55a",
-        "fgColor": "#eee"
+        "bgColor": "#ad1a0d; box-shadow:inset 2px 1px 1px #fff, inset -2px -1px 1px #881102;",
+        "fgColor": "#fff"
     },
     {
         "name": "php 8",
         "logo": "php.png",
-        "bgColor": "#55a",
+        "bgColor": "#4f5b93",
         "fgColor": "#eee"
     },
     {
         "name": "python",
         "logo": "python.svg",
-        "bgColor": "#55a",
-        "fgColor": "#eee"
+        "bgColor": "linear-gradient(135deg, #376f9e 15%, #ffd748 90%)",
+        "fgColor": "#fff"
     },
     {
         "name": "java",
-        "logo": "java.svg",
-        "bgColor": "#55a",
-        "fgColor": "#eee"
+        "logo": "java-white.svg",
+        "bgColor": "linear-gradient(#e26e05, #5083a1, #e26e05)",
+        "fgColor": "#fff"
     },
     {
         "name": "spring",
         "logo": "spring.svg",
         "bgColor": "#fff",
-        "fgColor": "#f00"
+        "fgColor": "#77bc1f"
     },
     {
         "name": "laravel 9",
@@ -111,8 +111,8 @@
     {
         "name": "symfony",
         "logo": "symfony.svg",
-        "bgColor": "#fff",
-        "fgColor": "#f00"
+        "bgColor": "#1a171b",
+        "fgColor": "#fff"
     },
     {
         "name": "node JS",
@@ -123,7 +123,7 @@
     {
         "name": "npm",
         "logo": "npm.svg",
-        "bgColor": "#c00",
+        "bgColor": "#cb3837",
         "fgColor": "#eee"
     },
     {
@@ -147,8 +147,8 @@
     {
         "name": "oracle",
         "logo": "oracle.svg",
-        "bgColor": "#fff",
-        "fgColor": "#005"
+        "bgColor": "#c74634; filter: hue-rotate(180deg) brightness(1.4) invert()",
+        "fgColor": "#000"
     },
     {
         "name": "mariaDB",
@@ -160,19 +160,19 @@
         "name": "mongoDB",
         "logo": "mongodb.svg",
         "bgColor": "#fff",
-        "fgColor": "#005"
+        "fgColor": "#0000; background:-webkit-linear-gradient(0deg, #6cac48 50%, #599636 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
     },
     {
         "name": "postgresql",
         "logo": "postgresql.svg",
-        "bgColor": "#fff",
-        "fgColor": "#005"
+        "bgColor": "#336791",
+        "fgColor": "#fff"
     },
     {
         "name": "SQLite",
         "logo": "sqlite.svg",
-        "bgColor": "#fff",
-        "fgColor": "#005"
+        "bgColor": "linear-gradient(#8fd3f3, #0f80cc)",
+        "fgColor": "#003b57"
     },
     {
         "name": "responsiveness",
@@ -189,67 +189,67 @@
     {
         "name": "c#",
         "logo": "csharp.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#b189ec",
+        "fgColor": "#eee"
     },
     {
         "name": "c++",
         "logo": "cplus.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#6c9dcc",
+        "fgColor": "#eee"
     },
     {
         "name": "c",
         "logo": "c.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#75aae2",
+        "fgColor": "#eee"
     },
     {
         "name": "kotlin",
         "logo": "kotlin.svg",
-        "bgColor": "#000",
+        "bgColor": "linear-gradient(-135deg, #7f52ff, #e2455e)",
         "fgColor": "#ed0"
     },
     {
         "name": "dart",
         "logo": "dart.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#0075ac",
+        "fgColor": "#55ddca"
     },
     {
         "name": "flutter",
         "logo": "flutter.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#fff",
+        "fgColor": "#42a5f5"
     },
     {
         "name": "adobe illustrator",
         "logo": "illustrator.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#330000",
+        "fgColor": "#ff9a00"
     },
     {
         "name": "adobe photoshop",
         "logo": "photoshop.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#001e36",
+        "fgColor": "#31a8ff"
     },
     {
         "name": "adobe xd",
         "logo": "xd.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#470137",
+        "fgColor": "#ff61f6"
     },
     {
         "name": "git",
         "logo": "git.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#333",
+        "fgColor": "#de4c36"
     },
     {
         "name": "github",
         "logo": "github.svg",
-        "bgColor": "#000",
-        "fgColor": "#ed0"
+        "bgColor": "#fff",
+        "fgColor": "#161614"
     }
 ]
