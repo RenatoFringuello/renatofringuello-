@@ -12,7 +12,7 @@ export default {
          * - bgColor:String
          * - fgColor:String
          */
-        technologies:Array,
+        tags:Array,
         /**
          * the title of the row paragraph
          * pass empty string or null to disable it
@@ -53,9 +53,9 @@ export default {
             <AppTitle v-show="title != ''" class="title mb-3 text-complementary-darken" :content="title"/>
             <AppTitle class="sub-title mb-2" :content="subTitle"/>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="tags-container justify-content-center p-2 h-100 d-flex flex-wrap align-items-center">
-                <AppTag :technology="tech" :type="tagType" class="square" v-for:="tech in technologies"/>
+        <div class="col-12 col-md-6 d-flex">
+            <div class="tags-container justify-content-center p-2 m-auto w-100 d-flex flex-wrap align-items-center">
+                <AppTag :tagContent="tag" :type="tagType" v-for:="tag in tags"/>
             </div>
         </div>
     </div>
@@ -65,13 +65,5 @@ export default {
     .paragraph{
         background-color: $accent-color;
         color: $accent-comp-color;
-    }
-    .tag{
-        &:nth-child(-n + 6){
-            margin-top: 0;
-        }
-        &:nth-last-child(1){
-            margin-right: 0;
-        }
     }
 </style>
