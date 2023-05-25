@@ -21,19 +21,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    .main-title{
+div{
+    line-height: 1;
+    &.main-title{
         color:$complementary-color;
-        line-height: 1;
         font-size: clamp(3rem, 6vw, 4rem);
         margin-left: -0px;
         font-family: 'Archivo Black';
     }
-    .title{
+    &.title{
         font-size: 2rem;
-        line-height: 1;
         font-family: 'Archivo Black';
     }
-    .sub-title{
-        font-size: 1.3rem;   
+    &.sub-title{
+        font-size: 1.3rem;
+        line-height: 1.1 !important;
     }
+}
+
 </style>
