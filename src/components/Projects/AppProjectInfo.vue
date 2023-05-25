@@ -44,7 +44,7 @@ export default {
             <!-- add a full descirption maybe step by step -->
             <AppTitle :content="`${project.description}.`"/>
         </div>
-        <AppTagsContainer :tags="store.getTechs(project.technologies)" />
+        <AppTagsContainer :tags="store.getTechs(project.technologies)" :tagsPerRow="10" />
         <!-- <div class="tags-container d-flex flex-wrap">
             <AppTag class="link" v-for:="techId in project.technologies" :tagContent="store.technologies[techId]"/>
         </div> -->
