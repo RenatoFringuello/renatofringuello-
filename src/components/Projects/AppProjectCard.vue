@@ -40,9 +40,6 @@ export default {
                 <AppTitle :content="`${project.description}.`"/>
             </div>
             <AppTagsContainer :tags="store.getTechs(project.technologies)" />
-            <!-- <div class="tags-container d-flex flex-wrap">
-                <AppTag v-for:="techId in project.technologies" :tagContent="store.technologies[techId]"/>
-            </div> -->
         </div>
         <img class="snapshot" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
     </div>
