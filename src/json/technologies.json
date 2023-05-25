@@ -70,12 +70,12 @@
         "name": "angular",
         "logo": "angular.svg",
         "bgColor": "linear-gradient(90deg, #b52e31 50%, #e23237 50%)",
-        "fgColor": "#eee;"
+        "fgColor": "#eee"
     },
     {
         "name": "ruby",
         "logo": "ruby.svg",
-        "bgColor": "#ad1a0d; box-shadow:inset 2px 1px 1px #fff, inset -2px -1px 1px #881102;",
+        "bgColor": "#ad1a0d; box-shadow:inset 2px 1px 1px #fff, inset -2px -1px 1px #881102",
         "fgColor": "#fff"
     },
     {
@@ -160,7 +160,7 @@
         "name": "mongoDB",
         "logo": "mongodb.svg",
         "bgColor": "#fff",
-        "fgColor": "#0000; background:-webkit-linear-gradient(0deg, #6cac48 50%, #599636 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+        "fgColor": "#0000; background:-webkit-linear-gradient(0deg, #6cac48 50%, #599636 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent"
     },
     {
         "name": "postgresql",
