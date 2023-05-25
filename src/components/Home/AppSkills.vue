@@ -1,7 +1,7 @@
 <script>
 import {store} from '@/store';
 
-import AppRowParagraphTags from '@/components/Skills/AppRowParagraphTags.vue';
+import AppRowParagraphTags from '@/components/partials/AppRowParagraphTags.vue';
 
 export default {
     name:'AppSkills',
