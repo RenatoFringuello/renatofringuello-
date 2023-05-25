@@ -145,9 +145,9 @@ export default {
         .tag.tag-name{
             width: auto !important;
             height:auto !important;
-            margin-top: .5rem ;
-            margin-right:.5rem ;
-            aspect-ratio: auto;
+            margin-top:  .5rem !important;
+            margin-right:.5rem !important;
+            aspect-ratio: auto !important;
         }
     }
 </style>
