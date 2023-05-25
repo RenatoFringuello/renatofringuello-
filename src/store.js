@@ -10,6 +10,9 @@ const store = reactive({
     getImageSnap(location, imgPath){
         return require(`@/assets/images/${location}/${imgPath}`);
     },
+    getTechs(techsToFind){
+        return store.technologies.filter(tech => techsToFind.includes(tech.name));
+    },
     technologies,
     projects,
 });

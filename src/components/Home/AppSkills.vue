@@ -37,20 +37,15 @@ export default {
                 'github'
             ]
         }
-    },
-    methods:{
-        getTechs(techsToFind){
-            return store.technologies.filter(tech => techsToFind.includes(tech.name));
-        }
     }
 }
 </script>
 
 <template lang="">
     <section class="" id="skills">
-        <AppRowParagraphTags :technologies="getTechs(skillsTechs)" tagType="tag-image" title="Skills" subTitle="I studied Full Stack Web Development as self-taught first then I get the Boolean course where I had the opportunity to learn the basics of front-end and back-end web development"/>
-        <AppRowParagraphTags :technologies="getTechs(learningTechs)" tagType="tag-image" :direction="false" title="Learning" subTitle="Now I'm currently learning these technologies"/>
-        <AppRowParagraphTags :technologies="getTechs(versionTechs)" tagType="tag-image" title="Versioning" subTitle="During my studies I learned what git is and some basic commands to work in team"/>
+        <AppRowParagraphTags :tags="store.getTechs(skillsTechs)" tagType="tag-image" title="Skills" subTitle="I studied Full Stack Web Development as self-taught first then I get the Boolean course where I had the opportunity to learn the basics of front-end and back-end web development"/>
+        <AppRowParagraphTags :tags="store.getTechs(learningTechs)" tagType="tag-image" :direction="false" title="Learning" subTitle="Now I'm currently learning these technologies"/>
+        <AppRowParagraphTags :tags="store.getTechs(versionTechs)" tagType="tag-image" title="Versioning" subTitle="During my studies I learned what git is and some basic commands to work in team"/>
     </section>
 </template>
 

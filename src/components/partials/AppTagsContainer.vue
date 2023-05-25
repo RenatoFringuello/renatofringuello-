@@ -26,16 +26,25 @@ export default {
         tagsPerRow:{
             type:Number,
             default:6
+        },
+        areCentered:{
+            type:Boolean,
+            default:false
         }
     },
     components:{
         AppTag,
+    },
+    computed:{
+        getCenteredStyle(){
+            return (this.areCentered) ? 'p-2 m-auto justify-content-center' : '';
+        }
     }
 }
 </script>
 
 <template lang="">
-    <div class="tags-container justify-content-center p-2 m-auto w-100 d-flex flex-wrap align-items-center">
+    <div class="tags-container d-flex flex-wrap w-100 align-items-center" :class="getCenteredStyle">
         <AppTag :tagsLength="tags.length" :index="i" :nPerRow="tagsPerRow" :tagContent="tag" :type="tagType" v-for:="(tag, i) in tags"/>
     </div>
 </template>

@@ -2,7 +2,8 @@
 import { store } from "@/store";
 
 import AppTitle from "@/components/partials/AppTitle.vue";
-import AppTag from "@/components/partials/AppTag.vue";
+import AppTagsContainer from "@/components/partials/AppTagsContainer.vue";
+// import AppTag from "@/components/partials/AppTag.vue";
 
 export default {
     name:'AppProjectInfo',
@@ -19,7 +20,8 @@ export default {
     },
     components:{
         AppTitle,
-        AppTag,
+        AppTagsContainer,
+        // AppTag,
     },
     data() {
         return {
@@ -42,9 +44,10 @@ export default {
             <!-- add a full descirption maybe step by step -->
             <AppTitle :content="`${project.description}.`"/>
         </div>
-        <div class="tags-container d-flex flex-wrap">
-            <AppTag class="link" v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
-        </div>
+        <AppTagsContainer :tags="store.getTechs(project.technologies)" />
+        <!-- <div class="tags-container d-flex flex-wrap">
+            <AppTag class="link" v-for:="techId in project.technologies" :tagContent="store.technologies[techId]"/>
+        </div> -->
     </div>
 </template>
 

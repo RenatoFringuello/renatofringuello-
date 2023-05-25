@@ -2,7 +2,9 @@
 import { store } from "@/store";
 
 import AppTitle from "@/components/partials/AppTitle.vue";
-import AppTag from "@/components/partials/AppTag.vue";
+import AppTagsContainer from "@/components/partials/AppTagsContainer.vue";
+
+// import AppTag from "@/components/partials/AppTag.vue";
 
 export default {
     name:'AppProjectCard',
@@ -19,7 +21,8 @@ export default {
     },
     components:{
         AppTitle,
-        AppTag,
+        AppTagsContainer,
+        // AppTag,
     },
     data() {
         return {
@@ -36,9 +39,10 @@ export default {
                 <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
                 <AppTitle :content="`${project.description}.`"/>
             </div>
-            <div class="tags-container d-flex flex-wrap">
-                <AppTag v-for:="techId in project.technologies" :technology="store.technologies[techId]"/>
-            </div>
+            <AppTagsContainer :tags="store.getTechs(project.technologies)" />
+            <!-- <div class="tags-container d-flex flex-wrap">
+                <AppTag v-for:="techId in project.technologies" :tagContent="store.technologies[techId]"/>
+            </div> -->
         </div>
         <img class="snapshot" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
     </div>

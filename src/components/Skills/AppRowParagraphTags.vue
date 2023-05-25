@@ -61,7 +61,7 @@ export default {
             <AppTitle class="sub-title" :content="subTitle"/>
         </div>
         <div class="col-12 col-md-6 d-flex">
-            <AppTagsContainer :tags="tags" :nPerRow="tagsPerRow" :tagType="tagType"/>
+            <AppTagsContainer :areCentered="true" :tags="tags" :nPerRow="tagsPerRow" :tagType="tagType"/>
         </div>
     </div>
 </template>
