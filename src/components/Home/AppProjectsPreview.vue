@@ -16,7 +16,7 @@ export default {
         <div class="row flex-md-row-reverse">
             <div class="col-12 col-md-5 position-relative pb-5">
                 <div class="py-5 px-3">
-                    <AppTitle content="More than +10 projects" className="title fw-800 text-complementary-darken"/>
+                    <AppTitle content="More than +10 projects" className="title pb-3 fw-800 text-complementary-darken"/>
                     <AppTitle class="mb-3" className="sub-title" content="See the projects I developed during my studies in the Boolean Accademy Course 'Full-Stack Web Developer'"/>
                     <router-link to="projects">
                         <AppMainButton content="Project Highlight" class="black-white"/>
@@ -34,20 +34,14 @@ export default {
 
 <style lang="scss" scoped>
 .snap{
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 100%;
-    max-height: 65vh;
-    max-width: 100%; 
-    margin-top: -50px;
+    @include image(cover, top, 100%, 100%, 100%, 65vh);
     
-    &:nth-child(2){//select all 2nd child
+    &:nth-child(2){//select all 2nds child
         max-height: 45vh;
         width: 45%;
         position: absolute;
         
-        &:nth-of-type(1){//first of type (the last displayed)
+        &:nth-of-type(1){//first of type (the last from right, the one under the button)
             top: calc(100% - 20px);
             left:-5%;
             z-index: 2;
@@ -57,6 +51,12 @@ export default {
             top: 45%;
             left: 47%;
         }
+    }
+}
+@media screen and (min-width:992px) {
+    //lg & more
+    .snap{
+        margin-top: -50px;
     }
 }
 </style>
