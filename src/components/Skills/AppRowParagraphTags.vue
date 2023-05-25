@@ -38,6 +38,10 @@ export default {
         tagType:{
             type:String,
             default:'both',
+        },
+        tagsPerRow:{
+            type:Number,
+            default:6
         }
     },
     components:{
@@ -55,7 +59,7 @@ export default {
         </div>
         <div class="col-12 col-md-6 d-flex">
             <div class="tags-container justify-content-center p-2 m-auto w-100 d-flex flex-wrap align-items-center">
-                <AppTag :tagContent="tag" :type="tagType" v-for:="tag in tags"/>
+                <AppTag :isLastOfRow="((i+1) % tagsPerRow == 0 || i == tags.length - 1)" :isInFirstRow="(i < tagsPerRow)" :nPerRow="tagsPerRow" :tagContent="tag" :type="tagType" v-for:="(tag, i) in tags"/>
             </div>
         </div>
     </div>

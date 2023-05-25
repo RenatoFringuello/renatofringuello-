@@ -18,6 +18,16 @@ export default {
         type:{
             type:String,
             default:'both'
+        },
+        nPerRow:{
+            type:Number,
+            default:6
+        },
+        isInFirstRow:{
+            type:Boolean
+        },
+        isLastOfRow:{
+            type:Boolean
         }
     },
     data() {
@@ -25,13 +35,29 @@ export default {
             store,
         }
     },
+    computed:{
+        getTagStyle(){
+                let marginTop = (!this.isInFirstRow) ? '.5rem' : '0';
+                let marginRight = (!this.isLastOfRow) ? '.5rem' : '0';
+                return `
+                    background : ${this.tagContent.bgColor};
+                    margin-top : ${marginTop};
+                    margin-right : ${marginRight};`;
+        },
+        getWidth(){
+            return { width: `calc((100% - (.5rem * ${this.nPerRow - 1})) / ${this.nPerRow})` };
+        },
+        getTagNameStyle(){
+            return { color : this.tagContent.fgColor };
+        }
+    }
 }
 </script>
 
 <template lang="">
-    <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="`background:${tagContent.bgColor};`"
+    <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="[getTagStyle, getWidth]"
          :title="tagContent.name">
-        <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold" :style="`color:${tagContent.fgColor}`">
+        <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold" :style="getTagNameStyle">
             <!-- when sm or from lg forward show this -->
             {{ tagContent.name }}
         </div>
@@ -40,9 +66,9 @@ export default {
             <img :src="store.getImageSnap('technologies', tagContent.logo)" :alt="tagContent.name">
         </div>
     </div>
-    <div v-else class="tag d-flex" :class="type" :style="`background:${tagContent.bgColor};`"
+    <div v-else class="tag d-flex" :class="type" :style="[getTagStyle, getWidth]"
          :title="tagContent.name">
-        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold" :style="`color:${tagContent.fgColor}`">
+        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold" :style="getTagNameStyle">
             <!-- when sm or from lg forward show this -->
             {{ tagContent.name }}
         </div>
@@ -60,20 +86,7 @@ export default {
         color: $accent-comp-color;
         border-radius: $border-radius-3;
         font-size: .8rem;
-        width: calc((100% - (.5rem * 5)) / 6);
         aspect-ratio: 1/1;
-        
-        &:not(:nth-child(-n + 6)){
-            margin-top: .5rem;
-        }
-        &:not(:nth-child(6n)){
-            //give margin to all the tags but the multiple of 6
-            margin-right: .5rem ;
-        }
-        &:nth-last-child(1){
-            //to center the last row when has lest than 6 tags
-            margin-right: 0;
-        }
         
         &.link{
             box-shadow: 0 2px 2px 2px #0004;
