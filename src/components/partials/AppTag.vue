@@ -19,38 +19,75 @@ export default {
             type:String,
             default:'both'
         },
+        /**
+         * represent the number of tags in each row [default = 6]
+         */
         nPerRow:{
             type:Number,
             default:6
         },
-        isInFirstRow:{
-            type:Boolean
+        /**
+         * it's the index position of the tag in the tags list [default = 0 - in case of no list]
+         */
+        index:{
+            type:Number,
+            default:0
         },
-        isLastOfRow:{
-            type:Boolean
+        /**
+         * it's the tags list count [default = 0 - in case of no list]
+         */
+        tagsLength:{
+            type:Number,
+            default:0
         }
     },
     data() {
         return {
             store,
+            /**
+             * if the tag is in the first row or not
+             * true = the tag to create is in the first row (its position index is less than nPerRow)
+             * false = the tag position index is bigger than nPerRow
+             */
+            isInFirstRow:true,
+            /**
+             * if the tag is in the first row or not
+             * true = the tag to create is the last of the row (its position index + 1 is a multiple of nPerRow OR when it's the last of all tags even if not a multiple)
+             * false = the tag isn't the last of its row
+             */
+            isLastOfRow:true,
         }
     },
     computed:{
+        /**
+         * set the background color
+         * set the margin for tag that aren't in the first row or last of the row
+         */
         getTagStyle(){
-                let marginTop = (!this.isInFirstRow) ? '.5rem' : '0';
-                let marginRight = (!this.isLastOfRow) ? '.5rem' : '0';
-                return `
-                    background : ${this.tagContent.bgColor};
-                    margin-top : ${marginTop};
-                    margin-right : ${marginRight};`;
+            let marginTop = (!this.isInFirstRow) ? '.5rem' : '0';
+            let marginRight = (!this.isLastOfRow) ? '.5rem' : '0';
+            return `
+                background : ${this.tagContent.bgColor};
+                margin-top : ${marginTop};
+                margin-right : ${marginRight};`;
         },
+        /**
+         * calculate the width of the tag (in case it type is 'tag-image') based on nPerRow;
+         */
         getWidth(){
             return { width: `calc((100% - (.5rem * ${this.nPerRow - 1})) / ${this.nPerRow})` };
         },
+        /**
+         * set the text color (for type tag-name)
+         */
         getTagNameStyle(){
             return { color : this.tagContent.fgColor };
         }
-    }
+    },
+    mounted() {
+        this.isInFirstRow = (this.index < this.nPerRow);//get if the tag is in the first row
+        this.isLastOfRow = ((this.index+1) % this.nPerRow == 0 || this.index == this.tagsLength - 1);//get if the tag is the last of its row (multiple of nPerRow) or the last at all
+    },
 }
 </script>
 

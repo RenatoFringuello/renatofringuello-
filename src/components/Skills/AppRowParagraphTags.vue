@@ -1,5 +1,5 @@
 <script>
-import AppTag from '@/components/partials/AppTag.vue';
+import AppTagsContainer from '../partials/AppTagsContainer.vue';
 import AppTitle from '@/components/partials/AppTitle.vue';
 
 export default {
@@ -39,14 +39,17 @@ export default {
             type:String,
             default:'both',
         },
+        /**
+         * it's the number of tags per row
+         */
         tagsPerRow:{
             type:Number,
             default:6
         }
     },
     components:{
-        AppTag,
         AppTitle,
+        AppTagsContainer,
     }
 }
 </script>
@@ -55,12 +58,10 @@ export default {
     <div class="row g-0" :class="direction ? 'flex-row' : 'flex-row-reverse'">
         <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center paragraph">
             <AppTitle v-show="title != ''" class="title mb-3 text-complementary-darken" :content="title"/>
-            <AppTitle class="sub-title mb-2" :content="subTitle"/>
+            <AppTitle class="sub-title" :content="subTitle"/>
         </div>
         <div class="col-12 col-md-6 d-flex">
-            <div class="tags-container justify-content-center p-2 m-auto w-100 d-flex flex-wrap align-items-center">
-                <AppTag :isLastOfRow="((i+1) % tagsPerRow == 0 || i == tags.length - 1)" :isInFirstRow="(i < tagsPerRow)" :nPerRow="tagsPerRow" :tagContent="tag" :type="tagType" v-for:="(tag, i) in tags"/>
-            </div>
+            <AppTagsContainer :tags="tags" :nPerRow="tagsPerRow" :tagType="tagType"/>
         </div>
     </div>
 </template>
