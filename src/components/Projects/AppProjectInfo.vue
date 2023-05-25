@@ -64,7 +64,7 @@ export default {
                 &:after{
                     content: '';
                     position: absolute;
-                    top: -1px;
+                    top: 3px;
                     right: -7px;
                     width: 10px;
                     aspect-ratio: 1/1;
