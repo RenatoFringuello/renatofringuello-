@@ -13,6 +13,13 @@ const store = reactive({
     getTechs(techsToFind){
         return store.technologies.filter(tech => techsToFind.includes(tech.name));
     },
+    getSlug(stringToSlug){
+        return stringToSlug.toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    },
     technologies,
     projects,
 });
