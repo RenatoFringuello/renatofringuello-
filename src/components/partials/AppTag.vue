@@ -66,10 +66,16 @@ export default {
         getTagStyle(){
             let marginTop = (!this.isInFirstRow) ? '.5rem' : '0';
             let marginRight = (!this.isLastOfRow) ? '.5rem' : '0';
+            let minSize = (this.type == 'tag-image') ? '50px' : 'none';
+            let maxSize = (this.type == 'tag-image') ? '70px' : 'none';
             return `
                 background : ${this.tagContent.bgColor};
                 margin-top : ${marginTop};
-                margin-right : ${marginRight};`;
+                margin-right : ${marginRight};
+                max-width:  ${maxSize};
+                max-height: ${maxSize};
+                min-width:  ${minSize};
+                min-height: ${minSize};`;
         },
         /**
          * calculate the width of the tag (in case it type is 'tag-image') based on nPerRow;
@@ -94,9 +100,9 @@ export default {
 <template lang="">
     <div v-if="type == 'both'" class="tag d-flex" :class="type" :style="[getTagStyle, getWidth]"
          :title="tagContent.name">
-        <div class="d-none d-sm-block d-md-none d-lg-block text-capitalize fw-bold" :style="getTagNameStyle">
+        <div class="d-none d-sm-block d-md-none d-lg-block fw-bold" :style="getTagNameStyle">
             <!-- when sm or from lg forward show this -->
-            {{ tagContent.name }}
+            #{{ store.getSlug(tagContent.name) }}
         </div>
         <div class="d-block d-sm-none d-md-block d-lg-none m-auto">
             <!-- when xs or md-->
@@ -105,9 +111,9 @@ export default {
     </div>
     <div v-else class="tag d-flex" :class="type" :style="[getTagStyle, getWidth]"
          :title="tagContent.name">
-        <div v-if="type == 'tag-name'" class="text-capitalize fw-bold" :style="getTagNameStyle">
+        <div v-if="type == 'tag-name'" class="fw-bold" :style="getTagNameStyle">
             <!-- when sm or from lg forward show this -->
-            {{ tagContent.name }}
+            #{{ store.getSlug(tagContent.name) }}
         </div>
         <div v-else class="m-auto">
             <!-- when xs or md-->
