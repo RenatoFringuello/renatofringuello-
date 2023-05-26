@@ -33,11 +33,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+section{
+    margin-bottom:5rem;
+}
 .snap{
     @include image(cover, top, 100%, 100%, 100%, 65vh);
     
     &:nth-child(2){//select all 2nds child
-        max-height: 45vh;
+        max-height: 30vh;
         width: 45%;
         position: absolute;
         
@@ -57,6 +60,9 @@ export default {
     //lg & more
     .snap{
         margin-top: -50px;
+        &:nth-child(2){//select all 2nds child
+            max-height: 45vh;
+        }
     }
 }
 </style>
