@@ -36,7 +36,7 @@ export default {
     <div class="project-card position-relative">
         <div class="info-card position-absolute bottom-0 d-flex flex-column justify-content-between">
             <div class="description">
-                <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
+                <AppTitle :content="project.name" class="title text-capitalize archivo-black-font mb-3"/>
                 <AppTitle :content="`${project.description}.`"/>
             </div>
             <AppTagsContainer :tags="store.getTechs(project.technologies)" />

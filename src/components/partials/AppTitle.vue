@@ -22,20 +22,22 @@ export default {
 
 <style lang="scss" scoped>
 div{
-    line-height: 1;
+    line-height: 1.1;
+    font-size: 1.05rem;
     &.main-title{
         color:$complementary-color;
         font-size: clamp(3rem, 6vw, 4rem);
         margin-left: -0px;
+        line-height: 1 !important;
         font-family: 'Archivo Black';
     }
     &.title{
         font-size: 2rem;
+        line-height: 1 !important;
         font-family: 'Archivo Black';
     }
     &.sub-title{
         font-size: 1.3rem;
-        line-height: 1.1 !important;
     }
 }
 

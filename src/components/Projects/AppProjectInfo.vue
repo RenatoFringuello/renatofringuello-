@@ -35,8 +35,8 @@ export default {
 <template lang="">
     <div class="info-card d-flex flex-column justify-content-between">
         <div class="description mb-2">
-            <AppTitle :content="project.name" class="title text-capitalize archivo-black-font"/>
-            <div class="d-flex flex-wrap mb-2">
+            <AppTitle :content="project.name" class="title text-capitalize archivo-black-font mb-1"/>
+            <div class="d-flex flex-wrap mb-3">
                 <a :href="baseGitHubUri + repo" target="_blank" class="me-3" v-for:="repo in project.repos">
                     <AppTitle  :content="repo" class="sub-title archivo-black-font"/>
                 </a>
@@ -64,7 +64,7 @@ export default {
                 &:after{
                     content: '';
                     position: absolute;
-                    top: 3px;
+                    top: -1px;
                     right: -7px;
                     width: 10px;
                     aspect-ratio: 1/1;
