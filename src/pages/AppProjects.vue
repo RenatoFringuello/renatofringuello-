@@ -20,6 +20,10 @@ export default {
         }
     },
     methods:{
+        /**
+         * scroll to the carousel when is called
+         * @param {*} projectId - is the id of the project clicked
+         */
         goToCarousel(projectId){
             this.projectActiveId = projectId;
             const carousel = document.getElementById(this.carouselId);
@@ -31,23 +35,29 @@ export default {
 </script>
 
 <template lang="">
+    <!-- list of projects cards-->
     <div class="container-lg">
         <div class="row g-3 g-md-4">
             <div class="col-12 col-md-6 col-xl-4" v-for:="(project,i) in store.projects">
                 <AppProjectCard :project="project" @click="goToCarousel(i)"/>
             </div>
-            <div class="col-12 d-flex" :id="carouselId">
-                <AppCarousel class="m-auto" :isHintActive="true" imgsLocation="projects" :imgs="store.projects[projectActiveId].snapshots"/>
-            </div>
-            <div class="col-12">
-                <AppProjectInfo :project="store.projects[projectActiveId]"/>
-            </div>
         </div>
+    </div>
+    <!-- carousel -->
+    <div class="d-flex mt-4" :id="carouselId">
+        <div class="m-auto container-lg">
+            <AppCarousel :isHintActive="true" imgsLocation="projects" :imgs="store.projects[projectActiveId].snapshots"/>
+        </div>
+    </div>
+    <!-- project info -->
+    <div class="container-lg py-4">
+        <AppProjectInfo :project="store.projects[projectActiveId]"/>
     </div>
 </template>
 
 <style lang="scss" scoped>
 #project-carousel{
-    height: 100vh;
+    height: 100dvh;
+    background-color: $accent-color;
 }
 </style>
