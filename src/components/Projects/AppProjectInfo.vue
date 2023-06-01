@@ -3,7 +3,6 @@ import { store } from "@/store";
 
 import AppTitle from "@/components/partials/AppTitle.vue";
 import AppTagsContainer from "@/components/partials/AppTagsContainer.vue";
-// import AppTag from "@/components/partials/AppTag.vue";
 
 export default {
     name:'AppProjectInfo',
