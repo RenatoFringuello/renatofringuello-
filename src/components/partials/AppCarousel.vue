@@ -98,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
     .carousel{
-        @include carousel(auto, 70vh, 'false');
+        @include carousel(auto, 85dvh, 'false');
         margin: 2rem 0;
         border-radius: $border-radius-2;
         > div{
@@ -128,12 +128,6 @@ export default {
         //sm & more
         .carousel .item img.smartphone{
             max-width:500px;
-        }
-    }
-    @media screen and (min-width:768px) {
-        //md & more
-        .carousel{
-            height: 85vh;
         }
     }
     @media screen and (min-width:992px) {
