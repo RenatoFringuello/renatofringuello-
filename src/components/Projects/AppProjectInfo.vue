@@ -34,17 +34,19 @@ export default {
 
 <template lang="">
     <div class="info-card d-flex flex-column justify-content-between">
-        <div class="description mb-2">
+        <div class="description mb-3">
             <AppTitle :content="project.name" class="title text-capitalize archivo-black-font mb-1"/>
             <div class="d-flex flex-wrap mb-3">
                 <a :href="baseGitHubUri + repo" target="_blank" class="me-3" v-for:="repo in project.repos">
                     <AppTitle  :content="repo" class="sub-title archivo-black-font"/>
                 </a>
             </div>
-            <!-- add a full descirption maybe step by step -->
+            <!-- add a full descirption maybe with the process of the project-->
             <AppTitle :content="`${project.description}.`"/>
         </div>
-        <AppTagsContainer :tags="store.getTechs(project.technologies)" :tagsPerRow="10" />
+        <AppTagsContainer class="d-flex d-sm-none" tagType="tag-image" :tags="this.store.getTechs(this.project.technologies)" :tagsPerRow="6"/>
+        <AppTagsContainer class="d-none d-sm-flex d-lg-none" tagType="tag-image" :tags="this.store.getTechs(this.project.technologies)" :tagsPerRow="10"/>
+        <AppTagsContainer class="d-none d-lg-flex" tagType="tag-image" :tags="this.store.getTechs(this.project.technologies)" :tagsPerRow="14"/>
     </div>
 </template>
 
