@@ -4,8 +4,6 @@ import { store } from "@/store";
 import AppTitle from "@/components/partials/AppTitle.vue";
 import AppTagsContainer from "@/components/partials/AppTagsContainer.vue";
 
-// import AppTag from "@/components/partials/AppTag.vue";
-
 export default {
     name:'AppProjectCard',
     props:{
@@ -22,7 +20,6 @@ export default {
     components:{
         AppTitle,
         AppTagsContainer,
-        // AppTag,
     },
     data() {
         return {
@@ -39,7 +36,7 @@ export default {
                 <AppTitle :content="project.name" class="title text-capitalize archivo-black-font mb-3"/>
                 <AppTitle :content="`${project.description}.`"/>
             </div>
-            <AppTagsContainer :tags="store.getTechs(project.technologies)" />
+            <AppTagsContainer :maxNRow="2" :tags="store.getTechs(project.technologies)" />
         </div>
         <img class="snapshot" :src="store.getImageSnap('projects', project.snapshots[project.snapshots.length-1])" :alt="`${project.name}'s snapshot'`">
     </div>
