@@ -1,5 +1,5 @@
 <script>
-import AppSwitchToggle from './AppSwitchToggle.vue';
+import AppSwitchToggle from './partials/AppSwitchToggle.vue';
 
 export default {
     name:'AppeHeader',
