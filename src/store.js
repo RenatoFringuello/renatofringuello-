@@ -35,11 +35,9 @@ const store = reactive({
     },
     /**
      * scroll to the carousel when is called
-     * @param {Number} projectId - is the id of the project clicked
      * @param {String} carouselId - is the carousel id name
      */
-    goToCarousel(projectId, carouselId){
-        this.projectActiveId = projectId;
+    goToCarousel(carouselId){
         const carousel = document.getElementById(carouselId);
         carousel.scrollIntoView();
         carousel.childNodes[0].scrollTo(0,0);//reset to first slide 

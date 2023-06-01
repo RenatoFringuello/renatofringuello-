@@ -19,18 +19,6 @@ export default {
             carouselId : 'project-carousel',
         }
     },
-    methods:{
-        /**
-         * scroll to the carousel when is called
-         * @param {*} projectId - is the id of the project clicked
-         */
-        goToCarousel(projectId){
-            this.projectActiveId = projectId;
-            const carousel = document.getElementById(this.carouselId);
-            carousel.scrollIntoView();
-            carousel.childNodes[0].scrollTo(0,0);//reset to first slide 
-        }
-    }
 }
 </script>
 
@@ -39,7 +27,7 @@ export default {
     <div class="container-lg">
         <div class="row g-3 g-md-4">
             <div class="col-12 col-md-6 col-xl-4" v-for:="(project,i) in store.projects">
-                <AppProjectCard :project="project" @click="goToCarousel(i)"/>
+                <AppProjectCard :project="project" @click="store.goToCarousel(i, carouselId)"/>
             </div>
         </div>
     </div>
