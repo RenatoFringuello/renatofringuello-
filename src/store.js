@@ -4,21 +4,45 @@ import technologies from '@/json/technologies.json';
 import projects from "@/json/projects.json";
 
 const store = reactive({
-    getAsset(location, fileName){
-        return new URL(`./assets/${location}/${fileName}`, import.meta.url).href;
+    /**
+     * get the src value of the image to find in "src/assets/images"
+     * @param {String} location the path to the folder of the image to get
+     * @param {String} imgName the imageName
+     * @returns src
+     */
+    getImageSnap(location, imgName){
+        return require(`@/assets/images/${location}/${imgName}`);
     },
-    getImageSnap(location, imgPath){
-        return require(`@/assets/images/${location}/${imgPath}`);
-    },
+    /**
+     * search the technologies requested in the technologies array by their name
+     * @param {Array} techsToFind 
+     * @returns {Array} - techs found
+     */
     getTechs(techsToFind){
         return store.technologies.filter(tech => techsToFind.includes(tech.name));
     },
+    /**
+     * cast a alphanumeric string into a slug
+     * @param {String} stringToSlug 
+     * @returns {String} - slugged stringToSlug
+     */
     getSlug(stringToSlug){
         return stringToSlug.toLowerCase()
             .trim()
             .replace(/[^\w\s-]/g, '')
             .replace(/[\s_-]+/g, '-')
             .replace(/^-+|-+$/g, '');
+    },
+    /**
+     * scroll to the carousel when is called
+     * @param {Number} projectId - is the id of the project clicked
+     * @param {String} carouselId - is the carousel id name
+     */
+    goToCarousel(projectId, carouselId){
+        this.projectActiveId = projectId;
+        const carousel = document.getElementById(carouselId);
+        carousel.scrollIntoView();
+        carousel.childNodes[0].scrollTo(0,0);//reset to first slide 
     },
     technologies,
     projects,
