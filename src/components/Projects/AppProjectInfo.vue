@@ -20,7 +20,6 @@ export default {
     components:{
         AppTitle,
         AppTagsContainer,
-        // AppTag,
     },
     data() {
         return {
