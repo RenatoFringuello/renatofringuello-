@@ -27,7 +27,7 @@ export default {
     <div class="container-lg">
         <div class="row g-3 g-md-4">
             <div class="col-12 col-md-6 col-xl-4" v-for:="(project,i) in store.projects">
-                <AppProjectCard :project="project" @click="store.goToCarousel(i, carouselId)"/>
+                <AppProjectCard :project="project" @click="store.goToCarousel(carouselId); projectActiveId = i"/>
             </div>
         </div>
     </div>
