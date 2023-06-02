@@ -1,4 +1,6 @@
 <script>
+import { store } from '@/store';
+
 import AppMainButton from '../partials/AppMainButton.vue';
 import AppTitle from '../partials/AppTitle.vue';
 
@@ -8,9 +10,9 @@ export default {
         AppMainButton,
         AppTitle
     },
-    methods: {
-        sendEmail(){
-            window.location = 'mailto:renatofringuello7@gmail.com';
+    data() {
+        return {
+            store
         }
     },
 }
@@ -31,8 +33,8 @@ export default {
                         </div>
                     </div>
                     <div>
-                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" @click="sendEmail()"/>
-                        <AppMainButton content="Download CV" type="comp" theme="underline"/>
+                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" href="mailto:renatofringuello7@gmail.com"/>
+                        <AppMainButton content="Download CV" type="comp" theme="underline" :isButton="false" href="files/Renato_Fringuello_CV2023.pdf" download/>
                     </div>
                 </div>
             </div>
