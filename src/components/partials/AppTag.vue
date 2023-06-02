@@ -77,7 +77,7 @@ export default {
         </div>
         <div class="d-block d-sm-none d-md-block d-lg-none m-auto">
             <!-- when xs or md-->
-            <img :src="store.getImageSnap('technologies', tagContent.logo)" :alt="tagContent.name">
+            <img :src="store.getImageSnap(tagContent.logo, 'technologies')" :alt="tagContent.name">
         </div>
     </div>
     <div v-else class="tag d-flex" :class="type" :style="getTagStyle"
@@ -88,7 +88,7 @@ export default {
         </div>
         <div v-else class="m-auto">
             <!-- when xs or md-->
-            <img :src="store.getImageSnap('technologies', tagContent.logo)" :alt="tagContent.name">
+            <img :src="store.getImageSnap(tagContent.logo, 'technologies')" :alt="tagContent.name">
         </div>
     </div>
 </template>

@@ -10,7 +10,7 @@ const store = reactive({
      * @param {String} imgName the imageName
      * @returns src
      */
-    getImageSnap(location, imgName){
+    getImageSnap(imgName, location = ""){
         return require(`@/assets/images/${location}/${imgName}`);
     },
     /**

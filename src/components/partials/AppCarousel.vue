@@ -91,7 +91,7 @@ export default {
         </div>
         <!-- item -->
         <div class="item d-flex mx-3" v-for:="(imgPath, i) in imgs">
-            <img :src="store.getImageSnap(imgsLocation, imgPath)" :alt="imgPath" :class="getExtraClasses(imgPath)" class="m-auto">
+            <img :src="store.getImageSnap(imgPath, imgsLocation)" :alt="imgPath" :class="getExtraClasses(imgPath)" class="m-auto">
         </div>
     </div>
 </template>
