@@ -50,7 +50,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    #skills{
-        padding-top: 8rem;
-    }
+    
 </style>
