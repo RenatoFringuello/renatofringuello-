@@ -38,7 +38,7 @@ export default {
         </div>
     </div>
     <!-- project info -->
-    <div class="container-lg py-4">
+    <div class="container-lg pt-4">
         <AppProjectInfo :project="store.projects[projectActiveId]"/>
     </div>
 </template>
