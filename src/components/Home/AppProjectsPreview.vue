@@ -19,7 +19,7 @@ export default {
                     <AppTitle content="More than +10 projects" className="title pb-3 fw-800 text-complementary-darken"/>
                     <AppTitle class="mb-3" className="sub-title" content="See the projects I developed during my studies in the Boolean Accademy Course 'Full-Stack Web Developer'"/>
                     <router-link to="projects">
-                        <AppMainButton content="Project Highlight" class="black-white"/>
+                        <AppMainButton content="Project Highlight" theme="black-white" type="shadow"/>
                     </router-link>
                 </div>
                 <img class="snap" src="@/assets/images/projects/boolflix/boolflix_1.png" alt="Boolflix Project snapshot1">

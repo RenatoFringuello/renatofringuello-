@@ -85,7 +85,7 @@ export default {
                     </div>
                 </div>                        
                 <div class="d-flex">
-                    <AppMainButton content="Ok, I get it" class="m-auto white-black" @click="hintActive = false"/>
+                    <AppMainButton content="Ok, I get it" class="m-auto" theme="white-black" type="shadow" @click="hintActive = false"/>
                 </div>
             </div>
         </div>

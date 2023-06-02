@@ -31,7 +31,8 @@ export default {
                         </div>
                     </div>
                     <div>
-                        <AppMainButton content="Say Hi" class="comp-dom" @click="sendEmail()"/>
+                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" @click="sendEmail()"/>
+                        <AppMainButton content="Download CV" type="comp" theme="underline"/>
                     </div>
                 </div>
             </div>
