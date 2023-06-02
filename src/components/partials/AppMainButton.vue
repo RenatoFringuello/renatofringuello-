@@ -22,16 +22,11 @@ export default {
             default:''
         }
     },
-    methods: {
-        callToAction(location){
-            window.open(location);
-        }
-    },
 }
 </script>
 
 <template lang="">
-    <button v-if="isButton" class="main-action archivo-black-font text-uppercase" :class="[type, theme]" @click="callToAction(href)">{{ content }}</button>
+    <button v-if="isButton" class="main-action archivo-black-font text-uppercase" :class="[type, theme]">{{ content }}</button>
     <a v-else class="main-action archivo-black-font text-uppercase" :class="[type, theme]" :href="href">{{ content }}</a>
 </template>
 

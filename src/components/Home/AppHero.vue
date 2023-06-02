@@ -33,7 +33,7 @@ export default {
                         </div>
                     </div>
                     <div>
-                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" href="mailto:renatofringuello7@gmail.com"/>
+                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" :isButton="false" href="mailto:renatofringuello7@gmail.com"/>
                         <AppMainButton content="Download CV" type="comp" theme="underline" :isButton="false" href="files/Renato_Fringuello_CV2023.pdf" download/>
                     </div>
                 </div>
