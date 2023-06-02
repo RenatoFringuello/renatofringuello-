@@ -5,6 +5,10 @@ export default {
         content:{
             type:String
         },
+        isButton:{
+            type:Boolean,
+            default:true
+        },
         type:{
             type:String,
             default:'filled'
@@ -12,17 +16,29 @@ export default {
         theme:{
             type:String,
             default:'black-white'
+        },
+        href:{
+            type:String,
+            default:''
         }
-    }
+    },
+    methods: {
+        callToAction(location){
+            window.open(location);
+        }
+    },
 }
 </script>
 
 <template lang="">
-    <button class="main-button archivo-black-font text-uppercase" :class="[type, theme]">{{ content }}</button>
+    <button v-if="isButton" class="main-action archivo-black-font text-uppercase" :class="[type, theme]" @click="callToAction(href)">{{ content }}</button>
+    <a v-else class="main-action archivo-black-font text-uppercase" :class="[type, theme]" :href="href">{{ content }}</a>
 </template>
 
 <style lang="scss" scoped>
-    button{
+    .main-action{
+        text-decoration: none;
+        display: inline-block;
         padding: .5rem 2rem;
         position: relative;
 
