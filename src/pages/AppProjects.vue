@@ -34,7 +34,7 @@ export default {
     <!-- carousel -->
     <div class="d-flex mt-4" :id="carouselId">
         <div class="m-auto container-lg">
-            <AppCarousel :isHintActive="true" imgsLocation="projects" :imgs="store.projects[projectActiveId].snapshots"/>
+            <AppCarousel :isHintActive="true" imgsLocation="projects/" :imgs="store.projects[projectActiveId].snapshots"/>
         </div>
     </div>
     <!-- project info -->

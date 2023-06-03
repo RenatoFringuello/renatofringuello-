@@ -38,7 +38,7 @@ export default {
             </div>
             <AppTagsContainer :maxNRow="2" :tags="store.getTechs(project.technologies)" />
         </div>
-        <img class="snapshot" :src="store.getImageSnap(project.snapshots[project.snapshots.length-1], 'projects')" :alt="`${project.name}'s snapshot'`">
+        <img class="snapshot" :src="store.getImageSnap(project.snapshots[project.snapshots.length-1], 'projects/')" :alt="`${project.name}'s snapshot'`">
     </div>
 </template>
 

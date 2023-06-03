@@ -11,7 +11,7 @@ const store = reactive({
      * @returns src
      */
     getImageSnap(imgName, location = ""){
-        return require(`@/assets/images/${location}/${imgName}`);
+        return require(`@/assets/images/${location}${imgName}`);
     },
     /**
      * search the technologies requested in the technologies array by their name
