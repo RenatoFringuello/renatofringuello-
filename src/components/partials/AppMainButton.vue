@@ -34,7 +34,7 @@ export default {
     .main-action{
         text-decoration: none;
         display: inline-block;
-        padding: .5rem 2rem;
+        padding: .5rem 1rem;
         position: relative;
 
         //types
