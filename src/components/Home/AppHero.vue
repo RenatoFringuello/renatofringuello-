@@ -19,29 +19,14 @@ export default {
 </script>
 
 <template lang="">
-    <section class="bg-dominant container-lg" id="hero">
-        <div class="row hero">
-            <div class="col-12 col-md-8">
-                <div class="wrapper">
-                    <AppTitle content="Hi, my name is Renato." className="sub-title mb-2"/>
-                    <AppTitle content="I am a Full Stack Web Developer" className="main-title mb-2"/>
-                    <div class="mb-4">
-                        <div class="row">
-                            <div class="col-12 col-lg-7">
-                                <AppTitle content="and I'm a guy who like to create, learn and do sports" className="sub-title"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" :isButton="false" href="mailto:renatofringuello7@gmail.com"/>
-                        <AppMainButton content="Download CV" type="comp" theme="underline" :isButton="false" href="files/Renato_Fringuello_CV2023.pdf" download/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="wrapper">
-                    <img src="@/assets/images/logo.png" class="img-fluid mx-auto">
-                </div>
+    <section class="bg-dominant container-lg d-flex align-items-start justify-content-center align-items-lg-center justify-content-lg-start" id="hero">
+        <div class="wrapper pt-5 pt-lg-0">
+            <AppTitle content="Hi, my name is Renato." className="sub-title mb-2"/>
+            <AppTitle content="I am a Full Stack Web Developer" className="main-title mb-3"/>
+            <AppTitle content="and I'm a guy who like to create, learn and do sports" className="sub-title mb-4"/>
+            <div>
+                <AppMainButton content="Say Hi" class="me-5" type="shadow" theme="comp-dom" :isButton="false" href="mailto:renatofringuello7@gmail.com"/>
+                <AppMainButton content="Download CV" type="comp" theme="underline" :isButton="false" href="files/Renato_Fringuello_CV2023.pdf" download/>
             </div>
         </div>
     </section>
@@ -49,15 +34,12 @@ export default {
 
 <style lang="scss" scoped>
     #hero{
-        .row.hero{
-            min-height: 600px;
+        min-height: calc(100dvh - 120px);
 
-            .wrapper{
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                padding-top: 120px;
-            }
+        .wrapper{
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
         }
     }
 </style>
