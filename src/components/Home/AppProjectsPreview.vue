@@ -37,7 +37,7 @@ section{
     margin-bottom:5rem;
 }
 .snap{
-    @include image(cover, top, 100%, 100%, 100%, 65vh);
+    @include image(cover, top, 100%, 100%, 100%, 65dvh);
     
     &:nth-child(2){//select all 2nds child
         max-height: 30vh;
@@ -53,6 +53,7 @@ section{
         &:nth-of-type(2){//second of type (the middle one)
             top: 45%;
             left: 47%;
+            max-height: 300px;
         }
     }
 }
