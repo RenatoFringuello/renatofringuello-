@@ -1,6 +1,7 @@
 <script>
 import AppHero from "../components/Home/AppHero.vue";
 import AppProjectsPreview from "../components/Home/AppProjectsPreview.vue";
+import AppFeatures from "../components/Home/AppFeatures.vue";
 import AppSkills from "../components/Home/AppSkills.vue";
 
 export default {
@@ -8,6 +9,7 @@ export default {
     components:{
         AppHero,
         AppProjectsPreview,
+        AppFeatures,
         AppSkills,
     }
 }
@@ -16,6 +18,7 @@ export default {
 <template lang="">
     <AppHero />
     <AppProjectsPreview />
+    <AppFeatures />
     <AppSkills />
 </template>
 
