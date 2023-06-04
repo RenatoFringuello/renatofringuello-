@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template lang="">
-    <section class="bg-dominant container-lg d-flex align-items-start justify-content-center align-items-lg-center justify-content-lg-start" id="hero">
+    <section class="color-scheme-a container-lg d-flex align-items-start justify-content-center align-items-lg-center justify-content-lg-start" id="hero">
         <div class="wrapper pt-5 pt-lg-0">
             <AppTitle content="Hi, my name is Renato." className="sub-title mb-2"/>
             <AppTitle content="I am a Full Stack Web Developer" className="main-title mb-3"/>
