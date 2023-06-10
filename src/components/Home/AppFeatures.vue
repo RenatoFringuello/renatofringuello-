@@ -21,7 +21,7 @@ export default {
                 {
                     icon:'fa-solid fa-language',
                     title:'languages',
-                    subTitle:'Edusogno',
+                    subTitle:'',
                     contents:[
                         'I\'m learning english to do the exam to get the IELTS C1 certification.',
                         'My level in other langueages',
@@ -30,14 +30,6 @@ export default {
                     ],
                 }
             ]
-        }
-    },
-    computed:{
-        getContent(content){
-            if(content.includes('_')){
-                console.log(content);
-            }
-            return content;
         }
     }
 }
@@ -49,11 +41,8 @@ export default {
             <div class="col-12 col-lg-8">
                 <div class="row g-3">
                     <div class="col-12 col-sm-6" v-for:="card in cards">
-                        <AppCard :icon="card.icon" :title="card.title" :sub-title="card.subTitle" >
-                            <p class="m-0" v-for:="content in card.contents">
-                                {{ getContent(content) }}
-                            </p>
-                        </AppCard>
+                        <AppCard :card="card" />
+                        <!-- <AppCard :icon="card.icon" :title="card.title" :sub-title="card.subTitle" /> -->
                     </div>
                 </div>
             </div>

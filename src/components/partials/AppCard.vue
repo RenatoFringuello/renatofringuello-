@@ -4,21 +4,41 @@ import AppTitle from './AppTitle.vue';
 export default {
     name:'AppCard',
     props:{
-        icon:{
-            type:String,
-            default:''
-        },
-        title:{
-            type:String,
-            default:''
-        },
-        subTitle:{
-            type:String,
-            default:''
+        /**
+         * the card object with these properties:
+         * - icon:String
+         * - title:String
+         * - subTitle:String
+         * - content:String
+         */
+        card:{
+            type:Object,
         }
     },
     components:{
         AppTitle,
+    },
+    methods:{
+        /**
+         * catch the keywords from the content and return an image based on the keyword
+         * @param {String} content 
+         */
+        getContent(content){//cerca un modo per mostrare le flags
+            let flag, level, hasFlag;
+            
+            //catch the flag content
+            if(content.includes('_flag')){
+                hasFlag = true;
+                //get nationality
+                flag = content.includes('It') ? 'IT' : 'GB';
+                //get language level
+                level = content.split('flag')[1];
+            }
+
+            return (hasFlag)
+                ? `<img class="flag" src="https://flagsapi.com/${flag}/flat/64.png" alt="${flag} Flag">${level}`
+                : content ;
+        }
     }
 }
 </script>
@@ -26,13 +46,16 @@ export default {
 <template lang="">
     <div class="main-card d-flex flex-column justify-content-between">
         <div class="d-flex flex-wrap justify-content-between">
-            <i v-if="icon != ''" class="icon mb-2" :class="icon"></i>
+            <!-- icon -->
+            <i v-if="card.icon != ''" class="icon mb-2" :class="card.icon"></i>
+            <!-- titles -->
             <div class="text-md-end text-capitalize">
-                <AppTitle v-if="title != ''" :content="title" className="title mb-1"/>
-                <AppTitle v-if="subTitle != ''" :content="subTitle" className="sub-title mb-3"/>
+                <AppTitle v-if="card.title != ''" :content="card.title" className="title mb-1"/>
+                <AppTitle v-if="card.subTitle != ''" :content="card.subTitle" className="sub-title mb-3"/>
             </div>
         </div>
-        <slot></slot>
+        <!-- content -->
+        <p v-html="getContent(content)" class="m-0" v-for:="content in card.contents"></p>
     </div>
 </template>
 
@@ -56,6 +79,5 @@ export default {
         .title{
             line-height: 2.2rem !important;
         }
-
     }
 </style>
