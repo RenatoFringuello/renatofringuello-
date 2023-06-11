@@ -16,7 +16,10 @@ export default {
                     icon:'fa-solid fa-graduation-cap',
                     title:'education',
                     subTitle:'boolean careers',
-                    contents:['I\'ve learnt basics of web development during the 6 month crash course at Boolean'],
+                    contents:[
+                        'I\'ve learnt basics of web development during the 6 month crash course at Boolean.',
+                        'Come check my exercises/projects on my _link[https://github.com/RenatoFringuello,GitHub]'
+                    ],
                 },
                 {
                     icon:'fa-solid fa-language',
@@ -25,8 +28,17 @@ export default {
                     contents:[
                         'I\'m learning english to do the exam to get the IELTS C1 certification.',
                         'My level in other langueages',
-                        '_Italian_flag : Native',
-                        '_English_flag : B1',
+                        '_flag[https://flagsapi.com/XX/flat/64.png,IT] : Native',
+                        '_flag[https://flagsapi.com/XX/flat/64.png,GB] : B1',
+                    ],
+                },
+                {
+                    icon:'fa-solid fa-people-group',
+                    title:'teamwork',
+                    subTitle:'',
+                    contents:[
+                        'I\'m learning english to do the exam to get the IELTS C1 certification.',
+                        'My level in other langueages',
                     ],
                 }
             ]

@@ -20,24 +20,55 @@ export default {
     },
     methods:{
         /**
-         * catch the keywords from the content and return an image based on the keyword
+         * catch the keywords from the content and return specialContent based on the keywords
+         * use _key[link, title]
+         * (keys: _link, _flag)
+         * example: _flag[https://flagsapi.com/XX/flat/64.png,IT] => title (IT) will replace XX
          * @param {String} content 
          */
-        getContent(content){//cerca un modo per mostrare le flags
-            let flag, level, hasFlag;
-            
-            //catch the flag content
-            if(content.includes('_flag')){
-                hasFlag = true;
-                //get nationality
-                flag = content.includes('It') ? 'IT' : 'GB';
-                //get language level
-                level = content.split('flag')[1];
+        getContent(content){
+            //catch the escape content
+            if(content.includes('_flag') || content.includes('_link')){
+                //verify them all
+                const types = ['_flag', '_link']
+                types.forEach((type)=>{
+                    content = this.getEscape(type, content)
+                })
             }
 
-            return (hasFlag)
-                ? `<img class="flag" src="https://flagsapi.com/${flag}/flat/64.png" alt="${flag} Flag">${level}`
-                : content ;
+            return content
+        },
+        /**
+         * it detect escapes custom tag like [_flag | _link] and generate an HTML element with the data inside the square brakets
+         * 
+         * es(i want a itallian flag)
+         * _flag[https://flagsapi.com/XX/flat/64.png,IT] 'XX' will be replaced by 'IT'
+         * @param {String} type - [_flag | _link]
+         * @param {String} content - a string with some escapes (or not)
+         */
+        getEscape(type, content){
+            let specialContent = '';
+            //to math everything that start with _<type>[*] where type => [_flag | _link]
+            let regex = new RegExp(`${type}\\[(.*?)\\]`)
+
+            //split escaped content by non escaped content
+            content.split(regex)
+                .forEach((str)=> {
+                    //if don't match a _??? AND a img src AND str contains 'http'
+                    if((!str.match(/_(.*?)\[(.*?)\]/) && !str.match(/src="(.*?)"/)) && str.includes('http')) {
+                        // extract data 
+                        let data = str.split(',')
+                        //create a img | link a
+                        str = (type == '_flag')
+                            ? `<img class="flag" src="${data[0].replace('XX',data[1])}" alt="${data[1]} Flag">`
+                            : `<a href="${data[0]}">${data[1]}</a>`
+                    }
+                    //concatenate all content matched and not matched
+                    specialContent += str
+                });
+
+            //return the result
+            return specialContent
         }
     }
 }
@@ -54,8 +85,10 @@ export default {
                 <AppTitle v-if="card.subTitle != ''" :content="card.subTitle" className="sub-title mb-3"/>
             </div>
         </div>
-        <!-- content -->
-        <p v-html="getContent(content)" class="m-0" v-for:="content in card.contents"></p>
+        <div>
+            <!-- content -->
+            <p v-html="getContent(content)" class="m-0" v-for:="content in card.contents"></p>
+        </div>
     </div>
 </template>
 
@@ -78,6 +111,10 @@ export default {
         }
         .title{
             line-height: 2.2rem !important;
+        }
+        // with ::v-deep we can use scoped style to give element appended with v-html
+        p ::v-deep img.flag{
+            max-width: 30px;
         }
     }
 </style>
