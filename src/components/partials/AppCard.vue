@@ -124,8 +124,5 @@ export default {
         p:deep(img.flag){
             max-width: 30px;
         }
-        // p:deep(a.link){
-            
-        // }
     }
 </style>

@@ -63,6 +63,7 @@ export default {
 <template lang="">
     <section class="container-lg py-5">
         <AppTitle content="general skills" className="title text-center text-uppercase pb-5 fw-800 text-complementary"/>
+        <!-- cards -->
         <div class="row g-3">
             <div class="col-12 col-sm-6 col-xl-3" v-for:="card in cards">
                 <AppCard :card="card" />
