@@ -35,7 +35,7 @@ export default {
         <div class="description mb-3">
             <AppTitle :content="project.name" class="title text-capitalize archivo-black-font mb-1"/>
             <div class="d-flex flex-wrap mb-3">
-                <a :href="baseGitHubUri + repo" target="_blank" class="me-3" v-for:="repo in project.repos">
+                <a :href="baseGitHubUri + repo" target="_blank" class="link link-blank me-3" v-for:="repo in project.repos">
                     <AppTitle  :content="repo" class="sub-title archivo-black-font"/>
                 </a>
             </div>
@@ -60,17 +60,6 @@ export default {
         .description{
             a{
                 color: $dominant-color !important;
-                position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    top: -1px;
-                    right: -7px;
-                    width: 10px;
-                    aspect-ratio: 1/1;
-                    border-top:   3px solid;
-                    border-right: 3px solid;
-                }
             }
         }
     }

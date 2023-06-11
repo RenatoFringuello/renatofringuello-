@@ -14,9 +14,20 @@ body{
         }
         
         button,
-        a{
+        a.link{
             border:0;
             cursor: pointer;
+            position: relative;
+            &.link-blank::after{
+                content: '' !important;
+                position: absolute;
+                right: -3px;
+                top: 0;
+                width: 6px;
+                aspect-ratio: 1/1;
+                border-top:   2px solid;
+                border-right: 2px solid;
+            }
         }
     }
     
@@ -40,9 +51,8 @@ body{
         }
     }
 
-    *{
-        color:inherit;
-    }
+    //classes
+    
     //font
     .archivo-black-font{
         font-family: 'Archivo Black';
