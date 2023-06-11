@@ -61,7 +61,7 @@ export default {
                         //create a img | link a
                         str = (type == '_flag')
                             ? `<img class="flag" src="${data[0].replace('XX',data[1])}" alt="${data[1]} Flag">`
-                            : `<a href="${data[0]}" target="_blank">${data[1]}</a>`
+                            : `<a class="link link-blank" href="${data[0]}" target="_blank">${data[1]}</a>`
                     }
                     //concatenate all content matched and not matched
                     specialContent += str
@@ -76,18 +76,16 @@ export default {
 
 <template lang="">
     <div class="main-card d-flex flex-column justify-content-between">
-        <div class="row g-0">
-            <div class="col-1">
-                <!-- icon -->
-                <i v-if="card.icon != ''" class="icon mb-2" :class="card.icon"></i>
-            </div>
-            <div class="text-end text-capitalize col-11">
+        <!-- icon -->
+        <i v-if="card.icon != ''" class="icon mb-2" :class="card.icon"></i>
+        <div class="position-relative">
+            <div class="text-end text-capitalize">
                 <!-- titles -->
                 <AppTitle v-if="card.title != ''" :content="card.title" className="title mb-1"/>
                 <AppTitle v-if="card.subTitle != ''" :content="card.subTitle" className="sub-title mb-3"/>
             </div>
         </div>
-        <div>
+        <div class="position-relative">
             <!-- content -->
             <p v-html="getContent(content)" class="m-0" v-for:="content in card.contents"></p>
         </div>
@@ -96,10 +94,12 @@ export default {
 
 <style lang="scss" scoped>
     .main-card{
+        overflow: hidden;
         background-color: $dominant-color;
         border-radius: $border-radius-1;
         padding:1rem;
         height: 100%;
+        position: relative;
 
         i.icon,
         .title{
@@ -109,7 +109,13 @@ export default {
             -webkit-text-fill-color: transparent;
         }
         i.icon{
-            font-size: 3.5rem;
+            font-size: 6rem;
+            
+            position: absolute;
+            top:0;
+            left:0;
+            transform: rotate(-30deg);
+            opacity: .6;
         }
         .title{
             line-height: 2.2rem !important;
@@ -118,5 +124,8 @@ export default {
         p:deep(img.flag){
             max-width: 30px;
         }
+        // p:deep(a.link){
+            
+        // }
     }
 </style>
