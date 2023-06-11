@@ -1,12 +1,14 @@
 <script>
 import { store } from '@/store';
 
+import AppTitle from '@/components/partials/AppTitle.vue';
 import AppCard from '@/components/partials/AppCard.vue';
 
 export default {
     name:'AppFeatures',
     components:{
         AppCard,
+        AppTitle,
     },
     data() {
         return {
@@ -17,8 +19,8 @@ export default {
                     title:'education',
                     subTitle:'boolean careers',
                     contents:[
-                        'I\'ve learnt basics of web development during the 6 month crash course at Boolean.',
-                        'Come check my exercises/projects on my _link[https://github.com/RenatoFringuello,GitHub]'
+                        'I\'ve learnt basics of web development during the 6 month crash course at _link[https://boolean.careers,Boolean Careers].',
+                        'Come check my exercises/projects on my _link[https://github.com/RenatoFringuello,GitHub].'
                     ],
                 },
                 {
@@ -35,10 +37,21 @@ export default {
                 {
                     icon:'fa-solid fa-people-group',
                     title:'teamwork',
+                    subTitle:'boolean careers',
+                    contents:[
+                        'During my studies at _link[https://boolean.careers,Boolean Careers] I\'ve also learnt some team-working soft skill.',
+                        'I\'ve had the chance to develop this skill in years because I\'m a football player since 5 y/o',
+                    ],
+                },
+                {
+                    icon:'fa-solid fa-lightbulb',
+                    title:'problem solving',
                     subTitle:'',
                     contents:[
-                        'I\'m learning english to do the exam to get the IELTS C1 certification.',
-                        'My level in other langueages',
+                        'I had the opportunity to develop solving skills during:',
+                        '- my high school programming studies',
+                        '- at _link[https://boolean.careers,Boolean Careers]',
+                        '- with real working experiences.',
                     ],
                 }
             ]
@@ -48,25 +61,15 @@ export default {
 </script>
 
 <template lang="">
-    <section class="container-lg bg-danger py-5">
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6" v-for:="card in cards">
-                        <AppCard :card="card" />
-                        <!-- <AppCard :icon="card.icon" :title="card.title" :sub-title="card.subTitle" /> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4 d-flex">
-                <img class="m-auto" :src="store.getImageSnap('','me.png')" alt="">
+    <section class="container-lg py-5">
+        <AppTitle content="general skills" className="title text-center text-uppercase pb-5 fw-800 text-complementary"/>
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-xl-3" v-for:="card in cards">
+                <AppCard :card="card" />
             </div>
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-img{
-    @include image(contain, center, auto, auto)
-}
 </style>
