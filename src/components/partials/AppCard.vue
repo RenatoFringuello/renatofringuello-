@@ -61,7 +61,7 @@ export default {
                         //create a img | link a
                         str = (type == '_flag')
                             ? `<img class="flag" src="${data[0].replace('XX',data[1])}" alt="${data[1]} Flag">`
-                            : `<a href="${data[0]}">${data[1]}</a>`
+                            : `<a href="${data[0]}" target="_blank">${data[1]}</a>`
                     }
                     //concatenate all content matched and not matched
                     specialContent += str
@@ -76,11 +76,13 @@ export default {
 
 <template lang="">
     <div class="main-card d-flex flex-column justify-content-between">
-        <div class="d-flex flex-wrap justify-content-between">
-            <!-- icon -->
-            <i v-if="card.icon != ''" class="icon mb-2" :class="card.icon"></i>
-            <!-- titles -->
-            <div class="text-md-end text-capitalize">
+        <div class="row g-0">
+            <div class="col-1">
+                <!-- icon -->
+                <i v-if="card.icon != ''" class="icon mb-2" :class="card.icon"></i>
+            </div>
+            <div class="text-end text-capitalize col-11">
+                <!-- titles -->
                 <AppTitle v-if="card.title != ''" :content="card.title" className="title mb-1"/>
                 <AppTitle v-if="card.subTitle != ''" :content="card.subTitle" className="sub-title mb-3"/>
             </div>
@@ -112,8 +114,8 @@ export default {
         .title{
             line-height: 2.2rem !important;
         }
-        // with ::v-deep we can use scoped style to give element appended with v-html
-        p ::v-deep img.flag{
+        // with :deep(<inner-selector>) we can use scoped style to give element appended with v-html
+        p:deep(img.flag){
             max-width: 30px;
         }
     }
