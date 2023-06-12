@@ -27,26 +27,30 @@ export default {
                         <img class="snap" src="@/assets/images/projects/boolflix/boolflix_1.png" alt="Boolflix Project snapshot1">
                     </div>
                     <div class="col-12 col-lg-6">
-                        <img class="snap" src="@/assets/images/projects/discord/discord_full.png" alt="Discord Project snapshot_full">
+                        <img class="snap" src="@/assets/images/projects/boolzapp/boolzapp_1.png" alt="Boolzapp Project snapshot1">
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-7 position-relative p-0">
-                <img class="snap" src="@/assets/images/projects/boolzapp/boolzapp_1.png" alt="Boolzapp Project snapshot1">
+                <img class="snap" src="@/assets/images/projects/discord/discord_full.png" alt="Discord Project snapshot_full">
             </div>
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-section{
     .img-wrapper{
         .snap{
             @include image(cover, top, 100%, 100%, 100%, 200px);
         }
     }
     .snap{
-        @include image(cover, top);
+        @include image(cover, top, 100%, 100%, 100%, 200px);
     }
-}
+
+    @media screen and (min-width: 768px) {
+        .snap{
+            @include image(cover, top, 100%, 100%, 100%, 80vh);
+        }
+    }
 </style>
