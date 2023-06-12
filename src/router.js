@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from './pages/AppHome.vue';
 import AppProjects from './pages/AppProjects.vue';
+import AppAbout from './pages/AppAbout.vue';
 import AppPageStatusCode from './pages/AppPageStatusCode.vue';
 
 const router = createRouter({
@@ -20,7 +21,7 @@ const router = createRouter({
         {
             path : '/about-me',
             name : 'about',
-            component : AppHome
+            component : AppAbout
         },
         {
             path: '/400', 
