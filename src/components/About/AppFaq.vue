@@ -1,31 +1,19 @@
 <script>
 export default {
     name:'AppFaq',
+    props:{
+        /**
+         * must be an array of literal objects with these properties
+         * - question
+         * - answer
+         */
+        questions:{
+            type:Array,
+        }
+    },
     data() {
         return {
             openQuestionId:-1,
-            questions:[
-                {
-                    question:'Which one do you prefer, Frontend or Backend?',
-                    answer:'I don\'t have a specific choice, but I prefer Frontend just because I\'m searching for my first work experience so I prefer the "easier" one just to understand more the world behind the software developer life and learn good habits to write a very well organized code',
-                },
-                {
-                    question:'Are you available to transfer?',
-                    answer:'Yes, I am',
-                },
-                {
-                    question:'What is your greatest strength?',
-                    answer:'I\'m great to listen people and I\'m good at completing what I start',
-                },
-                {
-                    question:'What is your worst weakness?',
-                    answer:'I\'m not the best speaker to motivate someone or to sell something',
-                },
-                {
-                    question:'Why should we hire you?',
-                    answer:'I\'m a great choice just because I love programming and I don\'t like to quit some project till I didn\'t accomplished the task, even if I\'m working with a technology that I\'ve never studied before',
-                },
-            ]
         }
     },
     methods:{
@@ -61,8 +49,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+section{
+    border-radius: $border-radius-1;
+
     .faq-box{
         background-color: $complementary-color;
+        &:first-child .faq-question{
+            border-top:1px solid #888;
+        }
         .faq-question{
             background-color: $accent-color;
             border-bottom:1px solid #888;
@@ -89,6 +83,8 @@ export default {
             }
         }
     }
+}
+
 
     @media screen and (min-width: 992px) {
         .faq-wrapper{
