@@ -103,7 +103,6 @@ export default {
             position: relative;
             height: 500px;
             width: 100%;
-            max-width: 1000px;
             margin-left: auto;
             border-radius: $border-radius-1;
             background: $accent-color;
@@ -118,6 +117,11 @@ export default {
 
             width: 400px;
             margin-bottom: 0;
+        }
+    }
+    @media screen and (min-width: 769px) {
+        div .intro-wrapper{
+            max-width: 700px;
         }
     }
 </style>
