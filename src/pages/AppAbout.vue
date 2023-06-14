@@ -47,7 +47,7 @@ export default {
                 },
                 {
                     quote:'Ogni volta che ti viene chiesto se puoi fare un lavoro, rispondi: Certo che posso! Poi datti da fare e scopri come farlo',
-                    author:'teddy roosvelt'
+                    author:'theodore roosvelt'
                 },
                 {
                     quote:'Trova un lavoro che ti piaccia ed avrai cinque giorni in più per ogni settimana',
@@ -110,18 +110,24 @@ export default {
     }
 
     @media screen and (min-width: 992px) {
-        div .quote-wrapper{
-            position: absolute;
-            top:50px;
-            z-index: 2;
+        div {
+            .quote-wrapper{
+                position: absolute;
+                top:50px;
+                z-index: 2;
 
-            width: 400px;
-            margin-bottom: 0;
+                width: 400px;
+                margin-bottom: 0;
+            }
+            .intro-wrapper{
+                max-width: 700px;
+            }
         }
     }
-    @media screen and (min-width: 769px) {
+
+    @media screen and (min-width: 1199px) {
         div .intro-wrapper{
-            max-width: 700px;
+            max-width: 1000px;
         }
     }
 </style>
