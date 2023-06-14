@@ -72,7 +72,7 @@ export default {
     <div class="container-lg d-flex flex-column">
         <div class="mb-3">
             <div class="quote-wrapper mb-3">
-                <div class="d-flex text-complementary mb-2">
+                <div class="d-flex text-complementary mb-3">
                     <AppTitle content='"' class="title pe-1"/>
                     <div class="quote flex-grow-1">
                         <AppTitle :content="quotes[activeQuoteID].quote" class="title"/>
