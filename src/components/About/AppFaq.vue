@@ -35,7 +35,9 @@ export default {
                 <!-- question -->
                 <div class="faq-question d-flex justify-content-between">
                     <div>{{ question.question }}</div>
-                    <i class="fa-solid" :class="(openQuestionId == i) ?'fa-circle-chevron-down' :'fa-circle-chevron-up'" @click="toggleSwitch(i)"></i>
+                    <div class="chevron-wrapper d-flex" @click="toggleSwitch(i)">
+                        <i class="m-auto fa-solid" :class="(openQuestionId == i) ?'fa-circle-chevron-down' :'fa-circle-chevron-up'" ></i>
+                    </div>
                 </div>
                 <!-- answer -->
                 <div class="faq-answer d-flex" :class="(openQuestionId == i) ?'open' :'closed'">
@@ -60,12 +62,11 @@ section{
         .faq-question{
             background-color: $accent-color;
             border-bottom:1px solid #888;
-            *{
+            > div{
                 padding: 1rem;
             }
             i{
                 cursor: pointer;
-                line-height: 1.5rem;
             }
         }
         .faq-answer{
