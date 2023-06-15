@@ -82,9 +82,17 @@ export default {
                 <AppTitle :content="`- ${quotes[activeQuoteID].author}`" class="text-uppercase"/>
             </div>
 
-            <div class="intro-wrapper">
-                <!-- qui ci vuole un immagine e l'intro -->
-                
+            <div class="intro-wrapper ms-auto">
+                <!-- img -->
+                <div class="pic">
+                    <img class="img-fluid ms-auto" src="@/assets/images/me.png" alt="Renato's profile pic">
+                </div>
+                <!-- text boxes -->
+                <div class="text d-flex flex-wrap">
+                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
+                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
+                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
+                </div>
             </div>
         </div>
         <div class="faq-wrapper">    
@@ -94,22 +102,41 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+    $gap : 12px;
     div{
         position: relative;   
-        .quote-wrapper .quote{
-            text-align: justify;
-        }
         .intro-wrapper{
             position: relative;
-            height: 500px;
             width: 100%;
-            margin-left: auto;
             border-radius: $border-radius-1;
-            background: $accent-color;
+            background: $dominant-color;
+            padding: $gap;
+            
+            .pic{
+                display: flex;
+                margin-bottom: $gap;
+                
+                img{
+                    height: 220px;
+                    max-height: 100% !important;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 50%;
+                    border:5px inset $complementary-color;
+                    background-image: linear-gradient(45deg,$complementary-color, $complementary-darken-color);
+                    margin: auto;
+                }
+            }
+            .text{
+                gap : $gap;
+                .box{
+                    width: calc((100% - $gap) / 2);
+                }
+            }
         }
     }
 
     @media screen and (min-width: 992px) {
+        //lg & more
         div {
             .quote-wrapper{
                 position: absolute;
@@ -121,13 +148,23 @@ export default {
             }
             .intro-wrapper{
                 max-width: 700px;
+                .pic img{
+                    margin: 0;
+                }
+                .text .box{
+                    width: calc((100% - ($gap * 2)) / 3);
+                }
             }
         }
     }
 
     @media screen and (min-width: 1200px) {
+        //xl & more
         div .intro-wrapper{
             max-width: 1000px;
+            .pic img{
+                height: 300px;
+            }
         }
     }
 </style>
