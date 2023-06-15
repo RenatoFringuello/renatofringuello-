@@ -51,11 +51,8 @@ export default {
             &.comp{
                 color: $complementary-color !important;
             }
-            &.black{
-                color: black !important;
-            }
-            &.white{
-                color: white !important;
+            &.accent{
+                color: $accent-comp-color !important;
             }
         }
         &.filled{
@@ -68,13 +65,9 @@ export default {
                 background-color: $complementary-color;
                 color: $dominant-color !important;
             }
-            &.black-white{
-                background-color:  black;
-                color:  white !important;
-            }
-            &.white-black{
-                background-color:  white;
-                color:  black !important;
+            &.accent{
+                background-color:  $accent-comp-color;
+                color:  $accent-color !important;
             }
         }
         &.shadow{
@@ -102,20 +95,12 @@ export default {
                     border:2px solid $complementary-color;
                 }
             }
-            &.black-white{
-                background-color:  black;
-                color:  white !important;
+            &.accent{
+                background-color:  $accent-comp-color;
+                color:  $accent-color !important;
                 &::after{
                     content: '';
-                    border:2px solid black;
-                }
-            }
-            &.white-black{
-                background-color:  white;
-                color:  black !important;
-                &::after{
-                    content: '';
-                    border:2px solid white;
+                    border:2px solid $accent-comp-color;
                 }
             }
         }

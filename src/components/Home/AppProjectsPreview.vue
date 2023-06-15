@@ -19,7 +19,7 @@ export default {
                     <AppTitle content="More than +10 projects" className="title pb-3 fw-800 text-complementary-darken"/>
                     <AppTitle class="mb-3" className="sub-title" content="See the projects I developed during my studies in the Boolean Accademy Course 'Full-Stack Web Developer'"/>
                     <router-link to="projects">
-                        <AppMainButton content="Project Highlight" theme="black-white" type="shadow"/>
+                        <AppMainButton content="Project Highlight" theme="accent" type="underline"/>
                     </router-link>
                 </div>
                 <div class="img-wrapper row g-0">
