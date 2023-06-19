@@ -29,7 +29,7 @@ export default {
                 },
                 {
                     question:'Why should we hire you?',
-                    answer:'I\'m a great choice just because I love programming and I don\'t like to quit some project till I didn\'t accomplished the task, even if I\'m working with a technology that I\'ve never studied before',
+                    answer:'I love programming and I don\'t like to quit some project till I didn\'t accomplished the task, even if I\'m working with a technology that I\'ve never studied before',
                 },
             ],
             quotes:[
@@ -54,6 +54,14 @@ export default {
                     author:'h. jackson brown jr.'
                 },
             ],
+            // Chi sei
+            // Qual è il tuo background
+            // Quali sono i tuoi valori e principi
+            // Perché il prodotto o servizio che offri è importante per te
+            aboutMeData:[
+                'Ciao, I\'m Renato and I am an italian guy who likes programming, hang out with friends and do sports. I\'m the last born of 3 ...',
+                'When I\'m not programming, you can find me in the gym or playing playing football with some friends. Thanks for stopping by my portfolio!',
+            ],
             activeQuoteID:0
         }
     },
@@ -70,7 +78,7 @@ export default {
 
 <template lang="">
     <div class="container-lg d-flex flex-column">
-        <div class="mb-3">
+        <div class="mb-5">
             <div class="quote-wrapper mb-3">
                 <div class="d-flex text-complementary mb-3">
                     <AppTitle content='"' class="title pe-1"/>
@@ -89,13 +97,12 @@ export default {
                 </div>
                 <!-- text boxes -->
                 <div class="text d-flex flex-wrap">
-                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
-                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
-                    <div class="box flex-grow-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa vel et illum quas sit ratione recusandae ipsum nesciunt corporis tenetur fugiat esse rerum modi, quis est laudantium quo necessitatibus.</div>
+                    <div class="box flex-grow-1" v-for:="data in aboutMeData">{{ data }}</div>
                 </div>
             </div>
         </div>
-        <div class="faq-wrapper">    
+        <div>    
+            <AppTitle content='Most requested questions' class="title text-center"/>
             <AppFaq :questions="questions"/>
         </div>
     </div>
