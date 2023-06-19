@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template lang="">
-    <section class="container-lg py-5 color-scheme-b">
+    <section class="container-lg py-5">
         <div class="faq-wrapper">
             <div class="faq-box" v-for:="(question,i) in questions">
                 <!-- question -->
@@ -40,7 +40,7 @@ export default {
                     </div>
                 </div>
                 <!-- answer -->
-                <div class="faq-answer d-flex" :class="(openQuestionId == i) ?'open' :'closed'">
+                <div class="faq-answer" :class="(openQuestionId == i) ?'open' :'closed'">
                     <div>
                         {{ question.answer }}
                     </div>
@@ -55,12 +55,10 @@ section{
     border-radius: $border-radius-1;
 
     .faq-box{
-        background-color: $complementary-color;
         &:first-child .faq-question{
             border-top:1px solid #888;
         }
         .faq-question{
-            background-color: $accent-color;
             border-bottom:1px solid #888;
             > div{
                 padding: 1rem;
@@ -70,6 +68,8 @@ section{
             }
         }
         .faq-answer{
+            background-color: $complementary-color;
+            color: $accent-comp-color;
             transition: 1.3s ease-in-out;
             overflow: hidden;
             height: auto;
@@ -79,7 +79,6 @@ section{
             }
 
             div{
-                margin:auto 0;
                 padding: 1rem;
             }
         }
@@ -89,7 +88,7 @@ section{
 
     @media screen and (min-width: 992px) {
         .faq-wrapper{
-            max-width: 600px;
+            max-width: 700px;
             margin:0 auto;
         }
     }
