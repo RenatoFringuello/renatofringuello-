@@ -31,7 +31,7 @@ export default {
                 <!-- route name -->
                 <div class="text-capitalize">{{ $route.name }}</div>
                 <!-- brand logo -->
-                <router-link class="position-absolute translate-middle-x start-50" :to="{name:navLinks[0].name}">
+                <router-link class="logo position-absolute translate-middle-x top-0 start-50" :to="{name:navLinks[0].name}">
                     <img src="@/assets/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </router-link>
                 <!-- navbar toggler -->
@@ -61,7 +61,10 @@ export default {
             opacity: 1;
             box-shadow: 0 1px 15px 5px #0004;
         }
-        
+        .logo{
+            padding:12px;
+        }
+
         li{
             padding:.4rem 0;
             margin-left: 1rem;
