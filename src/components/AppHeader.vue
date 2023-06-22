@@ -20,12 +20,17 @@ export default {
                 },
             ]
         }
+    },
+    computed:{
+        navbarState(){
+            return (this.isNavbarOpen)?'open':'closed'
+        },
     }
 }
 </script>
 
 <template lang="">
-    <header class="fixed-top color-scheme-a" :class="(isNavbarOpen)?'open':'closed'">
+    <header class="fixed-top color-scheme-a" :class="navbarState">
         <nav class="navbar navbar-dark navbar-expand-lg">
             <div class="container-lg">
                 <!-- route name -->
@@ -40,10 +45,10 @@ export default {
                     <span class="navbar-toggler-icon position-absolute translate-middle-x start-50"></span>
                 </button>
                 <!-- links -->
-                <div class="navbar-collapse flex-grow-0" :class="(isNavbarOpen)?'open':'closed'" id="navbarNav">
+                <div class="navbar-collapse flex-grow-0" :class="navbarState" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item text-end" :class="($route.name == navLink.name)? 'active fw-bold' : ''" v-for:="navLink in navLinks">
-                            <router-link class="text-capitalize" :to="{name:navLink.name}">
+                            <router-link class="text-capitalize" :to="{name:navLink.name}" @click="isNavbarOpen = !isNavbarOpen">
                                 <i :class="navLink.icon"></i>
                                 {{ navLink.name }}
                             </router-link>
@@ -53,6 +58,7 @@ export default {
             </div>
         </nav>
     </header>
+    <div class="overlay" :class="isNavbarOpen ? 'd-block' : 'd-none'" @click="isNavbarOpen = !isNavbarOpen"></div>
 </template>
 
 <style lang="scss" scoped>
@@ -61,6 +67,7 @@ export default {
             opacity: 1;
             box-shadow: 0 1px 15px 5px #0004;
         }
+
         .logo{
             padding:12px;
         }
@@ -94,6 +101,14 @@ export default {
                 max-height: 0;
             }
         }
+    }
+
+    .overlay{
+        position: fixed;
+        height: 100dvh;
+        width: 100%;
+        background-color: #0005;
+        z-index: 2;
     }
 
     @media screen and (min-width: 992px) {
