@@ -1,6 +1,7 @@
 <script>
-import AppTitle from './AppTitle.vue';
+import { store } from '@/store'
 
+import AppTitle from './AppTitle.vue';
 export default {
     name:'AppCard',
     props:{
@@ -18,59 +19,11 @@ export default {
     components:{
         AppTitle,
     },
-    methods:{
-        /**
-         * catch the keywords from the content and return specialContent based on the keywords
-         * use _key[link, title]
-         * (keys: _link, _flag)
-         * example: _flag[https://flagsapi.com/XX/flat/64.png,IT] => title (IT) will replace XX
-         * @param {String} content 
-         */
-        getContent(content){
-            //catch the escape content
-            if(content.includes('_flag') || content.includes('_link')){
-                //verify them all
-                const types = ['_flag', '_link']
-                types.forEach((type)=>{
-                    content = this.getEscape(type, content)
-                })
-            }
-
-            return content
-        },
-        /**
-         * it detect escapes custom tag like [_flag | _link] and generate an HTML element with the data inside the square brakets
-         * 
-         * es(i want a itallian flag)
-         * _flag[https://flagsapi.com/XX/flat/64.png,IT] 'XX' will be replaced by 'IT'
-         * @param {String} type - [_flag | _link]
-         * @param {String} content - a string with some escapes (or not)
-         */
-        getEscape(type, content){
-            let specialContent = '';
-            //to math everything that start with _<type>[*] where type => [_flag | _link]
-            let regex = new RegExp(`${type}\\[(.*?)\\]`)
-
-            //split escaped content by non escaped content
-            content.split(regex)
-                .forEach((str)=> {
-                    //if don't match a _??? AND a img src AND str contains 'http'
-                    if((!str.match(/_(.*?)\[(.*?)\]/) && !str.match(/src="(.*?)"/)) && str.includes('http')) {
-                        // extract data 
-                        let data = str.split(',')
-                        //create a img | link a
-                        str = (type == '_flag')
-                            ? `<img class="flag" src="${data[0].replace('XX',data[1])}" alt="${data[1]} Flag">`
-                            : `<a class="link link-blank" href="${data[0]}" target="_blank">${data[1]}</a>`
-                    }
-                    //concatenate all content matched and not matched
-                    specialContent += str
-                });
-
-            //return the result
-            return specialContent
+    data() {
+        return {
+            store,
         }
-    }
+    },
 }
 </script>
 
@@ -87,7 +40,7 @@ export default {
         </div>
         <div class="position-relative">
             <!-- content -->
-            <p v-html="getContent(content)" class="m-0" v-for:="content in card.contents"></p>
+            <p v-html="store.getContent(content)" class="m-0" v-for:="content in card.contents"></p>
         </div>
     </div>
 </template>
@@ -123,6 +76,12 @@ export default {
         // with :deep(<inner-selector>) we can use scoped style to give element appended with v-html
         p:deep(img.flag){
             max-width: 30px;
+        }
+        p:deep(a.link){
+            ::after:hover{
+                content: '';
+                animation: swing 1s;
+            }
         }
     }
 </style>
