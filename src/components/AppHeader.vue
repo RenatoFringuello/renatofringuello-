@@ -28,14 +28,18 @@ export default {
     <header class="fixed-top color-scheme-a" :class="(isNavbarOpen)?'open':'closed'">
         <nav class="navbar navbar-dark navbar-expand-lg">
             <div class="container-lg">
+                <!-- route name -->
                 <div class="text-capitalize">{{ $route.name }}</div>
+                <!-- brand logo -->
                 <router-link class="position-absolute translate-middle-x start-50" :to="{name:navLinks[0].name}">
                     <img src="@/assets/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 </router-link>
+                <!-- navbar toggler -->
                 <button class="navbar-toggler position-relative border-0" @click="isNavbarOpen = !isNavbarOpen" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <span class="navbar-toggler-icon position-absolute translate-middle-x start-50"></span>
                 </button>
+                <!-- links -->
                 <div class="navbar-collapse flex-grow-0" :class="(isNavbarOpen)?'open':'closed'" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item text-end" :class="($route.name == navLink.name)? 'active fw-bold' : ''" v-for:="navLink in navLinks">
