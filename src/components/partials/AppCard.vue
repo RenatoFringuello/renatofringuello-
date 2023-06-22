@@ -77,10 +77,10 @@ export default {
         p:deep(img.flag){
             max-width: 30px;
         }
-        p:deep(a.link){
-            ::after:hover{
+        p:deep(a.link:hover){
+            &.link-blank::after{
                 content: '';
-                animation: swing 1s;
+                animation: swing .5s 2 alternate;
             }
         }
     }
