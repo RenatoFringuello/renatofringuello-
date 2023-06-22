@@ -68,15 +68,10 @@ export default {
         li{
             padding:.4rem 0;
             margin-left: 1rem;
-            // &.active{
-            //     font-size: 1.5rem;
-            //     padding:.5rem 0;
-            // }
             &:not(.active) a:hover,
             &.active a{/* every a but the a of .active */
                 padding:.4rem 0;
                 border-bottom: 2px solid;
-                // font-size: 1.3rem;
             }
             a{
                 text-decoration: none;
