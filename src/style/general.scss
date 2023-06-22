@@ -100,11 +100,3 @@ body{
         font-weight: 800;
     }
 }
-
-.transition,
-.transition *,
-.transition *:before,
-.transition *:after {
-    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 620ms!important;
-    transition-delay: 0!important;
-}
